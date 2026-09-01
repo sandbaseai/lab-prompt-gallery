@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MeiMind · GPT Image 2 Prompts Gallery</title>
+    <meta name="description" content="MeiMind · 16,000+ 免费 GPT Image 2 提示词与图像灵感库,涵盖 UI、摄影、海报、信息图、人物、漫画等 13 大类,支持搜索、复制、二创。" />
+    <meta name="theme-color" content="#F5F0E8" />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ============ TOP NAV ============ -->
+    <header class="nav">
+      <div class="nav__inner">
+        <a class="nav__logo" href="#">
+          <span class="nav__logo-mark">▣</span>
+          <span class="nav__logo-text">MeiMind</span>
+          <span class="nav__logo-tag">/ gpt-image-2</span>
+        </a>
+        <nav class="nav__links">
+          <a href="#gallery">Prompts</a>
+          <a href="#trending">Trending</a>
+          <a href="#about">About</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+        <div class="nav__actions">
+          <a class="btn btn--ghost" href="https://github.com/freestylefly/awesome-gpt-image-2" target="_blank" rel="noopener">
+            <span aria-hidden="true">★</span> GitHub
+          </a>
+          <button class="btn btn--solid" id="submitBtn" type="button">Submit Prompt</button>
+          <button class="nav__lang" type="button" id="langBtn">EN</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="hero__inner">
+        <div class="hero__model">
+          <span class="hero__model-pill">MODEL</span>
+          <span class="hero__model-name">GPT Image 2</span>
+          <span class="hero__model-meta">| Settings · Image · Generate</span>
+        </div>
+        <h1 class="hero__title">
+          The Loudest Library of <br />
+          <span class="hero__title-accent">GPT Image 2</span> Prompts.
+        </h1>
+        <p class="hero__sub">
+          <strong>16,000+</strong> free image & video prompts.
+          13 brutalist categories. Zero fluff. Copy · Remix · Ship.
+        </p>
+        <div class="hero__cta">
+          <a class="btn btn--solid btn--xl" href="#gallery">Browse Gallery →</a>
+          <a class="btn btn--ghost btn--xl" href="#trending">View Trending</a>
+        </div>
+        <div class="hero__stats">
+          <div class="stat"><b>16,472</b><span>PROMPTS</span></div>
+          <div class="stat"><b>13</b><span>CATEGORIES</span></div>
+          <div class="stat"><b>4K</b><span>RES OUTPUT</span></div>
+          <div class="stat"><b>0$</b><span>FREE FOREVER</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TRENDING ============ -->
+    <section class="section" id="trending">
+      <div class="section__head">
+        <h2 class="section__title">Trending Prompts</h2>
+        <a href="#gallery" class="section__more">View All →</a>
+      </div>
+      <div class="trending" id="trendingGrid"></div>
+    </section>
+
+    <!-- ============ ABOUT GPT IMAGE 2 ============ -->
+    <section class="section section--banded" id="about">
+      <div class="about">
+        <div class="about__col">
+          <span class="section__kicker">// ABOUT THE MODEL</span>
+          <h2 class="about__title">What is GPT Image 2?</h2>
+        </div>
+        <div class="about__col about__col--text">
+          <p>
+            <b>GPT Image 2</b> 是 OpenAI 推出的旗舰级图像生成模型,具备原生 <b>4K</b> 输出、
+            <b>精准文字渲染</b>(海报、UI 截图、漫画对话框)和强指令遵循能力。
+            它能稳定处理 JSON / 自然语言两种 prompt 范式,在摄影、UI、信息图、海报、
+            角色一致性等场景表现尤其出色。
+          </p>
+          <p>
+            本站点从 <a href="https://github.com/freestylefly/awesome-gpt-image-2" target="_blank" rel="noopener">awesome-gpt-image-2</a>、
+            <a href="https://gpt-image2.canghe.ai/" target="_blank" rel="noopener">canghe.ai 镜像库</a> 与社区推特采集 prompt,
+            全部按 Brutalism 分类聚合,支持一键复制、二创、二次分发。
+          </p>
+          <a class="btn btn--solid" href="https://meimind.app" target="_blank" rel="noopener">Try it in MeiMind →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GALLERY ============ -->
+    <section class="section" id="gallery">
+      <div class="section__head">
+        <h2 class="section__title">All Prompts</h2>
+        <div class="section__meta">
+          <span class="total-pill">TOTAL: <b id="totalCount">0</b></span>
+        </div>
+      </div>
+
+      <!-- Toolbar -->
+      <div class="toolbar">
+        <div class="toolbar__row">
+          <div class="search">
+            <span class="search__icon" aria-hidden="true">⌕</span>
+            <input
+              id="searchInput"
+              class="search__input"
+              type="search"
+              placeholder="Search 16,472 prompts by title, tag, model..."
+              autocomplete="off"
+            />
+          </div>
+          <div class="toolbar__select">
+            <label for="sortSel">SORT</label>
+            <select id="sortSel">
+              <option value="trending">Trending</option>
+              <option value="newest">Newest</option>
+              <option value="az">A → Z</option>
+            </select>
+          </div>
+        </div>
+        <div class="pills" id="pills"></div>
+      </div>
+
+      <!-- Grid -->
+      <div class="grid" id="grid"></div>
+
+      <div class="grid__more">
+        <button id="loadMore" class="btn btn--ghost" type="button">Load More ↓</button>
+        <span class="grid__count" id="gridCount">0 / 0</span>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section" id="faq">
+      <div class="section__head">
+        <h2 class="section__title">Common Questions</h2>
+      </div>
+      <div class="faq">
+        <details class="faq__item">
+          <summary>What is GPT Image 2?</summary>
+          <p>
+            OpenAI 的新一代原生图像生成模型。支持 4K 输出、精确文字渲染、强大的指令遵循,
+            可生成摄影、UI 截图、海报、漫画、信息图等多种风格图像。
+          </p>
+        </details>
+        <details class="faq__item">
+          <summary>Where do these prompts come from?</summary>
+          <p>
+            数据主要来自
+            <a href="https://github.com/freestylefly/awesome-gpt-image-2" target="_blank" rel="noopener">freestylefly/awesome-gpt-image-2</a>
+            社区开源仓库和
+            <a href="https://gpt-image2.canghe.ai/" target="_blank" rel="noopener">canghe.ai</a>
+            镜像。所有 prompt 版权归原作者所有,仅用于学习与二次创作。
+          </p>
+        </details>
+        <details class="faq__item">
+          <summary>How do I use these prompts?</summary>
+          <p>
+            点开任意卡片 → "Copy" 完整 prompt → 粘贴到 MeiMind、ChatGPT 或任意支持 GPT Image 2 的工具中 →
+            调整参数 → 生成。鼓励基于现有 prompt 进行 remix 与扩展。
+          </p>
+        </details>
+        <details class="faq__item">
+          <summary>Can I submit my own prompt?</summary>
+          <p>
+            当然。点击右上角 "Submit Prompt",在 GitHub 仓库提一个 PR,我们会在 24h 内审合并入。
+            高质量 prompt 会被推上 Trending 区。
+          </p>
+        </details>
+        <details class="faq__item">
+          <summary>Is this free?</summary>
+          <p>
+            100% free,无注册、无水印、无追踪。本站所有内容遵循对应源仓库的 License(CC-BY-4.0 / MIT)。
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <!-- ============ FINAL CTA ============ -->
+    <section class="cta">
+      <h2>Ready to create with <span class="cta__accent">GPT Image 2?</span></h2>
+      <p>16,000+ 提示词,1 键复制,无限 remix。</p>
+      <a class="btn btn--solid btn--xl btn--invert" href="https://meimind.app" target="_blank" rel="noopener">
+        Start Generating →
+      </a>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="footer__col">
+          <span class="nav__logo-mark">▣</span>
+          <span class="footer__brand">MeiMind / gpt-image-2</span>
+        </div>
+        <div class="footer__col">
+          <h4>RESOURCES</h4>
+          <a href="https://github.com/freestylefly/awesome-gpt-image-2" target="_blank" rel="noopener">awesome-gpt-image-2</a>
+          <a href="https://gpt-image2.canghe.ai/" target="_blank" rel="noopener">canghe.ai 镜像</a>
+          <a href="https://github.com/khangtrannn/ng-brutalism" target="_blank" rel="noopener">ng-brutalism</a>
+        </div>
+        <div class="footer__col">
+          <h4>LEGAL</h4>
+          <a href="#">License · CC-BY-4.0</a>
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+        </div>
+        <div class="footer__col footer__col--meta">
+          <span>© 2026 MeiMind</span>
+          <span>Built with HTML + CSS + Vanilla JS</span>
+          <span>Brutalism inspired by ng-brutalism</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ============ MODAL ============ -->
+    <div class="modal" id="modal" aria-hidden="true">
+      <div class="modal__backdrop" data-close></div>
+      <div class="modal__dialog" role="dialog" aria-modal="true">
+        <button class="modal__close" data-close aria-label="Close">✕</button>
+        <div class="modal__body" id="modalBody"></div>
+      </div>
+    </div>
+
+    <!-- ============ TOAST ============ -->
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
