@@ -2,12 +2,13 @@
 
 # ▣ MeiMind · GPT Image 2 Prompts Gallery
 
-**专为 GPT Image 2 打造的新野蛮主义（Neo-Brutalism）提示词与灵感画廊**
+**The Loudest Library of GPT Image 2 Prompts with Neo-Brutalism Aesthetics.**
 
-16,000+ 免费图像与视频 Prompt 灵感 · 13 大严选分类 · 一键复制 · 极速零依赖
+16,000+ Free Image & Video Prompts · 13 Brutalist Categories · 1-Click Copy · Zero Fluff
 
-[![License: CC-BY-4.0](https://img.shields.io/badge/License-CC--BY--4.0-red.svg)](https://creativecommons.org/licenses/by/4.0/)
-[![Vanilla JS](https://img.shields.io/badge/Stack-HTML5%20%7C%20CSS3%20%7C%20Vanilla%20JS-F5F0E8?logo=javascript&logoColor=black)](#技术架构)
+[![License: MIT](https://img.shields.io/badge/License-MIT-black.svg)](LICENSE)
+[![Content License: CC-BY-4.0](https://img.shields.io/badge/Content-CC--BY--4.0-red.svg)](https://creativecommons.org/licenses/by/4.0/)
+[![Vanilla JS](https://img.shields.io/badge/Stack-HTML5%20%7C%20CSS3%20%7C%20Vanilla%20JS-F5F0E8?logo=javascript&logoColor=black)](#-tech-stack)
 [![Deploy with Vercel](https://img.shields.io/badge/Deploy-Vercel-black?logo=vercel)](vercel.json)
 
 ---
@@ -18,130 +19,135 @@
 
 ---
 
-## 🌟 项目亮点 (Highlights)
+## 🌟 Key Highlights
 
-- 🎨 **新野蛮主义设计语言（Neo-Brutalism）**：粗边框、硬阴影、等宽字符排版（Monospace UI），纯粹、克制、无废话。
-- ⚡ **零框架、零构建、超轻量**：纯 HTML5 + 现代化原生 CSS + 原生 Vanilla JS，首屏毫秒级秒开。
-- 🗂 **13 大垂直场景分类**：涵盖 UI & 界面设计、摄影 (35mm/RAW)、信息图 (Infographic)、概念海报、3D 角色网格、漫画分镜、YouTube 封面等。
-- 🔍 **毫秒级实时搜索与筛选**：支持按标题、标签、模型、宽高比及热度多维度即时过滤排序。
-- 📋 **沉浸式卡片与详情弹窗**：提供完整结构化 JSON / 自然语言 Prompt 预览，一键复制（Clipboard API）与二创分发。
-- 📱 **全终端自适应响应式**：从 4K 大屏到移动端设备均具备良好的阅读与交互体验。
-
----
-
-## 📸 产品界面展示 (Screenshots)
-
-### 1. 首页与画廊检索区 (Hero & Gallery Search)
-> 聚合全局检索条、13 类分类标签筛选 Pill，以及带有热度标签的瀑布流卡片网格。
-
-![Gallery Preview](docs/images/gallery-preview.png)
+- 🎨 **Neo-Brutalism Design Language** — Sharp borders, hard drop shadows, monospace typography, and a raw editorial aesthetic.
+- ⚡ **Zero Build, Zero Framework, Blazing Fast** — Built with vanilla HTML5, modern CSS custom properties, and native ES6+ JavaScript. Loads in milliseconds.
+- 🗂 **13 Curated Categories** — UI & Interfaces, 35mm Photography, Infographics, Conceptual Posters, 3D Character Grids, Manga Storyboards, YouTube Thumbnails, and more.
+- 🔍 **Instant Real-Time Search & Filtering** — Sub-millisecond keyword search across titles, tags, models, and aspect ratios with live category counters.
+- 📋 **Structured Prompt Inspector & 1-Click Copy** — Deep-dive modal view with formatted JSON/natural language prompts, parameter chips, and native clipboard integration.
+- 📱 **Fully Responsive Layout** — Seamless user experience from 4K ultrawide monitors to mobile viewports.
 
 ---
 
-### 2. 结构化 Prompt 详情弹窗 (Modal & Detail View)
-> 点击卡片即时弹出详情，高亮显示 Aspect Ratio、模型参数、标签、源作者，并支持一键复制完整 Prompt。
+## 📸 Product Preview & Screenshots
 
-![Modal Detail Preview](docs/images/modal-detail.png)
+### 1. Gallery Explorer & Filter Bar
+> Real-time search bar, category pill selector with dynamic counts, sorting options, and responsive prompt card grid.
 
----
-
-### 3. 热门推荐专区 (Trending Prompts)
-> 精选社区高热度、高点赞 Prompt，快速激发创作灵感。
-
-![Trending Preview](docs/images/trending-preview.png)
+![Gallery Explorer Preview](docs/images/gallery-preview.png)
 
 ---
 
-## 📂 目录结构 (Project Structure)
+### 2. Prompt Detail Modal & Inspector
+> Click any prompt card to view model parameters, aspect ratios, source attribution, full prompt text, and copy directly to clipboard.
+
+![Modal Detail Inspector](docs/images/modal-detail.png)
+
+---
+
+### 3. Trending Prompts Section
+> Highlighted community-curated prompts driving top engagement and creative remixing.
+
+![Trending Section Preview](docs/images/trending-preview.png)
+
+---
+
+## 📂 Project Structure
 
 ```text
 prompt-gallery/
-├── index.html                  # 页面结构 (语义化 HTML5)
-├── style.css                   # 新野蛮主义样式体系 (Design Tokens + Layout)
-├── app.js                      # 核心业务逻辑 (原生 JS 数据加载、过滤、渲染、弹窗)
-├── vercel.json                 # Vercel 静态托管路由与缓存配置
-├── .gitignore                  # Git 忽略配置
+├── index.html                  # Semantic HTML5 single-page structure
+├── style.css                   # Neo-Brutalism design system & tokens
+├── app.js                      # Vanilla JS state manager, filter engine & modal
+├── vercel.json                 # Vercel static routing & asset caching rules
+├── .gitignore                  # Git ignore rules
+├── LICENSE                     # MIT Open Source License
 ├── data/
-│   └── prompts.json            # Prompt 数据库 (分类元数据、结构化 prompt 集合)
+│   └── prompts.json            # Curated prompt database & taxonomy
 ├── assets/
-│   └── favicon.svg             # 矢量站点图标
+│   └── favicon.svg             # Vector site mark
 ├── docs/
-│   └── images/                 # 项目展示配图 (Hero, Gallery, Modal, Trending)
+│   └── images/                 # High-resolution documentation preview assets
 └── scripts/
-    └── capture-screenshots.mjs # 自动化截图生成脚本 (基于 Chrome DevTools Protocol)
+    └── capture-screenshots.mjs # Automated screenshot tool via Chrome DevTools Protocol
 ```
 
 ---
 
-## 🚀 快速上手 (Quick Start)
+## 🚀 Quick Start (Local Development)
 
-由于本项目无需任何 Node.js 编译或 Webpack/Vite 构建流程，直接通过任意静态 HTTP 服务器即可运行：
+No build step or Node.js package installation is required. Run it instantly with any local static HTTP server:
 
-### 方式 1：Python 极速启动（推荐）
+### Option 1: Python HTTP Server (Recommended)
 
 ```bash
-# 进入项目根目录
+# Clone the repository
+git clone https://github.com/pepedesigner/prompt-gallery.git
 cd prompt-gallery
 
-# 启动本地 HTTP 服务
+# Start a lightweight local server
 python3 -m http.server 8000
 ```
-打开浏览器访问 `http://localhost:8000` 即可。
+Visit `http://localhost:8000` in your browser.
 
-### 方式 2：使用 Node.js / npx serve
+### Option 2: Node.js / npx serve
 
 ```bash
 npx serve .
 ```
 
-### 方式 3：VS Code Live Server
-在 VS Code 中安装 **Live Server** 插件，右键 `index.html` 选择 **"Open with Live Server"**。
+### Option 3: VS Code Live Server
+Open the directory in VS Code, right-click `index.html`, and select **"Open with Live Server"**.
 
 ---
 
-## 🛠 技术架构与实现 (Tech Stack)
+## 🛠 Tech Stack
 
-- **UI / CSS**：原生 CSS3 Variables 自定义主题变量、CSS Grid / Flex 响应式排版、Neo-Brutalism 硬朗阴影与色彩体系。
-- **JavaScript**：ES6+ 模块化写法、原生 Fetch API 异步流式加载、防抖搜索（Debounce）、无依赖 Toast & Modal 状态机。
-- **数据源设计**：解耦的 `data/prompts.json` 架构，支持轻松接入后端 API 或自动化抓取管线。
+- **Markup & Layout**: Semantic HTML5, CSS Grid & Flexbox, Container-query friendly structures.
+- **Styling**: Vanilla CSS3 with `:root` CSS Design Tokens, Neo-Brutalism hard shadows (`--shadow-hard: 4px 4px 0 #1A1A1A`), dark mode accents, and custom monospace typography.
+- **Logic & State**: Native ES6+ JavaScript, Fetch API, Debounced input handler, Keyboard navigation (Escape to close modal), and modern Clipboard API.
+- **Data Layer**: Clean decoupled `data/prompts.json` schema, easily connectable to external APIs or automated scraping pipelines.
 
 ---
 
-## 🌐 部署指南 (Deployment)
+## 🌐 Deployment
 
-### 部署到 Vercel
-本项目已内置 [`vercel.json`](vercel.json)，已配置静态资源高缓存与根路径重定向：
+### Deploy to Vercel
+The project includes a ready-to-use [`vercel.json`](vercel.json) configured for static asset caching:
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
 
+Or deploy via the Vercel CLI:
 ```bash
-# 或使用 Vercel CLI
 npx vercel
 ```
 
-### 部署到 GitHub Pages
-1. 在 GitHub 仓库进入 **Settings -> Pages**；
-2. **Build and deployment** Source 选择 `Deploy from a branch`；
-3. Branch 选择 `main` / `root`，点击 **Save** 即可。
+### Deploy to GitHub Pages
+1. Navigate to your repository **Settings** -> **Pages**;
+2. Under **Build and deployment**, set Source to `Deploy from a branch`;
+3. Select branch `main` and folder `/ (root)`, then click **Save**.
 
 ---
 
-## 🤝 贡献与提交 (Contributing)
+## 🤝 Contributing
 
-欢迎提交新的 Prompt 灵感或优化功能！
-1. Fork 本仓库；
-2. 在 `data/prompts.json` 中新增或修改你的 Prompt 条目；
-3. 提交 PR，经测试无误后将在 24 小时内合并。
+Contributions, prompt submissions, and feature ideas are welcome!
+
+1. Fork this repository.
+2. Add or update prompt entries in [`data/prompts.json`](data/prompts.json).
+3. Commit your changes: `git commit -m "feat: add new UI design prompts"`
+4. Push to your branch and open a Pull Request.
 
 ---
 
-## 📄 开源协议 (License)
+## 📄 License
 
-- 代码部分基于 [MIT License](LICENSE) 开源。
-- 提示词与内容数据遵循对应源社区的 [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/) 协议。
+- **Code & Design**: Licensed under the [MIT License](LICENSE).
+- **Prompt Content & Metadata**: Follows the upstream community licenses ([CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/)).
 
 ---
 
 <div align="center">
-  <sub>Built with ❤️ & Brutalism by <a href="https://github.com/pepedesigner">@pepedesigner</a></sub>
+  <sub>Crafted with ❤️ and Neo-Brutalism by <a href="https://github.com/pepedesigner">@pepedesigner</a></sub>
 </div>
