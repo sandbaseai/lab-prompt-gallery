@@ -4,7 +4,7 @@
 
 **The Loudest Library of GPT Image 2 Prompts with Neo-Brutalism Aesthetics.**
 
-33 curated image & video prompts · 11 brutalist categories · 1-click copy · zero fluff
+16,000+ upstream image & video prompts · 33 curated entries in this snapshot · 11 brutalist categories · 1-click copy
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-black.svg)](LICENSE)
 [![Content License: CC-BY-4.0](https://img.shields.io/badge/Content-CC--BY--4.0-red.svg)](https://creativecommons.org/licenses/by/4.0/)
@@ -56,7 +56,7 @@
 ## 📂 Project Structure
 
 ```text
-prompt-gallery/
+lab-prompt-gallery/
 ├── index.html                  # Semantic HTML5 single-page structure
 ├── style.css                   # Neo-Brutalism design system & tokens
 ├── app.js                      # Vanilla JS state manager, filter engine & modal
@@ -85,8 +85,8 @@ The gallery is intentionally static. Use the root npm scripts or any local stati
 
 ```bash
 # Clone the repository
-git clone https://github.com/sandbaseai/prompt-gallery.git
-cd prompt-gallery
+git clone https://github.com/sandbaseai/lab-prompt-gallery.git
+cd lab-prompt-gallery
 
 # Start a lightweight local server
 npm run dev

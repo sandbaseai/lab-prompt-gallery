@@ -1,5 +1,5 @@
 {
-  "name": "prompt-gallery",
+  "name": "lab-prompt-gallery",
   "version": "1.0.0",
   "private": true,
   "description": "A lightweight prompt gallery for GPT Image 2 workflows.",

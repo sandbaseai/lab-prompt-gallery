@@ -27,7 +27,10 @@ if (!html.includes('id="heroPromptCount"') || !html.includes('POWERED BY SANDBAS
 if (!html.includes('aria-labelledby="modalTitle"') || !app.includes("event.key === 'Enter'") || !app.includes(".catch(() => toast('COPY FAILED'))")) {
   throw new Error('keyboard/modal/clipboard contract missing')
 }
-if (!app.includes('github.com/sandbaseai/prompt-gallery')) throw new Error('company repository link missing')
+if (!html.includes('id="langBtn"') || !app.includes('const copy = {') || !app.includes('setLanguage(next)') || !app.includes("localStorage.setItem('meimind-language'")) {
+  throw new Error('bilingual switch contract missing')
+}
+if (!app.includes('github.com/sandbaseai/lab-prompt-gallery')) throw new Error('company repository link missing')
 if (vercel.cleanUrls !== true || !Array.isArray(vercel.headers)) throw new Error('vercel.json must define clean URLs and headers')
 
 const categoryCount = data.categories.filter((category) => category.id !== 'all').length

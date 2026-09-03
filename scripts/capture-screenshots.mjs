@@ -102,12 +102,13 @@ await send('Emulation.setDeviceMetricsOverride', {
   mobile: false
 });
 
-fs.mkdirSync(path.join(process.cwd(), 'docs/images'), { recursive: true });
+const screenshotDir = path.resolve(process.env.SCREENSHOT_DIR || path.join(process.cwd(), 'docs/images'));
+fs.mkdirSync(screenshotDir, { recursive: true });
 
 async function takeViewportScreenshot(filename) {
   const { data } = await send('Page.captureScreenshot', { format: 'png' });
-  fs.writeFileSync(path.join(process.cwd(), 'docs/images', filename), Buffer.from(data, 'base64'));
-  console.log(`Saved: docs/images/${filename}`);
+  fs.writeFileSync(path.join(screenshotDir, filename), Buffer.from(data, 'base64'));
+  console.log(`Saved: ${path.join(screenshotDir, filename)}`);
 }
 
 // 1. Hero Preview
