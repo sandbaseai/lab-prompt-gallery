@@ -62,6 +62,10 @@ lab-prompt-gallery/
 ├── index.html                  # Semantic HTML5 single-page structure
 ├── style.css                   # Neo-Brutalism design system & tokens
 ├── app.js                      # Vanilla JS state manager, filter engine & modal
+├── licenses.html               # Source licenses and attribution notes
+├── privacy.html                # Bilingual privacy notes
+├── terms.html                  # Bilingual usage terms
+├── legal.js                    # Shared legal-page language switch and return state
 ├── package.json                # Root scripts for dev, verify, and capture
 ├── vercel.json                 # Vercel static routing & asset caching rules
 ├── robots.txt                  # Crawler policy and sitemap pointer

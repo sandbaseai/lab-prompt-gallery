@@ -33,7 +33,7 @@
       sourcesCopy: 'This gallery samples prompts from <a href="https://github.com/freestylefly/awesome-gpt-image-2" target="_blank" rel="noopener">awesome-gpt-image-2</a>, <a href="https://github.com/no-chili/awesome-gpt-image-2-prompts" target="_blank" rel="noopener">Virloom\'s GPT Image 2 collection</a>, and <a href="https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts" target="_blank" rel="noopener">Pixmind\'s CC0 Midjourney examples</a>. The gallery keeps source links visible for attribution and leaves third-party media at its origin.',
       allPrompts: 'All Prompts', total: 'TOTAL', searchLabel: 'Search prompts', searchPlaceholder: 'Search prompts by title, tag, model…', sortLabel: 'SORT', sortTrending: 'Featured', sortNewest: 'Newest', sortAZ: 'A → Z', loadMore: 'Load More ↓', noResultsTitle: 'No prompts found', noResultsBody: 'Try a different search or clear the current filters.', clearFilters: 'Clear filters',
       faqTitle: 'Common Questions', faq1Question: 'What is GPT Image 2?', faq1Answer: 'OpenAI\'s native image generation model for high-resolution output, accurate typography, and strong instruction following.', faq2Question: 'Where do these prompts come from?', faq2Answer: 'Data is curated from <a href="https://github.com/freestylefly/awesome-gpt-image-2" target="_blank" rel="noopener">freestylefly/awesome-gpt-image-2</a>, <a href="https://github.com/no-chili/awesome-gpt-image-2-prompts" target="_blank" rel="noopener">Virloom\'s collection</a>, and <a href="https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts" target="_blank" rel="noopener">Pixmind\'s CC0 examples</a>. Credit the original author when remixing.', faq3Question: 'How do I use these prompts?', faq3Answer: 'Open a card, copy the full prompt, paste it into ChatGPT or another compatible image tool, then adjust the parameters and remix.', faq4Question: 'Can I submit my own prompt?', faq4Answer: 'Yes. Submit Prompt opens a GitHub Issue after a quick confirmation. Strong prompts can be featured in the Featured section.', faq5Question: 'Is this free?', faq5Answer: 'The gallery is free to browse and copy. Prompt content follows the license and attribution terms of its original source.',
-      ctaTitle: 'Keep exploring the prompt library.', ctaTail: ' prompts ready to copy and remix.', submitConfirm: 'This will open a new GitHub Issue for the prompt gallery. Continue?', resources: 'RESOURCES', legal: 'LEGAL', license: 'Source licenses', privacy: 'Privacy', terms: 'Terms', mirror: 'canghe.ai mirror', poweredBy: 'POWERED BY SANDBASE', close: 'Close', noscript: 'This gallery needs JavaScript enabled to load prompts and open the inspector.', source: 'Source', copyPrompt: 'Copy Prompt', originalPrompt: 'Original prompt text (preserved from the source)', imageUnavailable: 'Image unavailable · open the source to view it', copied: 'COPIED ✓', copyFailed: 'COPY FAILED', loadFailedTitle: 'Unable to load the gallery', loadFailedBody: 'Refresh the page and try again.', retry: 'Refresh', switchedToChinese: '已切换到中文', switchedToEnglish: 'Switched to English',
+      ctaTitle: 'Keep exploring the prompt library.', ctaTail: ' prompts ready to copy and remix.', submitConfirm: 'This will open a new GitHub Issue for the prompt gallery. Continue?', resources: 'RESOURCES', legal: 'LEGAL', license: 'Source licenses', privacy: 'Privacy', terms: 'Terms', mirror: 'canghe.ai mirror', poweredBy: 'POWERED BY SANDBASE', backToTop: 'Back to top', close: 'Close', noscript: 'This gallery needs JavaScript enabled to load prompts and open the inspector.', source: 'Source', copyPrompt: 'Copy Prompt', originalPrompt: 'Original prompt text (preserved from the source)', imageUnavailable: 'Image unavailable · open the source to view it', copied: 'COPIED ✓', copyFailed: 'COPY FAILED', loadFailedTitle: 'Unable to load the gallery', loadFailedBody: 'Refresh the page and try again.', retry: 'Refresh', switchedToChinese: '已切换到中文', switchedToEnglish: 'Switched to English',
     },
     zh: {
       pageTitle: 'MeiMind · GPT Image 2 提示词画廊', primaryNav: '主导航', navPrompts: '提示词', navTrending: '精选', navAbout: '关于', navFaq: '问答', github: 'GitHub', submitPrompt: '提交提示词', menu: '菜单', menuOpen: '打开菜单', menuClose: '关闭菜单', skipToContent: '跳到主要内容',
@@ -44,7 +44,7 @@
       sourcesCopy: '本画廊整理自 <a href="https://github.com/freestylefly/awesome-gpt-image-2" target="_blank" rel="noopener">awesome-gpt-image-2</a>、<a href="https://github.com/no-chili/awesome-gpt-image-2-prompts" target="_blank" rel="noopener">Virloom 的 GPT Image 2 提示词库</a> 与 <a href="https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts" target="_blank" rel="noopener">Pixmind 的 CC0 Midjourney 示例</a>。页面保留来源链接，第三方图片仍从原站加载。',
       allPrompts: '全部提示词', total: '总计', searchLabel: '搜索提示词', searchPlaceholder: '按标题、标签或模型搜索提示词……', sortLabel: '排序', sortTrending: '精选', sortNewest: '最新', sortAZ: 'A → Z', loadMore: '加载更多 ↓', noResultsTitle: '没有找到提示词', noResultsBody: '换个关键词，或清除当前筛选条件。', clearFilters: '清除筛选',
       faqTitle: '常见问题', faq1Question: 'GPT Image 2 是什么？', faq1Answer: 'OpenAI 的原生图像生成模型，支持高分辨率输出、准确排版和强指令遵循。', faq2Question: '这些提示词来自哪里？', faq2Answer: '内容整理自 <a href="https://github.com/freestylefly/awesome-gpt-image-2" target="_blank" rel="noopener">awesome-gpt-image-2</a>、<a href="https://github.com/no-chili/awesome-gpt-image-2-prompts" target="_blank" rel="noopener">Virloom 提示词库</a> 与 <a href="https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts" target="_blank" rel="noopener">Pixmind 的 CC0 示例</a>。改编时请保留原作者署名。', faq3Question: '如何使用这些提示词？', faq3Answer: '打开卡片，复制完整提示词，粘贴到 ChatGPT 或其他兼容图像工具中，再调整参数并继续改编。', faq4Question: '可以提交自己的提示词吗？', faq4Answer: '可以。点击“提交提示词”后，确认即可打开 GitHub 新 Issue。优质提示词会进入精选区域。', faq5Question: '这些内容免费吗？', faq5Answer: '画廊浏览和复制免费。提示词内容遵循原始来源的许可证与署名要求。',
-      ctaTitle: '继续探索提示词库。', ctaTail: ' 条提示词可供复制和改编。', submitConfirm: '即将打开提示词画廊的 GitHub 新 Issue 页面。确定继续吗？', resources: '资源', legal: '法律', license: '来源许可', privacy: '隐私', terms: '条款', mirror: 'canghe.ai 镜像', poweredBy: 'POWERED BY SANDBASE', close: '关闭', noscript: '请启用 JavaScript 以加载提示词并打开查看器。', source: '来源', copyPrompt: '复制提示词', originalPrompt: '提示词原文（按上游内容保留）', imageUnavailable: '图片暂时无法加载 · 可打开来源查看', copied: '已复制 ✓', copyFailed: '复制失败', loadFailedTitle: '画廊加载失败', loadFailedBody: '请刷新页面后重试。', retry: '刷新页面', switchedToChinese: '已切换到中文', switchedToEnglish: 'Switched to English',
+      ctaTitle: '继续探索提示词库。', ctaTail: ' 条提示词可供复制和改编。', submitConfirm: '即将打开提示词画廊的 GitHub 新 Issue 页面。确定继续吗？', resources: '资源', legal: '法律', license: '来源许可', privacy: '隐私', terms: '条款', mirror: 'canghe.ai 镜像', poweredBy: 'POWERED BY SANDBASE', backToTop: '回到顶部', close: '关闭', noscript: '请启用 JavaScript 以加载提示词并打开查看器。', source: '来源', copyPrompt: '复制提示词', originalPrompt: '提示词原文（按上游内容保留）', imageUnavailable: '图片暂时无法加载 · 可打开来源查看', copied: '已复制 ✓', copyFailed: '复制失败', loadFailedTitle: '画廊加载失败', loadFailedBody: '请刷新页面后重试。', retry: '刷新页面', switchedToChinese: '已切换到中文', switchedToEnglish: 'Switched to English',
     },
   };
   const categoryLabels = {
@@ -293,6 +293,7 @@
       if (prompt) openModal(prompt.id, { updateUrl: false });
       else syncUrl({ modalId: null });
     }
+    restoreGalleryPosition();
   }
 
   /* ---------- 2. PILLS / FILTERS ---------- */
@@ -321,6 +322,17 @@
     $('#submitBtn').addEventListener('click', event => {
       if (!window.confirm(t('submitConfirm'))) event.preventDefault();
     });
+    $$('.footer a').filter(link => /^(?:privacy|terms|licenses)\.html(?:#|$)/.test(link.getAttribute('href') || '')).forEach(link => {
+      link.addEventListener('click', rememberGalleryPosition);
+    });
+    const backToTop = $('#backToTop');
+    const updateBackToTop = () => { backToTop.hidden = window.scrollY < 480; };
+    window.addEventListener('scroll', updateBackToTop, { passive: true });
+    backToTop.addEventListener('click', () => {
+      const behavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+      window.scrollTo({ top: 0, behavior });
+    });
+    updateBackToTop();
     $('#menuBtn').addEventListener('click', () => {
       const menu = $('#menuBtn');
       const expanded = menu.getAttribute('aria-expanded') === 'true';
@@ -461,6 +473,24 @@
     renderPills();
     applyFilters();
     syncUrl();
+  }
+
+  function rememberGalleryPosition() {
+    try {
+      sessionStorage.setItem('prompt-gallery-return', JSON.stringify({ href: window.location.href, y: Math.round(window.scrollY) }));
+    } catch {}
+  }
+
+  function restoreGalleryPosition() {
+    try {
+      const raw = sessionStorage.getItem('prompt-gallery-return');
+      if (!raw) return;
+      const saved = JSON.parse(raw);
+      const target = new URL(saved.href, window.location.href);
+      if (target.origin !== window.location.origin || !Number.isFinite(saved.y)) return;
+      sessionStorage.removeItem('prompt-gallery-return');
+      requestAnimationFrame(() => window.scrollTo({ top: Math.max(0, saved.y), behavior: 'auto' }));
+    } catch {}
   }
 
   /* ---------- 6. CARD HTML ---------- */

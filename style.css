@@ -894,6 +894,24 @@ img { display: block; max-width: 100%; }
   transform: translateX(-50%) translateY(0);
 }
 
+.back-to-top {
+  position: fixed;
+  right: max(20px, env(safe-area-inset-right));
+  bottom: max(20px, env(safe-area-inset-bottom));
+  z-index: 250;
+  width: 46px;
+  height: 46px;
+  border: 2px solid var(--border-fat);
+  background: var(--bg-card);
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 20px;
+  line-height: 1;
+  box-shadow: var(--shadow-hard);
+  touch-action: manipulation;
+}
+.back-to-top:hover { background: var(--text); color: var(--bg-card); }
+
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 900px) {
   .hero__stats { grid-template-columns: repeat(2, 1fr); }
