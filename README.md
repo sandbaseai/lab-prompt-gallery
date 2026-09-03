@@ -2,7 +2,7 @@
 
 # ▣ MeiMind · GPT Image 2 Prompts Gallery
 
-**The Loudest Library of GPT Image 2 Prompts with Neo-Brutalism Aesthetics.**
+**A focused library of GPT Image 2 prompts with a clear, editorial interface.**
 
 16,000+ upstream image & video prompts · 2,211 merged cases in this snapshot · 13 categories · 1-click copy
 
@@ -62,8 +62,6 @@ lab-prompt-gallery/
 ├── index.html                  # Semantic HTML5 single-page structure
 ├── style.css                   # Neo-Brutalism design system & tokens
 ├── app.js                      # Vanilla JS state manager, filter engine & modal
-├── submit.html                 # Beginner-friendly prompt submission form
-├── submit.js                   # Creates a pre-filled GitHub Issue draft
 ├── package.json                # Root scripts for dev, verify, and capture
 ├── vercel.json                 # Vercel static routing & asset caching rules
 ├── robots.txt                  # Crawler policy and sitemap pointer
@@ -129,7 +127,7 @@ Run `npm run sync:upstream` to refresh the three connected libraries. The merge 
 
 ### Submit a prompt
 
-The **Submit Prompt** button opens `submit.html`, a short guided form for title, prompt text, author, and source. The site does not store submissions; after validation, users can open a pre-filled GitHub Issue or copy the prepared text and send it through another channel. A GitHub account is required only for the public Issue route.
+The **Submit Prompt** button asks for confirmation, then opens a new GitHub Issue in the company repository. GitHub handles the final review and submission; a GitHub account is required to publish the issue.
 
 ## 🌐 Deployment
 

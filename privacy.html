@@ -1,32 +1,68 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="MeiMind Prompt Gallery privacy notes." />
-    <title>Privacy · MeiMind Prompt Gallery</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Prompt Gallery privacy notes." />
+    <title>Privacy · Prompt Gallery</title>
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <main class="legal-page">
-      <a class="legal-back" href="index.html">← Back to the gallery / 返回画廊</a>
-      <p class="section__kicker">// PRIVACY NOTES</p>
-      <h1 class="legal-title">Privacy / 隐私说明</h1>
-      <p class="legal-lead">This is a static prompt gallery. It does not require an account, collect prompt submissions, or run advertising trackers.</p>
-      <section class="legal-section">
-        <h2>What stays in your browser</h2>
-        <p>The language switch stores one preference in <code>localStorage</code> under <code>meimind-language</code>. It contains no identity information and can be cleared from your browser settings.</p>
+    <header class="nav">
+      <div class="nav__inner">
+        <div class="nav__logo">
+          <img class="nav__logo-mark" src="assets/favicon.svg" alt="" width="28" height="28" />
+          <span class="nav__logo-text" translate="no">MeiMind</span>
+        </div>
+        <a class="nav__powered-link" href="https://sandbase.ai" target="_blank" rel="noopener" data-i18n="poweredBy">POWERED BY SANDBASE</a>
+        <div class="nav__actions">
+          <a class="btn btn--ghost" href="index.html" data-i18n="backToGallery">Back to gallery</a>
+          <button class="nav__lang" type="button" id="langBtn" aria-label="Switch to Chinese">中</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="legal-page" data-legal-page="privacy">
+      <section class="legal-locale" data-lang="en">
+        <p class="section__kicker">// PRIVACY NOTES</p>
+        <h1 class="legal-title">Privacy</h1>
+        <p class="legal-lead">This is a static prompt gallery. It does not require an account, collect prompt submissions, or run advertising trackers.</p>
+        <section class="legal-section">
+          <h2>What stays in your browser</h2>
+          <p>The language switch stores one preference in <code>localStorage</code> under <code>meimind-language</code>. It contains no identity information and can be cleared from your browser settings.</p>
+        </section>
+        <section class="legal-section">
+          <h2>Requests and external links</h2>
+          <p>The static site host may process ordinary web request logs. Prompt images are served through public upstream/CDN hosts, and source or generation links may have their own privacy policies.</p>
+        </section>
+        <section class="legal-section">
+          <h2>Contact</h2>
+          <p>For corrections or removal requests, open an issue in the <a href="https://github.com/sandbaseai/lab-prompt-gallery" target="_blank" rel="noopener">company repository</a>.</p>
+        </section>
+        <p class="legal-meta">Last updated: 2026-09-03 · <a href="https://sandbase.ai" target="_blank" rel="noopener">POWERED BY SANDBASE</a></p>
       </section>
-      <section class="legal-section">
-        <h2>Requests and external links</h2>
-        <p>The static site host may process ordinary web request logs. Prompt images are served through public upstream/CDN hosts, and source or generation links may have their own privacy policies.</p>
+
+      <section class="legal-locale" data-lang="zh" hidden>
+        <p class="section__kicker">// 隐私说明</p>
+        <h1 class="legal-title">隐私说明</h1>
+        <p class="legal-lead">这是一个静态提示词画廊，不要求登录、不收集站内提交内容，也不运行广告追踪器。</p>
+        <section class="legal-section">
+          <h2>保留在浏览器中的内容</h2>
+          <p>语言切换只会在 <code>localStorage</code> 中保存一项 <code>meimind-language</code> 偏好，不包含身份信息，可在浏览器设置中清除。</p>
+        </section>
+        <section class="legal-section">
+          <h2>请求与外部链接</h2>
+          <p>静态站点托管商可能处理普通网页请求日志。提示词图片通过公开的上游/CDN 主机提供，来源链接和生成工具链接也可能有各自的隐私政策。</p>
+        </section>
+        <section class="legal-section">
+          <h2>联系</h2>
+          <p>如需更正或移除内容，请在<a href="https://github.com/sandbaseai/lab-prompt-gallery" target="_blank" rel="noopener">公司仓库</a>提交 issue。</p>
+        </section>
+        <p class="legal-meta">更新日期：2026-09-03 · <a href="https://sandbase.ai" target="_blank" rel="noopener">POWERED BY SANDBASE</a></p>
       </section>
-      <section class="legal-section">
-        <h2>联系 / Contact</h2>
-        <p>For corrections or removal requests, open an issue in the <a href="https://github.com/sandbaseai/lab-prompt-gallery" target="_blank" rel="noopener">company repository</a>.</p>
-      </section>
-      <p class="legal-meta">Last updated: 2026-09-03 · POWERED BY <a href="https://sandbase.ai" target="_blank" rel="noopener">SANDBASE</a></p>
     </main>
+
+    <script src="legal.js" defer></script>
   </body>
 </html>

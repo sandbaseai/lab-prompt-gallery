@@ -1,32 +1,68 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="MeiMind Prompt Gallery usage terms." />
-    <title>Terms · MeiMind Prompt Gallery</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Prompt Gallery usage terms." />
+    <title>Terms · Prompt Gallery</title>
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <main class="legal-page">
-      <a class="legal-back" href="index.html">← Back to the gallery / 返回画廊</a>
-      <p class="section__kicker">// USAGE NOTES</p>
-      <h1 class="legal-title">Terms / 使用说明</h1>
-      <p class="legal-lead">Use the gallery to learn, copy, and remix prompts responsibly. The site is provided as an educational, community-curated reference.</p>
-      <section class="legal-section">
-        <h2>Attribution and licenses</h2>
-        <p>Prompt text, images, and source metadata remain subject to their original authors and licenses. Check the linked source before commercial use, redistribution, or model-specific claims.</p>
+    <header class="nav">
+      <div class="nav__inner">
+        <div class="nav__logo">
+          <img class="nav__logo-mark" src="assets/favicon.svg" alt="" width="28" height="28" />
+          <span class="nav__logo-text" translate="no">MeiMind</span>
+        </div>
+        <a class="nav__powered-link" href="https://sandbase.ai" target="_blank" rel="noopener" data-i18n="poweredBy">POWERED BY SANDBASE</a>
+        <div class="nav__actions">
+          <a class="btn btn--ghost" href="index.html" data-i18n="backToGallery">Back to gallery</a>
+          <button class="nav__lang" type="button" id="langBtn" aria-label="Switch to Chinese">中</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="legal-page" data-legal-page="terms">
+      <section class="legal-locale" data-lang="en">
+        <p class="section__kicker">// USAGE NOTES</p>
+        <h1 class="legal-title">Terms</h1>
+        <p class="legal-lead">Use the gallery to learn, copy, and remix prompts responsibly. The site is provided as an educational, community-curated reference.</p>
+        <section class="legal-section">
+          <h2>Attribution and licenses</h2>
+          <p>Prompt text, images, and source metadata remain subject to their original authors and licenses. Check the linked source before commercial use, redistribution, or model-specific claims.</p>
+        </section>
+        <section class="legal-section">
+          <h2>External services</h2>
+          <p>Source links and submission channels leave this site. GitHub, X, and other linked services have separate terms and may charge for their own products.</p>
+        </section>
+        <section class="legal-section">
+          <h2>No warranty</h2>
+          <p>Prompt examples are provided as-is. We do not guarantee output quality, model availability, or that a prompt is suitable for a particular use case.</p>
+        </section>
+        <p class="legal-meta">Last updated: 2026-09-03 · <a href="https://sandbase.ai" target="_blank" rel="noopener">POWERED BY SANDBASE</a></p>
       </section>
-      <section class="legal-section">
-        <h2>External services</h2>
-        <p>“Generate Image” and source links leave this site. MeiMind, GitHub, X, and other linked services have separate terms and may charge for their own products.</p>
+
+      <section class="legal-locale" data-lang="zh" hidden>
+        <p class="section__kicker">// 使用说明</p>
+        <h1 class="legal-title">使用说明</h1>
+        <p class="legal-lead">请在尊重来源的前提下学习、复制和改编提示词。本网站是教育用途的社区整理参考。</p>
+        <section class="legal-section">
+          <h2>署名与许可</h2>
+          <p>提示词原文、图片和来源元数据仍受原作者及其许可证约束。商业使用、再分发或做模型适配声明前，请先查看对应来源。</p>
+        </section>
+        <section class="legal-section">
+          <h2>外部服务</h2>
+          <p>来源链接和提交渠道会离开本站。GitHub、X 以及其他外部服务有各自的条款，也可能对其产品收费。</p>
+        </section>
+        <section class="legal-section">
+          <h2>不作保证</h2>
+          <p>提示词示例按“现状”提供。我们不保证生成质量、模型可用性，或某个提示词适合特定用途。</p>
+        </section>
+        <p class="legal-meta">更新日期：2026-09-03 · <a href="https://sandbase.ai" target="_blank" rel="noopener">POWERED BY SANDBASE</a></p>
       </section>
-      <section class="legal-section">
-        <h2>No warranty</h2>
-        <p>Prompt examples are provided as-is. We do not guarantee output quality, model availability, or that a prompt is suitable for a particular use case.</p>
-      </section>
-      <p class="legal-meta">Last updated: 2026-09-03 · POWERED BY <a href="https://sandbase.ai" target="_blank" rel="noopener">SANDBASE</a></p>
     </main>
+
+    <script src="legal.js" defer></script>
   </body>
 </html>

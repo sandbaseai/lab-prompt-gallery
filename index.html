@@ -8,7 +8,7 @@
     <meta name="theme-color" content="#F5F0E8" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://lab-prompt-gallery-sandbase.vercel.app/" />
-    <meta property="og:title" content="MeiMind · GPT Image 2 Prompts Gallery" />
+    <meta property="og:title" content="MeiMind · GPT Image 2 Prompt Library" />
     <meta property="og:description" content="Browse, copy, and remix a curated GPT Image 2 prompt gallery." />
     <meta property="og:image" content="https://cdn.jsdelivr.net/gh/freestylefly/awesome-gpt-image-2@main/data/images/case378.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -30,11 +30,11 @@
     <!-- ============ TOP NAV ============ -->
     <header class="nav">
       <div class="nav__inner">
-        <a class="nav__logo" href="#">
+        <div class="nav__logo">
           <img class="nav__logo-mark" src="assets/favicon.svg" alt="" width="28" height="28" />
-          <span class="nav__logo-text">MeiMind</span>
-          <span class="nav__logo-tag">/ gpt-image-2</span>
-        </a>
+          <span class="nav__logo-text" translate="no">MeiMind</span>
+        </div>
+        <a class="nav__powered-link" href="https://sandbase.ai" target="_blank" rel="noopener" data-i18n="poweredBy">POWERED BY SANDBASE</a>
         <nav class="nav__links" id="primaryNav" aria-label="Primary navigation" data-i18n-aria-label="primaryNav">
           <a href="#gallery" data-i18n="navPrompts">Prompts</a>
           <a href="#trending" data-i18n="navTrending">Featured</a>
@@ -48,7 +48,7 @@
           <a class="btn btn--ghost" href="https://github.com/sandbaseai/lab-prompt-gallery" target="_blank" rel="noopener">
             <span data-i18n="github">GitHub</span>
           </a>
-          <a class="btn btn--solid" id="submitBtn" href="submit.html" data-i18n="submitPrompt">Submit Prompt</a>
+          <a class="btn btn--solid" id="submitBtn" href="https://github.com/sandbaseai/lab-prompt-gallery/issues/new" target="_blank" rel="noopener" data-i18n="submitPrompt">Submit Prompt</a>
           <button class="nav__lang" type="button" id="langBtn" aria-label="Switch to Chinese">中</button>
         </div>
       </div>
@@ -61,12 +61,11 @@
       <div class="hero__inner">
         <div class="hero__model">
           <span class="hero__model-pill" data-i18n="modelPill">MODEL</span>
-          <span class="hero__model-name">GPT Image 2</span>
+          <span class="hero__model-name" translate="no">GPT Image 2</span>
           <span class="hero__model-meta" data-i18n="modelMeta">| Settings · Image · Generate</span>
         </div>
         <h1 class="hero__title">
-          <span data-i18n="heroTitleLead">The Loudest Library of</span><br />
-          <span class="hero__title-accent">GPT Image 2</span> <span data-i18n="heroTitleSuffix">Prompts.</span>
+          <span data-i18n-html="heroTitle">The <span class="hero__title-accent">GPT Image 2</span><br />Prompt Library.</span>
         </h1>
         <div class="hero__cta">
           <a class="btn btn--solid btn--xl" href="#gallery" data-i18n="browseGallery">Browse Gallery →</a>
@@ -106,10 +105,10 @@
           </p>
           <p data-i18n-html="sourcesCopy">
             This gallery samples prompts from <a href="https://github.com/freestylefly/awesome-gpt-image-2" target="_blank" rel="noopener">awesome-gpt-image-2</a>,
-            <a href="https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts" target="_blank" rel="noopener">Pixmind's CC0 examples</a>, and community posts.
+            <a href="https://github.com/no-chili/awesome-gpt-image-2-prompts" target="_blank" rel="noopener">Virloom's GPT Image 2 collection</a>, and
+            <a href="https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts" target="_blank" rel="noopener">Pixmind's CC0 examples</a>.
             Credit the original author when remixing.
           </p>
-          <a class="btn btn--solid" href="https://meimind.app" target="_blank" rel="noopener" data-i18n="tryMeiMind">Try it in MeiMind →</a>
         </div>
       </div>
     </section>
@@ -177,22 +176,23 @@
           <summary data-i18n="faq2Question">Where do these prompts come from?</summary>
           <p data-i18n-html="faq2Answer">
             Data is curated from <a href="https://github.com/freestylefly/awesome-gpt-image-2" target="_blank" rel="noopener">freestylefly/awesome-gpt-image-2</a>,
-            <a href="https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts" target="_blank" rel="noopener">Pixmind's CC0 examples</a>, and community posts.
+            <a href="https://github.com/no-chili/awesome-gpt-image-2-prompts" target="_blank" rel="noopener">Virloom's collection</a>, and
+            <a href="https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts" target="_blank" rel="noopener">Pixmind's CC0 examples</a>.
             Credit the original author when remixing.
           </p>
         </details>
         <details class="faq__item">
           <summary data-i18n="faq3Question">How do I use these prompts?</summary>
           <p data-i18n="faq3Answer">
-            Open a card, copy the full prompt, paste it into MeiMind, ChatGPT, or another compatible
+            Open a card, copy the full prompt, paste it into ChatGPT or another compatible
             tool, then adjust the parameters and remix.
           </p>
         </details>
         <details class="faq__item">
           <summary data-i18n="faq4Question">Can I submit my own prompt?</summary>
           <p data-i18n="faq4Answer">
-            Yes. The guided form can open a pre-filled GitHub Issue or copy the submission text for
-            another channel. Strong prompts can be featured in the Featured section.
+            Yes. Submit Prompt opens a GitHub Issue after a quick confirmation. Strong prompts can
+            be featured in the Featured section.
           </p>
         </details>
         <details class="faq__item">
@@ -207,10 +207,10 @@
 
     <!-- ============ FINAL CTA ============ -->
     <section class="cta">
-      <h2><span data-i18n="ctaLead">Ready to create with</span> <span class="cta__accent">GPT Image 2?</span></h2>
-      <p><span id="ctaPromptCount">2211</span><span data-i18n="ctaTail"> prompts, one-click copy, infinite remix.</span></p>
-      <a class="btn btn--solid btn--xl btn--invert" href="https://meimind.app" target="_blank" rel="noopener">
-        <span data-i18n="startGenerating">Start Generating →</span>
+      <h2 data-i18n="ctaTitle">Keep exploring the prompt library.</h2>
+      <p><span id="ctaPromptCount">2211</span><span data-i18n="ctaTail"> prompts ready to copy and remix.</span></p>
+      <a class="btn btn--solid btn--xl btn--invert" href="#gallery">
+        <span data-i18n="browseGallery">Browse Gallery →</span>
       </a>
     </section>
 
@@ -221,7 +221,7 @@
       <div class="footer__inner">
         <div class="footer__col">
           <img class="nav__logo-mark" src="assets/favicon.svg" alt="" width="28" height="28" />
-          <span class="footer__brand">MeiMind / gpt-image-2</span>
+          <span class="footer__brand">MeiMind Prompt Gallery</span>
         </div>
         <div class="footer__col">
           <h2 data-i18n="resources">RESOURCES</h2>

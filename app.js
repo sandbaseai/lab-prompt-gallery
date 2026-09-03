@@ -26,25 +26,25 @@
   const copy = {
     en: {
       pageTitle: 'MeiMind · GPT Image 2 Prompts Gallery', primaryNav: 'Primary navigation', navPrompts: 'Prompts', navTrending: 'Featured', navAbout: 'About', navFaq: 'FAQ', github: 'GitHub', submitPrompt: 'Submit Prompt', menu: 'Menu', menuOpen: 'Open menu', menuClose: 'Close menu', skipToContent: 'Skip to content',
-      modelPill: 'MODEL', modelMeta: '| Settings · Image · Generate', heroTitleLead: 'The Loudest Library of', heroTitleSuffix: 'Prompts.',
+      modelPill: 'MODEL', modelMeta: '| Settings · Image · Generate', heroTitle: 'The <span class="hero__title-accent">GPT Image 2</span><br />Prompt Library.',
       browseGallery: 'Browse Gallery →', viewTrending: 'View Featured',
       statPrompts: 'PROMPTS', statCategories: 'CATEGORIES', statResolution: 'RES OUTPUT', statFree: 'FREE FOREVER', trendingTitle: 'Featured Prompts', viewAll: 'View All →',
       aboutKicker: '// ABOUT THE MODEL', aboutTitle: 'What is GPT Image 2?', aboutCopy: '<b>GPT Image 2</b> is OpenAI\'s flagship image model with native <b>4K</b> output, precise text rendering (posters, UI screenshots, comic speech bubbles), and strong instruction following. It handles JSON and natural-language prompts across photography, UI, infographics, posters, and consistent characters.',
       sourcesCopy: 'This gallery samples prompts from <a href="https://github.com/freestylefly/awesome-gpt-image-2" target="_blank" rel="noopener">awesome-gpt-image-2</a>, <a href="https://github.com/no-chili/awesome-gpt-image-2-prompts" target="_blank" rel="noopener">Virloom\'s GPT Image 2 collection</a>, and <a href="https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts" target="_blank" rel="noopener">Pixmind\'s CC0 Midjourney examples</a>. The gallery keeps source links visible for attribution and leaves third-party media at its origin.',
-      tryMeiMind: 'Try it in MeiMind →', allPrompts: 'All Prompts', total: 'TOTAL', searchLabel: 'Search prompts', searchPlaceholder: 'Search prompts by title, tag, model…', sortLabel: 'SORT', sortTrending: 'Featured', sortNewest: 'Newest', sortAZ: 'A → Z', loadMore: 'Load More ↓', noResultsTitle: 'No prompts found', noResultsBody: 'Try a different search or clear the current filters.', clearFilters: 'Clear filters',
-      faqTitle: 'Common Questions', faq1Question: 'What is GPT Image 2?', faq1Answer: 'OpenAI\'s native image generation model for high-resolution output, accurate typography, and strong instruction following.', faq2Question: 'Where do these prompts come from?', faq2Answer: 'Data is curated from <a href="https://github.com/freestylefly/awesome-gpt-image-2" target="_blank" rel="noopener">freestylefly/awesome-gpt-image-2</a>, <a href="https://github.com/no-chili/awesome-gpt-image-2-prompts" target="_blank" rel="noopener">Virloom\'s collection</a>, and <a href="https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts" target="_blank" rel="noopener">Pixmind\'s CC0 examples</a>. Credit the original author when remixing.', faq3Question: 'How do I use these prompts?', faq3Answer: 'Open a card, copy the full prompt, paste it into MeiMind, ChatGPT, or another compatible tool, then adjust the parameters and remix.', faq4Question: 'Can I submit my own prompt?', faq4Answer: 'Yes. The guided form can open a pre-filled GitHub Issue or copy the submission text for another channel. Strong prompts can be featured in the Featured section.', faq5Question: 'Is this free?', faq5Answer: 'The gallery is free to browse and copy. Prompt content follows the license and attribution terms of its original source.',
-      ctaLead: 'Ready to create with', ctaTail: ' prompts, one-click copy, infinite remix.', startGenerating: 'Start Generating →', resources: 'RESOURCES', legal: 'LEGAL', license: 'Source licenses', privacy: 'Privacy', terms: 'Terms', mirror: 'canghe.ai mirror', poweredBy: 'POWERED BY SANDBASE', close: 'Close', noscript: 'This gallery needs JavaScript enabled to load prompts and open the inspector.', source: 'Source', copyPrompt: 'Copy Prompt', generateImage: 'Generate Image →', originalPrompt: 'Original prompt text (preserved from the source)', imageUnavailable: 'Image unavailable · open the source to view it', copied: 'COPIED ✓', copyFailed: 'COPY FAILED', loadFailedTitle: 'Unable to load the gallery', loadFailedBody: 'Refresh the page and try again.', retry: 'Refresh', switchedToChinese: '已切换到中文', switchedToEnglish: 'Switched to English',
+      allPrompts: 'All Prompts', total: 'TOTAL', searchLabel: 'Search prompts', searchPlaceholder: 'Search prompts by title, tag, model…', sortLabel: 'SORT', sortTrending: 'Featured', sortNewest: 'Newest', sortAZ: 'A → Z', loadMore: 'Load More ↓', noResultsTitle: 'No prompts found', noResultsBody: 'Try a different search or clear the current filters.', clearFilters: 'Clear filters',
+      faqTitle: 'Common Questions', faq1Question: 'What is GPT Image 2?', faq1Answer: 'OpenAI\'s native image generation model for high-resolution output, accurate typography, and strong instruction following.', faq2Question: 'Where do these prompts come from?', faq2Answer: 'Data is curated from <a href="https://github.com/freestylefly/awesome-gpt-image-2" target="_blank" rel="noopener">freestylefly/awesome-gpt-image-2</a>, <a href="https://github.com/no-chili/awesome-gpt-image-2-prompts" target="_blank" rel="noopener">Virloom\'s collection</a>, and <a href="https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts" target="_blank" rel="noopener">Pixmind\'s CC0 examples</a>. Credit the original author when remixing.', faq3Question: 'How do I use these prompts?', faq3Answer: 'Open a card, copy the full prompt, paste it into ChatGPT or another compatible image tool, then adjust the parameters and remix.', faq4Question: 'Can I submit my own prompt?', faq4Answer: 'Yes. Submit Prompt opens a GitHub Issue after a quick confirmation. Strong prompts can be featured in the Featured section.', faq5Question: 'Is this free?', faq5Answer: 'The gallery is free to browse and copy. Prompt content follows the license and attribution terms of its original source.',
+      ctaTitle: 'Keep exploring the prompt library.', ctaTail: ' prompts ready to copy and remix.', submitConfirm: 'This will open a new GitHub Issue for the prompt gallery. Continue?', resources: 'RESOURCES', legal: 'LEGAL', license: 'Source licenses', privacy: 'Privacy', terms: 'Terms', mirror: 'canghe.ai mirror', poweredBy: 'POWERED BY SANDBASE', close: 'Close', noscript: 'This gallery needs JavaScript enabled to load prompts and open the inspector.', source: 'Source', copyPrompt: 'Copy Prompt', originalPrompt: 'Original prompt text (preserved from the source)', imageUnavailable: 'Image unavailable · open the source to view it', copied: 'COPIED ✓', copyFailed: 'COPY FAILED', loadFailedTitle: 'Unable to load the gallery', loadFailedBody: 'Refresh the page and try again.', retry: 'Refresh', switchedToChinese: '已切换到中文', switchedToEnglish: 'Switched to English',
     },
     zh: {
       pageTitle: 'MeiMind · GPT Image 2 提示词画廊', primaryNav: '主导航', navPrompts: '提示词', navTrending: '精选', navAbout: '关于', navFaq: '问答', github: 'GitHub', submitPrompt: '提交提示词', menu: '菜单', menuOpen: '打开菜单', menuClose: '关闭菜单', skipToContent: '跳到主要内容',
-      modelPill: '模型', modelMeta: '| 参数 · 图像 · 生成', heroTitleLead: '最响亮的', heroTitleSuffix: '提示词库。',
+      modelPill: '模型', modelMeta: '| 参数 · 图像 · 生成', heroTitle: '<span class="hero__title-accent">GPT Image 2</span><br />提示词库。',
       browseGallery: '浏览画廊 →', viewTrending: '查看精选',
       statPrompts: '提示词', statCategories: '分类', statResolution: '输出分辨率', statFree: '永久免费', trendingTitle: '精选提示词', viewAll: '查看全部 →',
       aboutKicker: '// 关于模型', aboutTitle: 'GPT Image 2 是什么？', aboutCopy: '<b>GPT Image 2</b> 是 OpenAI 的旗舰图像模型，支持原生 <b>4K</b> 输出、精准文字渲染（海报、UI 截图、漫画对话框）和强指令遵循。它能处理 JSON 与自然语言提示词，适合摄影、UI、信息图、海报和角色一致性创作。',
       sourcesCopy: '本画廊整理自 <a href="https://github.com/freestylefly/awesome-gpt-image-2" target="_blank" rel="noopener">awesome-gpt-image-2</a>、<a href="https://github.com/no-chili/awesome-gpt-image-2-prompts" target="_blank" rel="noopener">Virloom 的 GPT Image 2 提示词库</a> 与 <a href="https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts" target="_blank" rel="noopener">Pixmind 的 CC0 Midjourney 示例</a>。页面保留来源链接，第三方图片仍从原站加载。',
-      tryMeiMind: '在 MeiMind 中试用 →', allPrompts: '全部提示词', total: '总计', searchLabel: '搜索提示词', searchPlaceholder: '按标题、标签或模型搜索提示词……', sortLabel: '排序', sortTrending: '精选', sortNewest: '最新', sortAZ: 'A → Z', loadMore: '加载更多 ↓', noResultsTitle: '没有找到提示词', noResultsBody: '换个关键词，或清除当前筛选条件。', clearFilters: '清除筛选',
-      faqTitle: '常见问题', faq1Question: 'GPT Image 2 是什么？', faq1Answer: 'OpenAI 的原生图像生成模型，支持高分辨率输出、准确排版和强指令遵循。', faq2Question: '这些提示词来自哪里？', faq2Answer: '内容整理自 <a href="https://github.com/freestylefly/awesome-gpt-image-2" target="_blank" rel="noopener">awesome-gpt-image-2</a>、<a href="https://github.com/no-chili/awesome-gpt-image-2-prompts" target="_blank" rel="noopener">Virloom 提示词库</a> 与 <a href="https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts" target="_blank" rel="noopener">Pixmind 的 CC0 示例</a>。改编时请保留原作者署名。', faq3Question: '如何使用这些提示词？', faq3Answer: '打开卡片，复制完整提示词，粘贴到 MeiMind、ChatGPT 或其他兼容工具中，再调整参数并继续改编。', faq4Question: '可以提交自己的提示词吗？', faq4Answer: '可以。引导表单可以打开预填的 GitHub Issue，也可以复制提交内容后通过其他渠道发送；优质提示词会进入精选区域。', faq5Question: '这些内容免费吗？', faq5Answer: '画廊浏览和复制免费。提示词内容遵循原始来源的许可证与署名要求。',
-      ctaLead: '准备好用', ctaTail: ' 条提示词，复制、改编，无限灵感。', startGenerating: '开始生成 →', resources: '资源', legal: '法律', license: '来源许可', privacy: '隐私', terms: '条款', mirror: 'canghe.ai 镜像', poweredBy: 'POWERED BY SANDBASE', close: '关闭', noscript: '请启用 JavaScript 以加载提示词并打开查看器。', source: '来源', copyPrompt: '复制提示词', generateImage: '生成图像 →', originalPrompt: '提示词原文（按上游内容保留）', imageUnavailable: '图片暂时无法加载 · 可打开来源查看', copied: '已复制 ✓', copyFailed: '复制失败', loadFailedTitle: '画廊加载失败', loadFailedBody: '请刷新页面后重试。', retry: '刷新页面', switchedToChinese: '已切换到中文', switchedToEnglish: 'Switched to English',
+      allPrompts: '全部提示词', total: '总计', searchLabel: '搜索提示词', searchPlaceholder: '按标题、标签或模型搜索提示词……', sortLabel: '排序', sortTrending: '精选', sortNewest: '最新', sortAZ: 'A → Z', loadMore: '加载更多 ↓', noResultsTitle: '没有找到提示词', noResultsBody: '换个关键词，或清除当前筛选条件。', clearFilters: '清除筛选',
+      faqTitle: '常见问题', faq1Question: 'GPT Image 2 是什么？', faq1Answer: 'OpenAI 的原生图像生成模型，支持高分辨率输出、准确排版和强指令遵循。', faq2Question: '这些提示词来自哪里？', faq2Answer: '内容整理自 <a href="https://github.com/freestylefly/awesome-gpt-image-2" target="_blank" rel="noopener">awesome-gpt-image-2</a>、<a href="https://github.com/no-chili/awesome-gpt-image-2-prompts" target="_blank" rel="noopener">Virloom 提示词库</a> 与 <a href="https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts" target="_blank" rel="noopener">Pixmind 的 CC0 示例</a>。改编时请保留原作者署名。', faq3Question: '如何使用这些提示词？', faq3Answer: '打开卡片，复制完整提示词，粘贴到 ChatGPT 或其他兼容图像工具中，再调整参数并继续改编。', faq4Question: '可以提交自己的提示词吗？', faq4Answer: '可以。点击“提交提示词”后，确认即可打开 GitHub 新 Issue。优质提示词会进入精选区域。', faq5Question: '这些内容免费吗？', faq5Answer: '画廊浏览和复制免费。提示词内容遵循原始来源的许可证与署名要求。',
+      ctaTitle: '继续探索提示词库。', ctaTail: ' 条提示词可供复制和改编。', submitConfirm: '即将打开提示词画廊的 GitHub 新 Issue 页面。确定继续吗？', resources: '资源', legal: '法律', license: '来源许可', privacy: '隐私', terms: '条款', mirror: 'canghe.ai 镜像', poweredBy: 'POWERED BY SANDBASE', close: '关闭', noscript: '请启用 JavaScript 以加载提示词并打开查看器。', source: '来源', copyPrompt: '复制提示词', originalPrompt: '提示词原文（按上游内容保留）', imageUnavailable: '图片暂时无法加载 · 可打开来源查看', copied: '已复制 ✓', copyFailed: '复制失败', loadFailedTitle: '画廊加载失败', loadFailedBody: '请刷新页面后重试。', retry: '刷新页面', switchedToChinese: '已切换到中文', switchedToEnglish: 'Switched to English',
     },
   };
   const categoryLabels = {
@@ -114,6 +114,42 @@
     return `A GPT Image 2 prompt case from ${category.label}.`;
   }
 
+  // Source titles are often English. Keep the card readable in Chinese mode
+  // without rewriting the original prompt shown in the detail view.
+  const titleZhReplacements = [
+    [/torn paper/gi, '撕纸'], [/dual timeline/gi, '双时间线'], [/photo collage/gi, '照片拼贴'],
+    [/\bkawaii\b/gi, '可爱'], [/\bwith\b/gi, '与'], [/\band\b/gi, '与'], [/\bfor\b/gi, '适用'], [/\bof\b/gi, '的'],
+    [/\bcrumple(?:d)?\b/gi, '皱褶'], [/\bchair\b/gi, '椅子'], [/\bconcept\b/gi, '概念'], [/\bsofa\b/gi, '沙发'], [/\bresearch\b/gi, '研发'], [/\bboard\b/gi, '板'],
+    [/trendy/gi, '潮流'], [/cafe/gi, '咖啡馆'], [/drink/gi, '饮品'], [/poster/gi, '海报'],
+    [/template/gi, '模板'], [/luxury/gi, '奢华'], [/suv/gi, 'SUV'], [/fashion/gi, '时尚'],
+    [/portrait/gi, '肖像'], [/realistic/gi, '写实'], [/woman/gi, '女性'], [/summer/gi, '夏日'],
+    [/lifestyle/gi, '生活方式'], [/product photography/gi, '产品摄影'], [/product/gi, '产品'],
+    [/playful/gi, '趣味'], [/doodle illustrations?/gi, '涂鸦插画'], [/minimalist/gi, '极简'],
+    [/bakery/gi, '烘焙'], [/almond croissant/gi, '杏仁可颂'], [/illustration/gi, '插画'],
+    [/character/gi, '角色'], [/people/gi, '人物'], [/forest/gi, '森林'], [/flight/gi, '飞行'],
+    [/aerial/gi, '航拍'], [/alpine valley/gi, '高山峡谷'], [/drone/gi, '无人机'], [/cinematic/gi, '电影感'],
+    [/nature/gi, '自然'], [/adventure/gi, '冒险'], [/travel/gi, '旅行'], [/dark fantasy/gi, '暗黑奇幻'],
+    [/movie/gi, '电影'], [/warrior/gi, '战士'], [/throne/gi, '王座'], [/oil painting/gi, '油画'],
+    [/warm amber tones?/gi, '琥珀暖色'], [/heavy shadows?/gi, '浓重阴影'], [/abstract/gi, '抽象'],
+    [/architecture/gi, '建筑'], [/spaces?/gi, '空间'], [/brand/gi, '品牌'], [/logo?s?/gi, '标志'],
+    [/chart?s?/gi, '图表'], [/infographic?s?/gi, '信息图'], [/document?s?/gi, '文档'],
+    [/history/gi, '历史'], [/classical/gi, '古典'], [/scene?s?/gi, '场景'], [/storytelling/gi, '叙事'],
+    [/interface?s?/gi, '界面'], [/ui/gi, 'UI'], [/v7/gi, 'V7'],
+  ];
+
+  function chineseTitle(item, category) {
+    const sourceTitle = String(item.title || '').trim();
+    if (!sourceTitle) return `${categoryLabels.zh[category.id]} · 案例 ${item.id}`;
+    if (containsCjk(sourceTitle) && !/[A-Za-z]{2,}/.test(sourceTitle)) return sourceTitle;
+    let translated = sourceTitle;
+    titleZhReplacements.forEach(([pattern, replacement]) => { translated = translated.replace(pattern, replacement); });
+    translated = translated.replace(/\s+/g, ' ').replace(/\s+([·。，！？])/g, '$1').trim();
+    const untranslatedWords = translated.replace(/\b(?:GPT|SUV|FPV|UI|V\d+)\b/gi, '').match(/[A-Za-z]{2,}/g);
+    return containsCjk(translated) && !untranslatedWords
+      ? translated
+      : `${categoryLabels.zh[category.id]} · 案例 ${item.id}`;
+  }
+
   const displayTitle = prompt => language === 'zh' ? prompt.titleZh : prompt.titleEn;
   const displaySummary = prompt => language === 'zh' ? prompt.summaryZh : prompt.summaryEn;
   const displayImageAlt = prompt => language === 'zh' ? prompt.imageAltZh : prompt.imageAltEn;
@@ -129,11 +165,8 @@
       const category = categoryByLabel.get(item.category) || CATEGORY_DEFS.find(def => def.id === 'other');
       const aspect = item.aspect || inferAspect(item.prompt);
       const sourceTitle = String(item.title || '').trim();
-      const sourceSummary = String(item.promptPreview || item.prompt || '').trim();
-      const titleZh = containsCjk(sourceTitle) ? sourceTitle : `${categoryLabels.zh[category.id]} · 案例 ${item.id}`;
-      const summaryZh = containsCjk(sourceSummary)
-        ? sourceSummary
-        : `来自${categoryLabels.zh[category.id]}分类的提示词；打开卡片可查看并复制英文原文。`;
+      const titleZh = chineseTitle(item, category);
+      const summaryZh = `围绕「${titleZh}」设计的提示词，打开卡片可查看并复制原文。`;
       const [width, height] = aspect.split(':').map(Number);
       const aspectHint = width === height ? 'square' : width > height ? 'wide' : 'tall';
       const image = /^https?:\/\//.test(String(item.imageUrl || ''))
@@ -284,6 +317,9 @@
       const next = language === 'en' ? 'zh' : 'en';
       setLanguage(next);
       toast(next === 'zh' ? copy.zh.switchedToChinese : copy.en.switchedToEnglish);
+    });
+    $('#submitBtn').addEventListener('click', event => {
+      if (!window.confirm(t('submitConfirm'))) event.preventDefault();
     });
     $('#menuBtn').addEventListener('click', () => {
       const menu = $('#menuBtn');
@@ -460,7 +496,7 @@
           <div class="card__summary">${escapeHTML(summary)}</div>
           <div class="card__meta">
             <span class="card__author">${escapeHTML(author)}</span>
-            <span>CASE ${escapeHTML(p.id)} ${tag}</span>
+            ${tag}
           </div>
         </div>
       </article>
@@ -531,7 +567,7 @@
     const authorLabel = authorName.startsWith('@') ? authorName : `@${authorName}`;
     const [imageWidth, imageHeight] = String(p.aspect || '4:5').split(':').map(Number);
     const detailImage = p.image
-      ? `<img src="${escapeAttr(p.image)}" data-fallback="${escapeAttr(p.imageFallback || '')}" width="${Number.isFinite(imageWidth) ? imageWidth : 4}" height="${Number.isFinite(imageHeight) ? imageHeight : 5}" alt="${escapeAttr(displayImageAlt(p))}" fetchpriority="high" decoding="async" />`
+      ? `<img src="${escapeAttr(p.image)}" data-fallback="${escapeAttr(p.imageFallback || '')}" width="${Number.isFinite(imageWidth) ? imageWidth : 4}" height="${Number.isFinite(imageHeight) ? imageHeight : 5}" alt="${escapeAttr(displayImageAlt(p))}" loading="eager" fetchpriority="high" decoding="async" />`
       : '';
     body.innerHTML = `
       <div class="detail__media">
@@ -553,7 +589,6 @@
         <pre class="detail__prompt" id="promptText">${escapeHTML(p.prompt)}</pre>
         <div class="detail__actions">
           <button class="btn btn--solid" id="copyBtn">${t('copyPrompt')}</button>
-          <button class="btn btn--ghost" id="generateBtn">${t('generateImage')}</button>
         </div>
         <div class="detail__source">
           <b>${t('source')}:</b> <a href="${escapeAttr(p.source.url)}" target="_blank" rel="noopener">${escapeHTML(authorLabel)}</a>
@@ -587,9 +622,6 @@
     if (focus) $('#modal .modal__close').focus();
 
     $('#copyBtn').addEventListener('click', () => copyText(p.prompt));
-    $('#generateBtn').addEventListener('click', () => {
-      window.open('https://meimind.app', '_blank', 'noopener');
-    });
   }
 
   function closeModal({ updateUrl = true } = {}) {
