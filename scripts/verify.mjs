@@ -1,10 +1,11 @@
-import { readFile } from 'node:fs/promises'
+import { access, readFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 
 const root = process.cwd()
 const parseJson = async (file) => JSON.parse(await readFile(resolve(root, file), 'utf8'))
 const data = await parseJson('data/cases.json')
 const html = await readFile(resolve(root, 'index.html'), 'utf8')
+const readme = await readFile(resolve(root, 'README.md'), 'utf8')
 const app = await readFile(resolve(root, 'app.js'), 'utf8')
 const vercel = await parseJson('vercel.json')
 const privacy = await readFile(resolve(root, 'privacy.html'), 'utf8')
@@ -13,6 +14,20 @@ const licenses = await readFile(resolve(root, 'licenses.html'), 'utf8')
 const legalJs = await readFile(resolve(root, 'legal.js'), 'utf8')
 const robots = await readFile(resolve(root, 'robots.txt'), 'utf8')
 const sitemap = await readFile(resolve(root, 'sitemap.xml'), 'utf8')
+
+for (const screenshot of [
+  'docs/images/hero-preview.png',
+  'docs/images/gallery-preview.png',
+  'docs/images/modal-detail.png',
+  'docs/images/trending-preview.png',
+]) {
+  if (!readme.includes(screenshot)) throw new Error(`README screenshot reference missing: ${screenshot}`)
+  try {
+    await access(resolve(root, screenshot))
+  } catch {
+    throw new Error(`README screenshot asset missing: ${screenshot}`)
+  }
+}
 
 if (!Array.isArray(data.categories) || data.categories.length < 2) throw new Error('categories must include at least two upstream categories')
 if (!Array.isArray(data.cases) || data.cases.length === 0) throw new Error('cases must be a non-empty array')

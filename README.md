@@ -51,7 +51,7 @@
 ### 3. Featured Prompts Section
 > Source-flagged and latest cases surfaced for quick discovery; no unverified view-count claim.
 
-![Trending Section Preview](docs/images/trending-preview.png)
+![Featured Prompts Preview](docs/images/trending-preview.png)
 
 ---
 

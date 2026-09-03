@@ -111,19 +111,52 @@ async function takeViewportScreenshot(filename) {
   console.log(`Saved: ${path.join(screenshotDir, filename)}`);
 }
 
+async function waitForVisibleImages() {
+  await send('Runtime.evaluate', {
+    awaitPromise: true,
+    expression: `(() => {
+      const images = [...document.images].filter((image) => {
+        const rect = image.getBoundingClientRect();
+        return rect.width > 0 && rect.height > 0;
+      });
+      return Promise.all(images.map((image) => image.complete
+        ? Promise.resolve()
+        : new Promise((resolve) => {
+            const done = () => resolve();
+            image.addEventListener('load', done, { once: true });
+            image.addEventListener('error', done, { once: true });
+            setTimeout(done, 8000);
+          })));
+    })()`
+  });
+  await new Promise((resolve) => setTimeout(resolve, 500));
+}
+
+async function scrollToSection(id) {
+  await send('Runtime.evaluate', {
+    expression: `(function () {
+      const section = document.getElementById(${JSON.stringify(id)});
+      const nav = document.querySelector('.nav');
+      if (!section) return;
+      window.scrollTo(0, Math.max(0, section.getBoundingClientRect().top + window.scrollY - (nav?.getBoundingClientRect().height || 70) - 8));
+    })()`
+  });
+  await new Promise((resolve) => setTimeout(resolve, 700));
+  await waitForVisibleImages();
+}
+
 // 1. Hero Preview
 await send('Runtime.evaluate', { expression: `window.scrollTo(0, 0);` });
-await new Promise(r => setTimeout(r, 500));
+await new Promise(r => setTimeout(r, 1000));
+await waitForVisibleImages();
 await takeViewportScreenshot('hero-preview.png');
 
-// 2. Trending Section
-await send('Runtime.evaluate', { expression: `document.getElementById('trending').scrollIntoView(true);` });
-await new Promise(r => setTimeout(r, 600));
+// 2. Featured Section
+await scrollToSection('trending');
 await takeViewportScreenshot('trending-preview.png');
 
 // 3. Gallery Section
-await send('Runtime.evaluate', { expression: `document.getElementById('gallery').scrollIntoView(true);` });
-await new Promise(r => setTimeout(r, 600));
+await scrollToSection('gallery');
 await takeViewportScreenshot('gallery-preview.png');
 
 // 4. Modal Detail View
@@ -131,7 +164,8 @@ await send('Runtime.evaluate', { expression: `
   const card = document.querySelector('#grid .card');
   if (card) card.click();
 ` });
-await new Promise(r => setTimeout(r, 600));
+await new Promise(r => setTimeout(r, 700));
+await waitForVisibleImages();
 await takeViewportScreenshot('modal-detail.png');
 
 ws.close();
