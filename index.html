@@ -31,10 +31,12 @@
           <span class="nav__logo-text">MeiMind</span>
           <span class="nav__logo-tag">/ gpt-image-2</span>
         </a>
+        <span class="nav__powered" data-i18n="poweredBy">POWERED BY SANDBASE</span>
         <nav class="nav__links" id="primaryNav" aria-label="Primary navigation" data-i18n-aria-label="primaryNav">
           <a href="#gallery" data-i18n="navPrompts">Prompts</a>
           <a href="#trending" data-i18n="navTrending">Featured</a>
           <a href="#about" data-i18n="navAbout">About</a>
+          <a href="#libraries" data-i18n="navLibraries">Libraries</a>
           <a href="#faq" data-i18n="navFaq">FAQ</a>
         </nav>
         <div class="nav__actions">
@@ -44,7 +46,7 @@
           <a class="btn btn--ghost" href="https://github.com/sandbaseai/lab-prompt-gallery" target="_blank" rel="noopener">
             <span data-i18n="github">GitHub</span>
           </a>
-          <button class="btn btn--solid" id="submitBtn" type="button" data-i18n="submitPrompt">Submit Prompt</button>
+          <a class="btn btn--solid" id="submitBtn" href="https://github.com/sandbaseai/lab-prompt-gallery/issues/new" target="_blank" rel="noopener" data-i18n="submitPrompt">Submit Prompt</a>
           <button class="nav__lang" type="button" id="langBtn" aria-label="Switch to Chinese">中</button>
         </div>
       </div>
@@ -113,6 +115,15 @@
           <a class="btn btn--solid" href="https://meimind.app" target="_blank" rel="noopener" data-i18n="tryMeiMind">Try it in MeiMind →</a>
         </div>
       </div>
+    </section>
+
+    <!-- ============ MORE LIBRARIES ============ -->
+    <section class="section section--banded" id="libraries">
+      <div class="section__head">
+        <h2 class="section__title" data-i18n="librariesTitle">More Prompt Libraries</h2>
+      </div>
+      <p class="libraries__lead" data-i18n="librariesLead">Go beyond this snapshot with complementary, source-attributed GPT Image 2 collections.</p>
+      <div class="library-grid" id="libraryGrid"></div>
     </section>
 
     <!-- ============ GALLERY ============ -->

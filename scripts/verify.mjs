@@ -14,6 +14,7 @@ const sitemap = await readFile(resolve(root, 'sitemap.xml'), 'utf8')
 
 if (!Array.isArray(data.categories) || data.categories.length < 2) throw new Error('categories must include at least two upstream categories')
 if (!Array.isArray(data.cases) || data.cases.length === 0) throw new Error('cases must be a non-empty array')
+if (!Array.isArray(data.sources) || data.sources.length < 2) throw new Error('sources must include the connected prompt libraries')
 
 const ids = new Set()
 for (const prompt of data.cases) {
@@ -24,7 +25,8 @@ for (const prompt of data.cases) {
   }
   if (ids.has(prompt.id)) throw new Error(`duplicate case id: ${prompt.id}`)
   ids.add(prompt.id)
-  if (!/^\/images\//.test(prompt.image) || (!prompt.sourceUrl && !prompt.githubUrl)) {
+  const imageValid = /^\/images\//.test(prompt.image) || /^https?:\/\//.test(prompt.imageUrl || '')
+  if (!imageValid || (!prompt.sourceUrl && !prompt.githubUrl)) {
     throw new Error(`case ${prompt.id} has an invalid image or source reference`)
   }
 }
@@ -52,5 +54,6 @@ if (!robots.includes('Sitemap: https://lab-prompt-gallery-sandbase.vercel.app/si
 if (vercel.cleanUrls !== true || !Array.isArray(vercel.headers) || !vercel.rewrites?.some(rule => rule.source === '/favicon.ico' && rule.destination === '/assets/favicon.svg')) {
   throw new Error('vercel.json must define clean URLs, headers, and favicon rewrite')
 }
+if (!app.includes('libraryGrid') || !app.includes('renderLibraries')) throw new Error('multi-library discovery contract missing')
 
-console.log(`verified ${data.cases.length} upstream cases across ${data.categories.length} categories`)
+console.log(`verified ${data.cases.length} cases from ${data.sources.length} libraries across ${data.categories.length} categories`)
