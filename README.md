@@ -4,10 +4,10 @@
 
 **The Loudest Library of GPT Image 2 Prompts with Neo-Brutalism Aesthetics.**
 
-16,000+ upstream image & video prompts · 2,183 merged cases in this snapshot · 13 categories · 1-click copy
+16,000+ upstream image & video prompts · 2,211 merged cases in this snapshot · 13 categories · 1-click copy
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-black.svg)](LICENSE)
-[![Content License: CC-BY-4.0](https://img.shields.io/badge/Content-CC--BY--4.0-red.svg)](https://creativecommons.org/licenses/by/4.0/)
+[![Content: source attributed](https://img.shields.io/badge/Content-source--attributed-red.svg)](#-data-sources)
 [![Vanilla JS](https://img.shields.io/badge/Stack-HTML5%20%7C%20CSS3%20%7C%20Vanilla%20JS-F5F0E8?logo=javascript&logoColor=black)](#-tech-stack)
 [![Deploy with Vercel](https://img.shields.io/badge/Deploy-Vercel-black?logo=vercel)](vercel.json)
 
@@ -24,7 +24,7 @@
 - 🎨 **Neo-Brutalism Design Language** — Sharp borders, hard drop shadows, monospace typography, and a raw editorial aesthetic.
 - ⚡ **Zero Build, Zero Framework, Blazing Fast** — Built with vanilla HTML5, modern CSS custom properties, and native ES6+ JavaScript. Loads in milliseconds.
 - 🗂 **13 Curated Categories** — UI & Interfaces, Photography, Infographics, Posters, Products, Characters, Documents, Scenes, History, and more.
-- 🧭 **Two Connected Libraries + More Sources** — The grid merges `freestylefly/awesome-gpt-image-2` with Virloom's `no-chili/awesome-gpt-image-2-prompts`; additional GPT Image 2 and Midjourney catalogs are linked for discovery until record-rights review is complete.
+- 🧭 **Three Connected Libraries** — The grid merges the original GPT Image 2 cases, Virloom metadata, and CC0 Midjourney V7 prompt text; source links and rights notes stay attached to the data.
 - 🔍 **Instant Search & Shareable Filters** — Debounced keyword search across titles, tags, models, and aspect ratios; category, sort, search, and open cases are reflected in the URL.
 - 📋 **Structured Prompt Inspector & 1-Click Copy** — Deep-dive modal view with formatted JSON/natural language prompts, parameter chips, and native clipboard integration.
 - 📱 **Fully Responsive Layout** — Seamless user experience from 4K ultrawide monitors to mobile viewports, with an accessible navigation menu and keyboard-roving case cards.
@@ -115,21 +115,21 @@ Open the directory in VS Code, right-click `index.html`, and select **"Open with
 - **Markup & Layout**: Semantic HTML5, CSS Grid & Flexbox, Container-query friendly structures.
 - **Styling**: Vanilla CSS3 with `:root` CSS Design Tokens, Neo-Brutalism hard shadows (`--shadow-hard: 4px 4px 0 #1A1A1A`), dark mode accents, and custom monospace typography.
 - **Logic & State**: Native ES6+ JavaScript, Fetch API, Debounced input handler, Keyboard navigation (Escape to close modal), and modern Clipboard API.
-- **Data Layer**: Directly synced `data/cases.json` metadata with upstream image assets served from the source repository.
+- **Data Layer**: Directly synced `data/cases.json` metadata with source-hosted image assets; CC0 Midjourney records intentionally omit images whose generation rights are not separately documented.
 
 ---
 
 ## 🌐 Data Sources
 
-The synchronized grid currently contains the 541-case `freestylefly/awesome-gpt-image-2` snapshot plus 1,642 records from [no-chili/awesome-gpt-image-2-prompts](https://github.com/no-chili/awesome-gpt-image-2-prompts). The latter requires preserving Virloom metadata attribution while third-party prompt/media rights remain reserved; the app keeps canonical and source links on every record.
+The synchronized grid currently contains the 541-case `freestylefly/awesome-gpt-image-2` snapshot, 1,642 records from [no-chili/awesome-gpt-image-2-prompts](https://github.com/no-chili/awesome-gpt-image-2-prompts), and 28 prompt-text records from [Pixmind's CC0 Midjourney V7 examples](https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts). Virloom metadata attribution is preserved, while third-party prompt/media rights remain reserved; Pixmind image files are intentionally omitted.
 
-For broader discovery, the UI also links to [Toolcentral's 7,902-template GPT Image 2 catalog](https://github.com/Toolcentral-ai/awesome-gpt-image-2-prompts) and [Pixmind's CC0 Midjourney V7 examples](https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts). These remain external until their record-level image/prompt rights and import format are reviewed.
+For broader discovery, the UI links to [Toolcentral's 7,902-template GPT Image 2 catalog](https://github.com/Toolcentral-ai/awesome-gpt-image-2-prompts). Its repository is MIT-licensed, but the data bundle does not grant a separate record-level redistribution license, so it remains external until that review is complete.
 
-Run `npm run sync:upstream` to refresh the two connected libraries. The merge is deterministic and assigns stable numeric IDs to secondary records so URL deep links remain shareable.
+Run `npm run sync:upstream` to refresh the three connected libraries. The merge is deterministic and assigns reserved numeric IDs to secondary records so URL deep links remain shareable.
 
 ### Submit a prompt
 
-The **Submit Prompt** button opens `submit.html`, a short guided form for title, prompt text, author, and source. The site does not store submissions; after validation, the form creates a pre-filled GitHub Issue draft for review. A GitHub account is required to click **Submit new issue**.
+The **Submit Prompt** button opens `submit.html`, a short guided form for title, prompt text, author, and source. The site does not store submissions; after validation, users can open a pre-filled GitHub Issue or copy the prepared text and send it through another channel. A GitHub account is required only for the public Issue route.
 
 ## 🌐 Deployment
 
@@ -164,7 +164,7 @@ Contributions, prompt submissions, and feature ideas are welcome!
 ## 📄 License
 
 - **Code & Design**: Licensed under the [MIT License](LICENSE).
-- **Prompt Content & Metadata**: Follows the upstream community licenses ([CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/)).
+- **Prompt Content & Metadata**: Source-specific. Check the record's source link and license note before commercial reuse or redistribution; CC0 records in this snapshot are prompt text only.
 
 ---
 

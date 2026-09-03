@@ -29,7 +29,7 @@
       <section class="submit-shell" aria-labelledby="submitTitle">
         <span class="section__kicker" data-i18n="submitKicker">// SHARE YOUR WORK</span>
         <h1 class="submit-title" id="submitTitle" data-i18n="submitTitle">Submit a prompt</h1>
-        <p class="submit-lead" data-i18n="submitLead">Fill out the short form first. We will prepare a GitHub draft with your text, so you do not need to understand issue templates.</p>
+        <p class="submit-lead" data-i18n="submitLead">Fill out the short form first. We will prepare a submission draft that you can send through GitHub or another channel.</p>
 
         <div class="submit-layout">
           <form class="submit-form" id="submitForm">
@@ -51,15 +51,16 @@
                 <input id="promptSource" name="source" type="url" maxlength="500" data-i18n-placeholder="promptSourcePlaceholder" placeholder="https://..." />
               </div>
             </div>
-            <button class="btn btn--solid btn--xl" type="submit" data-i18n="prepareDraft">Prepare GitHub draft →</button>
-            <p class="submit-note" data-i18n="submitPrivacy">Nothing is stored on this site. The next step opens GitHub, where you can review the draft before submitting.</p>
+            <button class="btn btn--solid btn--xl" type="submit" data-i18n="prepareDraft">Prepare submission →</button>
+            <p class="submit-note" data-i18n="submitPrivacy">Nothing is stored on this site. Review the draft, then choose where to send it.</p>
           </form>
 
           <aside class="submit-next" aria-live="polite">
             <span class="submit-next__step">02</span>
-            <h2 data-i18n="submitNextTitle">Finish on GitHub</h2>
-            <p data-i18n="submitNextBody">Review the pre-filled issue, sign in to GitHub if needed, and click “Submit new issue”.</p>
+            <h2 data-i18n="submitNextTitle">Send the draft</h2>
+            <p data-i18n="submitNextBody">Continue to GitHub for public review, or copy the prepared text and send it through another channel.</p>
             <a class="btn btn--solid" id="submitToGithub" href="https://github.com/sandbaseai/lab-prompt-gallery/issues/new" target="_blank" rel="noopener" hidden data-i18n="continueGithub">Continue to GitHub →</a>
+            <button class="btn btn--ghost" id="copySubmission" type="button" hidden data-i18n="copySubmission">Copy submission</button>
             <p class="submit-status" id="submitStatus" role="status"></p>
             <a class="submit-direct" href="https://github.com/sandbaseai/lab-prompt-gallery/issues/new" target="_blank" rel="noopener" data-i18n="openDirect">Prefer the direct issue form?</a>
           </aside>

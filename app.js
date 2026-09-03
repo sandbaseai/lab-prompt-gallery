@@ -6,8 +6,7 @@
 (() => {
   const $  = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
-  const REPO_URL = 'https://github.com/sandbaseai/lab-prompt-gallery';
-  const UPSTREAM_IMAGE_ROOT = 'https://raw.githubusercontent.com/freestylefly/awesome-gpt-image-2/main/data';
+  const UPSTREAM_IMAGE_ROOT = 'https://cdn.jsdelivr.net/gh/freestylefly/awesome-gpt-image-2@main/data';
   const CATEGORY_DEFS = [
     ['architecture', 'Architecture & Spaces', '▣'],
     ['brand', 'Brand & Logos', '▤'],
@@ -26,26 +25,26 @@
 
   const copy = {
     en: {
-      pageTitle: 'MeiMind · GPT Image 2 Prompts Gallery', primaryNav: 'Primary navigation', navPrompts: 'Prompts', navTrending: 'Featured', navAbout: 'About', navLibraries: 'Libraries', navFaq: 'FAQ', github: 'GitHub', submitPrompt: 'Submit Prompt', menu: 'Menu', menuOpen: 'Open menu', menuClose: 'Close menu', skipToContent: 'Skip to content',
+      pageTitle: 'MeiMind · GPT Image 2 Prompts Gallery', primaryNav: 'Primary navigation', navPrompts: 'Prompts', navTrending: 'Featured', navAbout: 'About', navFaq: 'FAQ', github: 'GitHub', submitPrompt: 'Submit Prompt', menu: 'Menu', menuOpen: 'Open menu', menuClose: 'Close menu', skipToContent: 'Skip to content',
       modelPill: 'MODEL', modelMeta: '| Settings · Image · Generate', heroTitleLead: 'The Loudest Library of', heroTitleSuffix: 'Prompts.',
       browseGallery: 'Browse Gallery →', viewTrending: 'View Featured',
-      statPrompts: 'PROMPTS', statCategories: 'CATEGORIES', statResolution: 'RES OUTPUT', statFree: 'FREE FOREVER', trendingTitle: 'Featured Prompts', viewAll: 'View All →', librariesTitle: 'More Prompt Libraries', librariesLead: 'Go beyond this snapshot with complementary, source-attributed GPT Image 2 collections.', exploreLibrary: 'Explore library →', externalLibrary: 'External catalog',
+      statPrompts: 'PROMPTS', statCategories: 'CATEGORIES', statResolution: 'RES OUTPUT', statFree: 'FREE FOREVER', trendingTitle: 'Featured Prompts', viewAll: 'View All →',
       aboutKicker: '// ABOUT THE MODEL', aboutTitle: 'What is GPT Image 2?', aboutCopy: '<b>GPT Image 2</b> is OpenAI\'s flagship image model with native <b>4K</b> output, precise text rendering (posters, UI screenshots, comic speech bubbles), and strong instruction following. It handles JSON and natural-language prompts across photography, UI, infographics, posters, and consistent characters.',
-      sourcesCopy: 'This gallery samples prompts from <a href="https://github.com/freestylefly/awesome-gpt-image-2" target="_blank" rel="noopener">awesome-gpt-image-2</a>, <a href="https://github.com/no-chili/awesome-gpt-image-2-prompts" target="_blank" rel="noopener">Virloom\'s GPT Image 2 collection</a>, the <a href="https://gpt-image2.canghe.ai/" target="_blank" rel="noopener">canghe.ai mirror</a>, and community posts. Everything is grouped for quick copying, remixing, and attribution.',
+      sourcesCopy: 'This gallery samples prompts from <a href="https://github.com/freestylefly/awesome-gpt-image-2" target="_blank" rel="noopener">awesome-gpt-image-2</a>, <a href="https://github.com/no-chili/awesome-gpt-image-2-prompts" target="_blank" rel="noopener">Virloom\'s GPT Image 2 collection</a>, and <a href="https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts" target="_blank" rel="noopener">Pixmind\'s CC0 Midjourney examples</a>. The gallery keeps source links visible for attribution and leaves third-party media at its origin.',
       tryMeiMind: 'Try it in MeiMind →', allPrompts: 'All Prompts', total: 'TOTAL', searchLabel: 'Search prompts', searchPlaceholder: 'Search prompts by title, tag, model…', sortLabel: 'SORT', sortTrending: 'Featured', sortNewest: 'Newest', sortAZ: 'A → Z', loadMore: 'Load More ↓', noResultsTitle: 'No prompts found', noResultsBody: 'Try a different search or clear the current filters.', clearFilters: 'Clear filters',
-      faqTitle: 'Common Questions', faq1Question: 'What is GPT Image 2?', faq1Answer: 'OpenAI\'s native image generation model for high-resolution output, accurate typography, and strong instruction following.', faq2Question: 'Where do these prompts come from?', faq2Answer: 'Data is curated from <a href="https://github.com/freestylefly/awesome-gpt-image-2" target="_blank" rel="noopener">freestylefly/awesome-gpt-image-2</a>, <a href="https://github.com/no-chili/awesome-gpt-image-2-prompts" target="_blank" rel="noopener">Virloom\'s collection</a>, <a href="https://gpt-image2.canghe.ai/" target="_blank" rel="noopener">canghe.ai</a>, and community posts. Credit the original author when remixing.', faq3Question: 'How do I use these prompts?', faq3Answer: 'Open a card, copy the full prompt, paste it into MeiMind, ChatGPT, or another compatible tool, then adjust the parameters and remix.', faq4Question: 'Can I submit my own prompt?', faq4Answer: 'Yes. Use “Submit Prompt” to fill out a short guided form, then continue to GitHub to send it. Strong prompts can be featured in the Featured section.', faq5Question: 'Is this free?', faq5Answer: 'The gallery is free to browse and copy. Prompt content follows the license and attribution terms of its original source.',
-      ctaLead: 'Ready to create with', ctaTail: ' prompts, one-click copy, infinite remix.', startGenerating: 'Start Generating →', resources: 'RESOURCES', legal: 'LEGAL', license: 'License · CC-BY-4.0', privacy: 'Privacy', terms: 'Terms', mirror: 'canghe.ai mirror', poweredBy: 'POWERED BY SANDBASE', close: 'Close', noscript: 'This gallery needs JavaScript enabled to load prompts and open the inspector.', source: 'Source', copyPrompt: 'Copy Prompt', generateImage: 'Generate Image →', originalPrompt: 'Original prompt text (preserved from the source)', imageUnavailable: 'Image unavailable · open the source to view it', copied: 'COPIED ✓', copyFailed: 'COPY FAILED', loadFailedTitle: 'Unable to load the gallery', loadFailedBody: 'Refresh the page and try again.', retry: 'Refresh', switchedToChinese: '已切换到中文', switchedToEnglish: 'Switched to English',
+      faqTitle: 'Common Questions', faq1Question: 'What is GPT Image 2?', faq1Answer: 'OpenAI\'s native image generation model for high-resolution output, accurate typography, and strong instruction following.', faq2Question: 'Where do these prompts come from?', faq2Answer: 'Data is curated from <a href="https://github.com/freestylefly/awesome-gpt-image-2" target="_blank" rel="noopener">freestylefly/awesome-gpt-image-2</a>, <a href="https://github.com/no-chili/awesome-gpt-image-2-prompts" target="_blank" rel="noopener">Virloom\'s collection</a>, and <a href="https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts" target="_blank" rel="noopener">Pixmind\'s CC0 examples</a>. Credit the original author when remixing.', faq3Question: 'How do I use these prompts?', faq3Answer: 'Open a card, copy the full prompt, paste it into MeiMind, ChatGPT, or another compatible tool, then adjust the parameters and remix.', faq4Question: 'Can I submit my own prompt?', faq4Answer: 'Yes. The guided form can open a pre-filled GitHub Issue or copy the submission text for another channel. Strong prompts can be featured in the Featured section.', faq5Question: 'Is this free?', faq5Answer: 'The gallery is free to browse and copy. Prompt content follows the license and attribution terms of its original source.',
+      ctaLead: 'Ready to create with', ctaTail: ' prompts, one-click copy, infinite remix.', startGenerating: 'Start Generating →', resources: 'RESOURCES', legal: 'LEGAL', license: 'Source licenses', privacy: 'Privacy', terms: 'Terms', mirror: 'canghe.ai mirror', poweredBy: 'POWERED BY SANDBASE', close: 'Close', noscript: 'This gallery needs JavaScript enabled to load prompts and open the inspector.', source: 'Source', copyPrompt: 'Copy Prompt', generateImage: 'Generate Image →', originalPrompt: 'Original prompt text (preserved from the source)', imageUnavailable: 'Image unavailable · open the source to view it', copied: 'COPIED ✓', copyFailed: 'COPY FAILED', loadFailedTitle: 'Unable to load the gallery', loadFailedBody: 'Refresh the page and try again.', retry: 'Refresh', switchedToChinese: '已切换到中文', switchedToEnglish: 'Switched to English',
     },
     zh: {
-      pageTitle: 'MeiMind · GPT Image 2 提示词画廊', primaryNav: '主导航', navPrompts: '提示词', navTrending: '精选', navAbout: '关于', navLibraries: '提示词库', navFaq: '问答', github: 'GitHub', submitPrompt: '提交提示词', menu: '菜单', menuOpen: '打开菜单', menuClose: '关闭菜单', skipToContent: '跳到主要内容',
+      pageTitle: 'MeiMind · GPT Image 2 提示词画廊', primaryNav: '主导航', navPrompts: '提示词', navTrending: '精选', navAbout: '关于', navFaq: '问答', github: 'GitHub', submitPrompt: '提交提示词', menu: '菜单', menuOpen: '打开菜单', menuClose: '关闭菜单', skipToContent: '跳到主要内容',
       modelPill: '模型', modelMeta: '| 参数 · 图像 · 生成', heroTitleLead: '最响亮的', heroTitleSuffix: '提示词库。',
       browseGallery: '浏览画廊 →', viewTrending: '查看精选',
-      statPrompts: '提示词', statCategories: '分类', statResolution: '输出分辨率', statFree: '永久免费', trendingTitle: '精选提示词', viewAll: '查看全部 →', librariesTitle: '更多提示词库', librariesLead: '当前画廊已合并两个 GPT Image 2 数据源，其他库先以外链形式提供，待完成版权与素材审核后再合并。', exploreLibrary: '浏览提示词库 →', externalLibrary: '外部目录',
+      statPrompts: '提示词', statCategories: '分类', statResolution: '输出分辨率', statFree: '永久免费', trendingTitle: '精选提示词', viewAll: '查看全部 →',
       aboutKicker: '// 关于模型', aboutTitle: 'GPT Image 2 是什么？', aboutCopy: '<b>GPT Image 2</b> 是 OpenAI 的旗舰图像模型，支持原生 <b>4K</b> 输出、精准文字渲染（海报、UI 截图、漫画对话框）和强指令遵循。它能处理 JSON 与自然语言提示词，适合摄影、UI、信息图、海报和角色一致性创作。',
-      sourcesCopy: '本画廊整理自 <a href="https://github.com/freestylefly/awesome-gpt-image-2" target="_blank" rel="noopener">awesome-gpt-image-2</a>、<a href="https://github.com/no-chili/awesome-gpt-image-2-prompts" target="_blank" rel="noopener">Virloom 的 GPT Image 2 提示词库</a>、<a href="https://gpt-image2.canghe.ai/" target="_blank" rel="noopener">canghe.ai 镜像库</a> 与社区内容，方便复制、改编和标注来源。',
+      sourcesCopy: '本画廊整理自 <a href="https://github.com/freestylefly/awesome-gpt-image-2" target="_blank" rel="noopener">awesome-gpt-image-2</a>、<a href="https://github.com/no-chili/awesome-gpt-image-2-prompts" target="_blank" rel="noopener">Virloom 的 GPT Image 2 提示词库</a> 与 <a href="https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts" target="_blank" rel="noopener">Pixmind 的 CC0 Midjourney 示例</a>。页面保留来源链接，第三方图片仍从原站加载。',
       tryMeiMind: '在 MeiMind 中试用 →', allPrompts: '全部提示词', total: '总计', searchLabel: '搜索提示词', searchPlaceholder: '按标题、标签或模型搜索提示词……', sortLabel: '排序', sortTrending: '精选', sortNewest: '最新', sortAZ: 'A → Z', loadMore: '加载更多 ↓', noResultsTitle: '没有找到提示词', noResultsBody: '换个关键词，或清除当前筛选条件。', clearFilters: '清除筛选',
-      faqTitle: '常见问题', faq1Question: 'GPT Image 2 是什么？', faq1Answer: 'OpenAI 的原生图像生成模型，支持高分辨率输出、准确排版和强指令遵循。', faq2Question: '这些提示词来自哪里？', faq2Answer: '内容整理自 <a href="https://github.com/freestylefly/awesome-gpt-image-2" target="_blank" rel="noopener">awesome-gpt-image-2</a>、<a href="https://github.com/no-chili/awesome-gpt-image-2-prompts" target="_blank" rel="noopener">Virloom 提示词库</a>、<a href="https://gpt-image2.canghe.ai/" target="_blank" rel="noopener">canghe.ai</a> 与社区内容。改编时请保留原作者署名。', faq3Question: '如何使用这些提示词？', faq3Answer: '打开卡片，复制完整提示词，粘贴到 MeiMind、ChatGPT 或其他兼容工具中，再调整参数并继续改编。', faq4Question: '可以提交自己的提示词吗？', faq4Answer: '可以。点击“提交提示词”填写简短表单，再前往 GitHub 完成提交；优质提示词会进入精选区域。', faq5Question: '这些内容免费吗？', faq5Answer: '画廊浏览和复制免费。提示词内容遵循原始来源的许可证与署名要求。',
-      ctaLead: '准备好用', ctaTail: ' 条提示词，复制、改编，无限灵感。', startGenerating: '开始生成 →', resources: '资源', legal: '法律', license: '许可证 · CC-BY-4.0', privacy: '隐私', terms: '条款', mirror: 'canghe.ai 镜像', poweredBy: 'POWERED BY SANDBASE', close: '关闭', noscript: '请启用 JavaScript 以加载提示词并打开查看器。', source: '来源', copyPrompt: '复制提示词', generateImage: '生成图像 →', originalPrompt: '提示词原文（按上游内容保留）', imageUnavailable: '图片暂时无法加载 · 可打开来源查看', copied: '已复制 ✓', copyFailed: '复制失败', loadFailedTitle: '画廊加载失败', loadFailedBody: '请刷新页面后重试。', retry: '刷新页面', switchedToChinese: '已切换到中文', switchedToEnglish: 'Switched to English',
+      faqTitle: '常见问题', faq1Question: 'GPT Image 2 是什么？', faq1Answer: 'OpenAI 的原生图像生成模型，支持高分辨率输出、准确排版和强指令遵循。', faq2Question: '这些提示词来自哪里？', faq2Answer: '内容整理自 <a href="https://github.com/freestylefly/awesome-gpt-image-2" target="_blank" rel="noopener">awesome-gpt-image-2</a>、<a href="https://github.com/no-chili/awesome-gpt-image-2-prompts" target="_blank" rel="noopener">Virloom 提示词库</a> 与 <a href="https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts" target="_blank" rel="noopener">Pixmind 的 CC0 示例</a>。改编时请保留原作者署名。', faq3Question: '如何使用这些提示词？', faq3Answer: '打开卡片，复制完整提示词，粘贴到 MeiMind、ChatGPT 或其他兼容工具中，再调整参数并继续改编。', faq4Question: '可以提交自己的提示词吗？', faq4Answer: '可以。引导表单可以打开预填的 GitHub Issue，也可以复制提交内容后通过其他渠道发送；优质提示词会进入精选区域。', faq5Question: '这些内容免费吗？', faq5Answer: '画廊浏览和复制免费。提示词内容遵循原始来源的许可证与署名要求。',
+      ctaLead: '准备好用', ctaTail: ' 条提示词，复制、改编，无限灵感。', startGenerating: '开始生成 →', resources: '资源', legal: '法律', license: '来源许可', privacy: '隐私', terms: '条款', mirror: 'canghe.ai 镜像', poweredBy: 'POWERED BY SANDBASE', close: '关闭', noscript: '请启用 JavaScript 以加载提示词并打开查看器。', source: '来源', copyPrompt: '复制提示词', generateImage: '生成图像 →', originalPrompt: '提示词原文（按上游内容保留）', imageUnavailable: '图片暂时无法加载 · 可打开来源查看', copied: '已复制 ✓', copyFailed: '复制失败', loadFailedTitle: '画廊加载失败', loadFailedBody: '请刷新页面后重试。', retry: '刷新页面', switchedToChinese: '已切换到中文', switchedToEnglish: 'Switched to English',
     },
   };
   const categoryLabels = {
@@ -75,7 +74,6 @@
       renderPills();
       applyFilters();
       renderTrending();
-      renderLibraries();
       if ($('#modal').classList.contains('is-open') && activeModalId) openModal(activeModalId, { updateUrl: false, focus: false });
     }
   }
@@ -129,7 +127,13 @@
     const categories = [{ id: 'all', label: 'All', icon: '▣' }, ...CATEGORY_DEFS];
     const prompts = (Array.isArray(raw.cases) ? raw.cases : []).map(item => {
       const category = categoryByLabel.get(item.category) || CATEGORY_DEFS.find(def => def.id === 'other');
-      const aspect = inferAspect(item.prompt);
+      const aspect = item.aspect || inferAspect(item.prompt);
+      const sourceTitle = String(item.title || '').trim();
+      const sourceSummary = String(item.promptPreview || item.prompt || '').trim();
+      const titleZh = containsCjk(sourceTitle) ? sourceTitle : `${categoryLabels.zh[category.id]} · 案例 ${item.id}`;
+      const summaryZh = containsCjk(sourceSummary)
+        ? sourceSummary
+        : `来自${categoryLabels.zh[category.id]}分类的提示词；打开卡片可查看并复制英文原文。`;
       const [width, height] = aspect.split(':').map(Number);
       const aspectHint = width === height ? 'square' : width > height ? 'wide' : 'tall';
       const image = /^https?:\/\//.test(String(item.imageUrl || ''))
@@ -144,13 +148,13 @@
           : '';
       return {
         id: String(item.id),
-        titleZh: item.title,
-        summaryZh: item.promptPreview || String(item.prompt || '').slice(0, 180),
+        titleZh,
+        summaryZh,
         titleEn: englishTitle(item, category),
         summaryEn: englishSummary(item, category),
         category: category.id,
         tags: [...(Array.isArray(item.styles) ? item.styles : []), ...(Array.isArray(item.scenes) ? item.scenes : [])].slice(0, 4),
-        model: 'gpt-image-2',
+        model: item.model || 'gpt-image-2',
         aspect,
         aspectHint,
         featured: Boolean(item.featured),
@@ -158,7 +162,7 @@
         imageFallback,
         sourceId: item.sourceId || 'freestylefly',
         sourceName: item.sourceName || 'awesome-gpt-image-2',
-        imageAltZh: item.imageAlt || item.title,
+        imageAltZh: titleZh,
         imageAltEn: englishTitle(item, category),
         prompt: item.prompt,
         source: { author: item.sourceLabel || 'upstream case', url: item.sourceUrl || item.githubUrl || raw.repository },
@@ -217,7 +221,6 @@
     renderPills();
     applyFilters();
     renderTrending();
-    renderLibraries();
     const prompt = requestedCase && state.data.prompts.find(item => item.id === requestedCase);
     if (prompt) {
       if (activeModalId !== prompt.id || !$('#modal').classList.contains('is-open')) openModal(prompt.id, { updateUrl: false });
@@ -414,22 +417,6 @@
 
   }
 
-  function renderLibraries() {
-    const grid = $('#libraryGrid');
-    if (!grid || !state.data?.sources) return;
-    grid.innerHTML = state.data.sources.map(source => `
-      <article class="library-card">
-        <div class="library-card__top">
-          <span class="library-card__kicker">${escapeHTML(source.id || 'SOURCE')}</span>
-          <strong>${source.external ? escapeHTML(t('externalLibrary')) : escapeHTML(Number(source.cases || 0).toLocaleString())}</strong>
-        </div>
-        <h3>${escapeHTML(source.name || 'Prompt library')}</h3>
-        <p>${escapeHTML(source.license || '')}</p>
-        <a href="${escapeAttr(source.url || '#')}" target="_blank" rel="noopener">${t('exploreLibrary')}</a>
-      </article>
-    `).join('');
-  }
-
   function clearFilters() {
     state.category = 'all';
     state.query = '';
@@ -448,14 +435,15 @@
          : 'card__media')
       : 'card__media';
 
-    const tag   = (p.tags && p.tags[0]) ? `<span class="card__tag">${escapeHTML(p.tags[0])}</span>` : '';
+    const tagLabel = language === 'zh' ? categoryLabels.zh[p.category] : p.tags?.[0];
+    const tag = tagLabel ? `<span class="card__tag">${escapeHTML(tagLabel)}</span>` : '';
     const authorName = displayAuthor(p);
     const author = authorName.startsWith('@') ? authorName : `@${authorName}`;
     const title = displayTitle(p);
     const summary = displaySummary(p);
     const [imageWidth, imageHeight] = String(p.aspect || '4:5').split(':').map(Number);
     const image = p.image
-      ? `<img class="card__image" src="${escapeAttr(p.image)}" data-fallback="${escapeAttr(p.imageFallback || '')}" width="${Number.isFinite(imageWidth) ? imageWidth : 4}" height="${Number.isFinite(imageHeight) ? imageHeight : 5}" alt="${escapeAttr(displayImageAlt(p))}" loading="lazy" decoding="async" />`
+      ? `<img class="card__image" src="${escapeAttr(p.image)}" data-fallback="${escapeAttr(p.imageFallback || '')}" width="${Number.isFinite(imageWidth) ? imageWidth : 4}" height="${Number.isFinite(imageHeight) ? imageHeight : 5}" alt="${escapeAttr(displayImageAlt(p))}" loading="${showTrend || idx <= 4 ? 'eager' : 'lazy'}" fetchpriority="${showTrend || idx <= 4 ? 'high' : 'auto'}" decoding="async" />`
       : '';
 
     return `
@@ -543,7 +531,7 @@
     const authorLabel = authorName.startsWith('@') ? authorName : `@${authorName}`;
     const [imageWidth, imageHeight] = String(p.aspect || '4:5').split(':').map(Number);
     const detailImage = p.image
-      ? `<img src="${escapeAttr(p.image)}" data-fallback="${escapeAttr(p.imageFallback || '')}" width="${Number.isFinite(imageWidth) ? imageWidth : 4}" height="${Number.isFinite(imageHeight) ? imageHeight : 5}" alt="${escapeAttr(displayImageAlt(p))}" decoding="async" />`
+      ? `<img src="${escapeAttr(p.image)}" data-fallback="${escapeAttr(p.imageFallback || '')}" width="${Number.isFinite(imageWidth) ? imageWidth : 4}" height="${Number.isFinite(imageHeight) ? imageHeight : 5}" alt="${escapeAttr(displayImageAlt(p))}" fetchpriority="high" decoding="async" />`
       : '';
     body.innerHTML = `
       <div class="detail__media">
@@ -559,7 +547,7 @@
           <span class="detail__chip detail__chip--accent">${escapeHTML(p.model)}</span>
           <span class="detail__chip">${escapeHTML(p.aspect || 'image')}</span>
           <span class="detail__chip">${escapeHTML(categoryLabels[language][p.category] || p.category)}</span>
-          ${(p.tags || []).map(t => `<span class="detail__chip">${escapeHTML(t)}</span>`).join('')}
+          ${language === 'zh' ? '' : (p.tags || []).map(t => `<span class="detail__chip">${escapeHTML(t)}</span>`).join('')}
         </div>
         <div class="detail__prompt-label">${t('originalPrompt')}</div>
         <pre class="detail__prompt" id="promptText">${escapeHTML(p.prompt)}</pre>

@@ -1,6 +1,6 @@
 {
   "repository": "https://github.com/freestylefly/awesome-gpt-image-2",
-  "totalCases": 2183,
+  "totalCases": 2211,
   "categories": [
     "Architecture & Spaces",
     "Brand & Logos",
@@ -46175,6 +46175,716 @@
       "githubUrl": "https://virloom.com/prompt-templates/k-pop-dancer-laundromat-realistic-photo",
       "sourceId": "virloom",
       "sourceName": "Awesome GPT Image 2 Prompts"
+    },
+    {
+      "id": 200001,
+      "title": "FPV Forest Flight",
+      "image": "",
+      "imageAlt": "FPV Forest Flight",
+      "sourceLabel": "Pixmind",
+      "sourceUrl": "https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts",
+      "prompt": "FPV drone racing through redwood forest, morning mist, golden sunlight, photorealistic\n\n--ar 16:9 --s 300 --v 7",
+      "promptPreview": "FPV drone racing through redwood forest, morning mist, golden sunlight, photorealistic",
+      "category": "Scenes & Storytelling",
+      "styles": [
+        "cinematic"
+      ],
+      "scenes": [
+        "Nature documentaries",
+        "Adventure content",
+        "Travel sequences"
+      ],
+      "featured": false,
+      "model": "midjourney-v7",
+      "aspect": "16:9",
+      "previewAvailable": false,
+      "githubUrl": "https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts",
+      "sourceId": "pixmind",
+      "sourceName": "awesome-midjourney-v7-example-prompts"
+    },
+    {
+      "id": 200002,
+      "title": "Aerial Alpine Valley",
+      "image": "",
+      "imageAlt": "Aerial Alpine Valley",
+      "sourceLabel": "Pixmind",
+      "sourceUrl": "https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts",
+      "prompt": "Aerial drone shot of an alpine valley with snow-capped peaks and a winding river, dramatic side lighting creating long shadows, atmospheric haze in valley, golden hour\n\n--ar 16:9 --s 250 --c 20 --v 7",
+      "promptPreview": "Aerial drone shot of an alpine valley with snow-capped peaks and a winding river, dramatic side lighting creating long shadows, atmospheric haze in valley, golden hour",
+      "category": "Scenes & Storytelling",
+      "styles": [
+        "cinematic"
+      ],
+      "scenes": [
+        "Establishing shots",
+        "Travel documentaries",
+        "Showcasing scale"
+      ],
+      "featured": false,
+      "model": "midjourney-v7",
+      "aspect": "16:9",
+      "previewAvailable": false,
+      "githubUrl": "https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts",
+      "sourceId": "pixmind",
+      "sourceName": "awesome-midjourney-v7-example-prompts"
+    },
+    {
+      "id": 200003,
+      "title": "Cyberpunk Tokyo Tracking",
+      "image": "",
+      "imageAlt": "Cyberpunk Tokyo Tracking",
+      "sourceLabel": "Pixmind",
+      "sourceUrl": "https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts",
+      "prompt": "Tracking shot through neon-lit Tokyo streets at night, rain-slicked pavement reflecting cyberpunk signs, crowds of people with umbrellas, cinematic, film grain\n\n--ar 16:9 --s 400 --no crowds --v 7",
+      "promptPreview": "Tracking shot through neon-lit Tokyo streets at night, rain-slicked pavement reflecting cyberpunk signs, crowds of people with umbrellas, cinematic, film grain",
+      "category": "Scenes & Storytelling",
+      "styles": [
+        "cinematic"
+      ],
+      "scenes": [
+        "Music videos",
+        "Fashion content",
+        "Cyberpunk aesthetics"
+      ],
+      "featured": false,
+      "model": "midjourney-v7",
+      "aspect": "16:9",
+      "previewAvailable": false,
+      "githubUrl": "https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts",
+      "sourceId": "pixmind",
+      "sourceName": "awesome-midjourney-v7-example-prompts"
+    },
+    {
+      "id": 200004,
+      "title": "Low Angle Hero Shot",
+      "image": "",
+      "imageAlt": "Low Angle Hero Shot",
+      "sourceLabel": "Pixmind",
+      "sourceUrl": "https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts",
+      "prompt": "Low angle hero shot of a warrior standing on a cliff edge overlooking a vast fantasy landscape, dramatic rim lighting, windswept hair and cloak, golden hour\n\n--ar 9:16 --s 350 --c 5 --v 7",
+      "promptPreview": "Low angle hero shot of a warrior standing on a cliff edge overlooking a vast fantasy landscape, dramatic rim lighting, windswept hair and cloak, golden hour",
+      "category": "Scenes & Storytelling",
+      "styles": [
+        "cinematic"
+      ],
+      "scenes": [
+        "Character introductions",
+        "Promotional imagery"
+      ],
+      "featured": false,
+      "model": "midjourney-v7",
+      "aspect": "9:16",
+      "previewAvailable": false,
+      "githubUrl": "https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts",
+      "sourceId": "pixmind",
+      "sourceName": "awesome-midjourney-v7-example-prompts"
+    },
+    {
+      "id": 200005,
+      "title": "Push-In Coffee Craft",
+      "image": "",
+      "imageAlt": "Push-In Coffee Craft",
+      "sourceLabel": "Pixmind",
+      "sourceUrl": "https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts",
+      "prompt": "Slow push-in on artisan hands crafting a latte, steam rising, warm morning light from cafe window, photorealistic, shallow depth of field\n\n--ar 9:16 --s 300 --v 7",
+      "promptPreview": "Slow push-in on artisan hands crafting a latte, steam rising, warm morning light from cafe window, photorealistic, shallow depth of field",
+      "category": "Scenes & Storytelling",
+      "styles": [
+        "cinematic"
+      ],
+      "scenes": [
+        "Process videos",
+        "Artisan content"
+      ],
+      "featured": false,
+      "model": "midjourney-v7",
+      "aspect": "9:16",
+      "previewAvailable": false,
+      "githubUrl": "https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts",
+      "sourceId": "pixmind",
+      "sourceName": "awesome-midjourney-v7-example-prompts"
+    },
+    {
+      "id": 200006,
+      "title": "Editorial Fashion Portrait",
+      "image": "",
+      "imageAlt": "Editorial Fashion Portrait",
+      "sourceLabel": "Pixmind",
+      "sourceUrl": "https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts",
+      "prompt": "Editorial fashion portrait of a woman in a bold red outfit against a brutalist concrete wall, shot on Hasselblad medium format, soft diffused lighting, desaturated color palette\n\n--ar 4:5 --s 350 --v 7",
+      "promptPreview": "Editorial fashion portrait of a woman in a bold red outfit against a brutalist concrete wall, shot on Hasselblad medium format, soft diffused lighting, desaturated color palette",
+      "category": "Photography & Realism",
+      "styles": [
+        "photography"
+      ],
+      "scenes": [
+        "Fashion editorials",
+        "Brand campaigns",
+        "Portfolio work"
+      ],
+      "featured": false,
+      "model": "midjourney-v7",
+      "aspect": "4:5",
+      "previewAvailable": false,
+      "githubUrl": "https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts",
+      "sourceId": "pixmind",
+      "sourceName": "awesome-midjourney-v7-example-prompts"
+    },
+    {
+      "id": 200007,
+      "title": "Cinematic Character Close-Up",
+      "image": "",
+      "imageAlt": "Cinematic Character Close-Up",
+      "sourceLabel": "Pixmind",
+      "sourceUrl": "https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts",
+      "prompt": "Cinematic portrait of an elderly fisherman with weathered hands and deep wrinkles, natural window light from left, warm morning atmosphere, background of a coastal harbor, documentary photography style\n\n--ar 4:5 --s 300 --v 7",
+      "promptPreview": "Cinematic portrait of an elderly fisherman with weathered hands and deep wrinkles, natural window light from left, warm morning atmosphere, background of a coastal harbor, documentary photography style",
+      "category": "Photography & Realism",
+      "styles": [
+        "photography"
+      ],
+      "scenes": [
+        "Documentary work",
+        "Character studies",
+        "Authentic storytelling"
+      ],
+      "featured": false,
+      "model": "midjourney-v7",
+      "aspect": "4:5",
+      "previewAvailable": false,
+      "githubUrl": "https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts",
+      "sourceId": "pixmind",
+      "sourceName": "awesome-midjourney-v7-example-prompts"
+    },
+    {
+      "id": 200008,
+      "title": "Hyper-Realistic Cinematic Portrait",
+      "image": "",
+      "imageAlt": "Hyper-Realistic Cinematic Portrait",
+      "sourceLabel": "Pixmind",
+      "sourceUrl": "https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts",
+      "prompt": "A hyper-realistic cinematic portrait of a handsome man with a rugged jawline and short, messy dark hair, wearing dark round sunglasses and a textured leather jacket, dramatic side lighting, shallow depth of field\n\n--ar 4:5 --s 250 --v 7",
+      "promptPreview": "A hyper-realistic cinematic portrait of a handsome man with a rugged jawline and short, messy dark hair, wearing dark round sunglasses and a textured leather jacket, dramatic side lighting, shallow depth of field",
+      "category": "Photography & Realism",
+      "styles": [
+        "photography"
+      ],
+      "scenes": [
+        "Character design",
+        "Film pre-visualization"
+      ],
+      "featured": false,
+      "model": "midjourney-v7",
+      "aspect": "4:5",
+      "previewAvailable": false,
+      "githubUrl": "https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts",
+      "sourceId": "pixmind",
+      "sourceName": "awesome-midjourney-v7-example-prompts"
+    },
+    {
+      "id": 200009,
+      "title": "Vintage Street Photography",
+      "image": "",
+      "imageAlt": "Vintage Street Photography",
+      "sourceLabel": "Pixmind",
+      "sourceUrl": "https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts",
+      "prompt": "Man walking his dog on a street, you can see his full body, like an old vintage photograph, film fuji color\n\n--ar 16:9 --style raw --v 7",
+      "promptPreview": "Man walking his dog on a street, you can see his full body, like an old vintage photograph, film fuji color",
+      "category": "Photography & Realism",
+      "styles": [
+        "photography"
+      ],
+      "scenes": [
+        "Retro aesthetics",
+        "Mood boards"
+      ],
+      "featured": false,
+      "model": "midjourney-v7",
+      "aspect": "16:9",
+      "previewAvailable": false,
+      "githubUrl": "https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts",
+      "sourceId": "pixmind",
+      "sourceName": "awesome-midjourney-v7-example-prompts"
+    },
+    {
+      "id": 200010,
+      "title": "Sustainable Forest Retreat",
+      "image": "",
+      "imageAlt": "Sustainable Forest Retreat",
+      "sourceLabel": "Pixmind",
+      "sourceUrl": "https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts",
+      "prompt": "A serene wellness retreat nestled in a redwood forest, architectural photography, built from cross-laminated timber and rammed earth walls, large panoramic windows framing the trees, dappled sunlight filtering through the canopy, geothermal heating, green roof, hyper-realistic, 8k\n\n--ar 16:9 --v 7",
+      "promptPreview": "A serene wellness retreat nestled in a redwood forest, architectural photography, built from cross-laminated timber and rammed earth walls, large panoramic windows framing the trees, dappled sunlight filtering through the canopy, geothermal heating, green roof, hyper-realistic, 8k",
+      "category": "Architecture & Spaces",
+      "styles": [
+        "architecture"
+      ],
+      "scenes": [
+        "Eco-conscious residential",
+        "Spa design",
+        "Biophilic design"
+      ],
+      "featured": false,
+      "model": "midjourney-v7",
+      "aspect": "16:9",
+      "previewAvailable": false,
+      "githubUrl": "https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts",
+      "sourceId": "pixmind",
+      "sourceName": "awesome-midjourney-v7-example-prompts"
+    },
+    {
+      "id": 200011,
+      "title": "Parametric Facade",
+      "image": "",
+      "imageAlt": "Parametric Facade",
+      "sourceLabel": "Pixmind",
+      "sourceUrl": "https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts",
+      "prompt": "A stunning parametric facade on a corporate headquarters, algorithmic architecture, a complex woven structure of glass and white composite panels, reflecting a dynamic sky, highly detailed intricate patterns, futuristic, wide-angle lens, photorealistic render\n\n--ar 16:9 --v 7",
+      "promptPreview": "A stunning parametric facade on a corporate headquarters, algorithmic architecture, a complex woven structure of glass and white composite panels, reflecting a dynamic sky, highly detailed intricate patterns, futuristic, wide-angle lens, photorealistic render",
+      "category": "Architecture & Spaces",
+      "styles": [
+        "architecture"
+      ],
+      "scenes": [
+        "Commercial projects",
+        "Cultural centers",
+        "Statement buildings"
+      ],
+      "featured": false,
+      "model": "midjourney-v7",
+      "aspect": "16:9",
+      "previewAvailable": false,
+      "githubUrl": "https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts",
+      "sourceId": "pixmind",
+      "sourceName": "awesome-midjourney-v7-example-prompts"
+    },
+    {
+      "id": 200012,
+      "title": "Tadao Ando Style Gallery",
+      "image": "",
+      "imageAlt": "Tadao Ando Style Gallery",
+      "sourceLabel": "Pixmind",
+      "sourceUrl": "https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts",
+      "prompt": "A small art gallery, architectural photography, in the style of Tadao Ando, masterful use of raw concrete and natural light, serene spatial composition, profound silence, minimalist, dramatic shadow play\n\n--ar 4:3 --v 7",
+      "promptPreview": "A small art gallery, architectural photography, in the style of Tadao Ando, masterful use of raw concrete and natural light, serene spatial composition, profound silence, minimalist, dramatic shadow play",
+      "category": "Architecture & Spaces",
+      "styles": [
+        "architecture"
+      ],
+      "scenes": [
+        "Museums",
+        "Galleries",
+        "Minimalist residential"
+      ],
+      "featured": false,
+      "model": "midjourney-v7",
+      "aspect": "4:3",
+      "previewAvailable": false,
+      "githubUrl": "https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts",
+      "sourceId": "pixmind",
+      "sourceName": "awesome-midjourney-v7-example-prompts"
+    },
+    {
+      "id": 200013,
+      "title": "Luxury Chronograph Watch",
+      "image": "",
+      "imageAlt": "Luxury Chronograph Watch",
+      "sourceLabel": "Pixmind",
+      "sourceUrl": "https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts",
+      "prompt": "Orbital product photography of a luxury chronograph watch on dark marble, single spotlight from above creating premium reflections, studio lighting, photorealistic\n\n--ar 1:1 --s 100 --c 0 --v 7",
+      "promptPreview": "Orbital product photography of a luxury chronograph watch on dark marble, single spotlight from above creating premium reflections, studio lighting, photorealistic",
+      "category": "Other Use Cases",
+      "styles": [
+        "product-commercial"
+      ],
+      "scenes": [
+        "Luxury product launches",
+        "E-commerce"
+      ],
+      "featured": false,
+      "model": "midjourney-v7",
+      "aspect": "1:1",
+      "previewAvailable": false,
+      "githubUrl": "https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts",
+      "sourceId": "pixmind",
+      "sourceName": "awesome-midjourney-v7-example-prompts"
+    },
+    {
+      "id": 200014,
+      "title": "Perfume Bottle Elegance",
+      "image": "",
+      "imageAlt": "Perfume Bottle Elegance",
+      "sourceLabel": "Pixmind",
+      "sourceUrl": "https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts",
+      "prompt": "Elegant perfume bottle on a mirrored surface, scattered rose petals, soft side lighting creating depth and drama, luxury cosmetics photography, pastel pink and gold tones\n\n--ar 4:5 --s 300 --v 7",
+      "promptPreview": "Elegant perfume bottle on a mirrored surface, scattered rose petals, soft side lighting creating depth and drama, luxury cosmetics photography, pastel pink and gold tones",
+      "category": "Other Use Cases",
+      "styles": [
+        "product-commercial"
+      ],
+      "scenes": [
+        "Luxury cosmetics",
+        "Lifestyle marketing"
+      ],
+      "featured": false,
+      "model": "midjourney-v7",
+      "aspect": "4:5",
+      "previewAvailable": false,
+      "githubUrl": "https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts",
+      "sourceId": "pixmind",
+      "sourceName": "awesome-midjourney-v7-example-prompts"
+    },
+    {
+      "id": 200015,
+      "title": "Skincare Ad with Text",
+      "image": "",
+      "imageAlt": "Skincare Ad with Text",
+      "sourceLabel": "Pixmind",
+      "sourceUrl": "https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts",
+      "prompt": "A minimalist Instagram ad for a skincare brand, pastel color palette, with a bottle of serum and a short tagline \"Glow Daily\"\n\n--ar 4:5 --v 7",
+      "promptPreview": "A minimalist Instagram ad for a skincare brand, pastel color palette, with a bottle of serum and a short tagline \"Glow Daily\"",
+      "category": "Other Use Cases",
+      "styles": [
+        "product-commercial"
+      ],
+      "scenes": [
+        "Social media marketing",
+        "Brand mockups"
+      ],
+      "featured": false,
+      "model": "midjourney-v7",
+      "aspect": "4:5",
+      "previewAvailable": false,
+      "githubUrl": "https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts",
+      "sourceId": "pixmind",
+      "sourceName": "awesome-midjourney-v7-example-prompts"
+    },
+    {
+      "id": 200016,
+      "title": "Futuristic Transport Hub",
+      "image": "",
+      "imageAlt": "Futuristic Transport Hub",
+      "sourceLabel": "Pixmind",
+      "sourceUrl": "https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts",
+      "prompt": "Futuristic conceptual architecture, a transportation hub with aerodynamic carbon fiber arches and ethereal light tunnels, speculative design, bio-inspired structures, neon glow, foggy atmosphere, epic scale, concept art, Unreal Engine 5 render\n\n--ar 21:9 --v 7",
+      "promptPreview": "Futuristic conceptual architecture, a transportation hub with aerodynamic carbon fiber arches and ethereal light tunnels, speculative design, bio-inspired structures, neon glow, foggy atmosphere, epic scale, concept art, Unreal Engine 5 render",
+      "category": "Illustration & Art",
+      "styles": [
+        "concept-art"
+      ],
+      "scenes": [
+        "Competitions",
+        "Sci-fi concept art"
+      ],
+      "featured": false,
+      "model": "midjourney-v7",
+      "aspect": "21:9",
+      "previewAvailable": false,
+      "githubUrl": "https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts",
+      "sourceId": "pixmind",
+      "sourceName": "awesome-midjourney-v7-example-prompts"
+    },
+    {
+      "id": 200017,
+      "title": "Dark Fantasy Poster",
+      "image": "",
+      "imageAlt": "Dark Fantasy Poster",
+      "sourceLabel": "Pixmind",
+      "sourceUrl": "https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts",
+      "prompt": "Create a dark fantasy poster with a young red-haired woman surrounded by mystical elements in a gloomy setting, gothic aesthetic, dramatic lighting\n\n--ar 16:9 --s 250 --v 7",
+      "promptPreview": "Create a dark fantasy poster with a young red-haired woman surrounded by mystical elements in a gloomy setting, gothic aesthetic, dramatic lighting",
+      "category": "Illustration & Art",
+      "styles": [
+        "concept-art"
+      ],
+      "scenes": [
+        "Book covers",
+        "Game art",
+        "Dark fantasy illustration"
+      ],
+      "featured": false,
+      "model": "midjourney-v7",
+      "aspect": "16:9",
+      "previewAvailable": false,
+      "githubUrl": "https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts",
+      "sourceId": "pixmind",
+      "sourceName": "awesome-midjourney-v7-example-prompts"
+    },
+    {
+      "id": 200018,
+      "title": "1970s Dark Fantasy Frazetta Style",
+      "image": "",
+      "imageAlt": "1970s Dark Fantasy Frazetta Style",
+      "sourceLabel": "Pixmind",
+      "sourceUrl": "https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts",
+      "prompt": "1970s dark fantasy movie poster style, barbarian warrior on a throne, Frank Frazetta inspired, oil painting texture, warm amber tones, heavy shadows\n\n--ar 2:3 --s 400 --v 7",
+      "promptPreview": "1970s dark fantasy movie poster style, barbarian warrior on a throne, Frank Frazetta inspired, oil painting texture, warm amber tones, heavy shadows",
+      "category": "Illustration & Art",
+      "styles": [
+        "concept-art"
+      ],
+      "scenes": [
+        "Retro fantasy",
+        "Vintage illustration"
+      ],
+      "featured": false,
+      "model": "midjourney-v7",
+      "aspect": "2:3",
+      "previewAvailable": false,
+      "githubUrl": "https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts",
+      "sourceId": "pixmind",
+      "sourceName": "awesome-midjourney-v7-example-prompts"
+    },
+    {
+      "id": 200019,
+      "title": "Ghibli Fishing Scene",
+      "image": "",
+      "imageAlt": "Ghibli Fishing Scene",
+      "sourceLabel": "Pixmind",
+      "sourceUrl": "https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts",
+      "prompt": "Close-up of a boy fishing in the river and catching a fish, captured with the finesse of Ghibli's storytelling, lush green background, soft lighting, detailed background\n\n--ar 16:9 --v 7",
+      "promptPreview": "Close-up of a boy fishing in the river and catching a fish, captured with the finesse of Ghibli's storytelling, lush green background, soft lighting, detailed background",
+      "category": "Other Use Cases",
+      "styles": [
+        "anime-illustration"
+      ],
+      "scenes": [
+        "Anime illustration",
+        "Peaceful nature scenes"
+      ],
+      "featured": false,
+      "model": "midjourney-v7",
+      "aspect": "16:9",
+      "previewAvailable": false,
+      "githubUrl": "https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts",
+      "sourceId": "pixmind",
+      "sourceName": "awesome-midjourney-v7-example-prompts"
+    },
+    {
+      "id": 200020,
+      "title": "Anime Forest Girl with SREF",
+      "image": "",
+      "imageAlt": "Anime Forest Girl with SREF",
+      "sourceLabel": "Pixmind",
+      "sourceUrl": "https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts",
+      "prompt": "A girl standing in a mystical forest, anime illustration style, vibrant colors, detailed eyes, cel shading, dynamic pose, studio ghibli inspired, soft lighting, detailed background\n\n--ar 16:9 --sref 7435 --v 7",
+      "promptPreview": "A girl standing in a mystical forest, anime illustration style, vibrant colors, detailed eyes, cel shading, dynamic pose, studio ghibli inspired, soft lighting, detailed background",
+      "category": "Other Use Cases",
+      "styles": [
+        "anime-illustration"
+      ],
+      "scenes": [
+        "Anime art",
+        "Manga illustration",
+        "Character design"
+      ],
+      "featured": false,
+      "model": "midjourney-v7",
+      "aspect": "16:9",
+      "previewAvailable": false,
+      "githubUrl": "https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts",
+      "sourceId": "pixmind",
+      "sourceName": "awesome-midjourney-v7-example-prompts"
+    },
+    {
+      "id": 200021,
+      "title": "Futuristic Vehicle 3D",
+      "image": "",
+      "imageAlt": "Futuristic Vehicle 3D",
+      "sourceLabel": "Pixmind",
+      "sourceUrl": "https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts",
+      "prompt": "3D-Illustration of a futuristic vehicle with smooth surfaces and dynamic lines, illuminated under a starry sky, octane render, volumetric lighting\n\n--ar 16:9 --v 7",
+      "promptPreview": "3D-Illustration of a futuristic vehicle with smooth surfaces and dynamic lines, illuminated under a starry sky, octane render, volumetric lighting",
+      "category": "Other Use Cases",
+      "styles": [
+        "3d-isometric"
+      ],
+      "scenes": [
+        "Product concepts",
+        "Sci-fi vehicle design"
+      ],
+      "featured": false,
+      "model": "midjourney-v7",
+      "aspect": "16:9",
+      "previewAvailable": false,
+      "githubUrl": "https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts",
+      "sourceId": "pixmind",
+      "sourceName": "awesome-midjourney-v7-example-prompts"
+    },
+    {
+      "id": 200022,
+      "title": "Isometric City Map",
+      "image": "",
+      "imageAlt": "Isometric City Map",
+      "sourceLabel": "Pixmind",
+      "sourceUrl": "https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts",
+      "prompt": "Create an isometric representation of a complex, futuristic city map in which all buildings and streets are in perfect harmony with each other and visible from a bird's eye view\n\n--ar 16:9 --v 7",
+      "promptPreview": "Create an isometric representation of a complex, futuristic city map in which all buildings and streets are in perfect harmony with each other and visible from a bird's eye view",
+      "category": "Other Use Cases",
+      "styles": [
+        "3d-isometric"
+      ],
+      "scenes": [
+        "Game design",
+        "Architectural planning"
+      ],
+      "featured": false,
+      "model": "midjourney-v7",
+      "aspect": "16:9",
+      "previewAvailable": false,
+      "githubUrl": "https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts",
+      "sourceId": "pixmind",
+      "sourceName": "awesome-midjourney-v7-example-prompts"
+    },
+    {
+      "id": 200023,
+      "title": "Misty Mountain Village",
+      "image": "",
+      "imageAlt": "Misty Mountain Village",
+      "sourceLabel": "Pixmind",
+      "sourceUrl": "https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts",
+      "prompt": "Crane shot descending over a misty mountain village at sunrise, traditional stone buildings with slate roofs, narrow winding cobblestone streets, warm golden light breaking through fog layers, cinematic\n\n--ar 16:9 --s 300 --v 7",
+      "promptPreview": "Crane shot descending over a misty mountain village at sunrise, traditional stone buildings with slate roofs, narrow winding cobblestone streets, warm golden light breaking through fog layers, cinematic",
+      "category": "Other Use Cases",
+      "styles": [
+        "nature-landscape"
+      ],
+      "scenes": [
+        "Travel documentaries",
+        "Establishing shots"
+      ],
+      "featured": false,
+      "model": "midjourney-v7",
+      "aspect": "16:9",
+      "previewAvailable": false,
+      "githubUrl": "https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts",
+      "sourceId": "pixmind",
+      "sourceName": "awesome-midjourney-v7-example-prompts"
+    },
+    {
+      "id": 200024,
+      "title": "Aurora Borealis",
+      "image": "",
+      "imageAlt": "Aurora Borealis",
+      "sourceLabel": "Pixmind",
+      "sourceUrl": "https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts",
+      "prompt": "Aurora borealis time-lapse over a warm lit log cabin in the snowy wilderness, vivid green and purple lights dancing in the sky, reflection on a frozen lake, long exposure photography\n\n--ar 16:9 --s 500 --v 7",
+      "promptPreview": "Aurora borealis time-lapse over a warm lit log cabin in the snowy wilderness, vivid green and purple lights dancing in the sky, reflection on a frozen lake, long exposure photography",
+      "category": "Other Use Cases",
+      "styles": [
+        "nature-landscape"
+      ],
+      "scenes": [
+        "Nature documentaries",
+        "Travel content"
+      ],
+      "featured": false,
+      "model": "midjourney-v7",
+      "aspect": "16:9",
+      "previewAvailable": false,
+      "githubUrl": "https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts",
+      "sourceId": "pixmind",
+      "sourceName": "awesome-midjourney-v7-example-prompts"
+    },
+    {
+      "id": 200025,
+      "title": "Metallic Paint Collision",
+      "image": "",
+      "imageAlt": "Metallic Paint Collision",
+      "sourceLabel": "Pixmind",
+      "sourceUrl": "https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts",
+      "prompt": "Two streams of metallic paint colliding in mid-air, gold and teal, frozen in time, high-speed photography style, black background, abstract art\n\n--ar 1:1 --s 600 --c 30 --v 7",
+      "promptPreview": "Two streams of metallic paint colliding in mid-air, gold and teal, frozen in time, high-speed photography style, black background, abstract art",
+      "category": "Other Use Cases",
+      "styles": [
+        "abstract-artistic"
+      ],
+      "scenes": [
+        "Abstract backgrounds",
+        "Title sequences"
+      ],
+      "featured": false,
+      "model": "midjourney-v7",
+      "aspect": "1:1",
+      "previewAvailable": false,
+      "githubUrl": "https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts",
+      "sourceId": "pixmind",
+      "sourceName": "awesome-midjourney-v7-example-prompts"
+    },
+    {
+      "id": 200026,
+      "title": "Geometric Light Refraction",
+      "image": "",
+      "imageAlt": "Geometric Light Refraction",
+      "sourceLabel": "Pixmind",
+      "sourceUrl": "https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts",
+      "prompt": "Geometric light refraction through crystal prisms, creating rainbow spectrum patterns, top-down view, multiple light sources, album cover art\n\n--ar 1:1 --s 700 --v 7",
+      "promptPreview": "Geometric light refraction through crystal prisms, creating rainbow spectrum patterns, top-down view, multiple light sources, album cover art",
+      "category": "Other Use Cases",
+      "styles": [
+        "abstract-artistic"
+      ],
+      "scenes": [
+        "Album covers",
+        "Modern art prints"
+      ],
+      "featured": false,
+      "model": "midjourney-v7",
+      "aspect": "1:1",
+      "previewAvailable": false,
+      "githubUrl": "https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts",
+      "sourceId": "pixmind",
+      "sourceName": "awesome-midjourney-v7-example-prompts"
+    },
+    {
+      "id": 200027,
+      "title": "Jazz Night Event Poster",
+      "image": "",
+      "imageAlt": "Jazz Night Event Poster",
+      "sourceLabel": "Pixmind",
+      "sourceUrl": "https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts",
+      "prompt": "A digital poster for a jazz night event with the words \"Smooth Sounds Tonight\" in glowing letters, moody lighting, neon aesthetic, dark background\n\n--ar 2:3 --v 7",
+      "promptPreview": "A digital poster for a jazz night event with the words \"Smooth Sounds Tonight\" in glowing letters, moody lighting, neon aesthetic, dark background",
+      "category": "Other Use Cases",
+      "styles": [
+        "text-typography"
+      ],
+      "scenes": [
+        "Event promotion",
+        "Poster design"
+      ],
+      "featured": false,
+      "model": "midjourney-v7",
+      "aspect": "2:3",
+      "previewAvailable": false,
+      "githubUrl": "https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts",
+      "sourceId": "pixmind",
+      "sourceName": "awesome-midjourney-v7-example-prompts"
+    },
+    {
+      "id": 200028,
+      "title": "Neon Sign Typography",
+      "image": "",
+      "imageAlt": "Neon Sign Typography",
+      "sourceLabel": "Pixmind",
+      "sourceUrl": "https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts",
+      "prompt": "Neon sign reading \"DREAM BIG\" mounted on a dark brick wall, warm glow reflecting on wet pavement below, atmospheric, urban photography style\n\n--ar 16:9 --s 400 --v 7",
+      "promptPreview": "Neon sign reading \"DREAM BIG\" mounted on a dark brick wall, warm glow reflecting on wet pavement below, atmospheric, urban photography style",
+      "category": "Other Use Cases",
+      "styles": [
+        "text-typography"
+      ],
+      "scenes": [
+        "Motivational content",
+        "Social media posts"
+      ],
+      "featured": false,
+      "model": "midjourney-v7",
+      "aspect": "16:9",
+      "previewAvailable": false,
+      "githubUrl": "https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts",
+      "sourceId": "pixmind",
+      "sourceName": "awesome-midjourney-v7-example-prompts"
     }
   ],
   "sources": [
@@ -46183,7 +46893,7 @@
       "name": "awesome-gpt-image-2",
       "url": "https://github.com/freestylefly/awesome-gpt-image-2",
       "cases": 541,
-      "license": "CC-BY-4.0"
+      "license": "MIT repo; case media/source rights vary"
     },
     {
       "id": "virloom",
@@ -46193,19 +46903,18 @@
       "license": "CC-BY-4.0 metadata; third-party content reserved"
     },
     {
+      "id": "pixmind",
+      "name": "awesome-midjourney-v7-example-prompts",
+      "url": "https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts",
+      "cases": 28,
+      "license": "CC0 1.0 prompt examples; images omitted"
+    },
+    {
       "id": "toolcentral",
       "name": "Image Prompt Gallery · GPT Image 2",
       "url": "https://github.com/Toolcentral-ai/awesome-gpt-image-2-prompts",
       "cases": null,
       "license": "External catalog · verify record rights before reuse",
-      "external": true
-    },
-    {
-      "id": "pixmind",
-      "name": "Midjourney V7 Example Prompts",
-      "url": "https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts",
-      "cases": null,
-      "license": "External catalog · CC0 examples",
       "external": true
     }
   ]

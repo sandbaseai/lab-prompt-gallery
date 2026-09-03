@@ -16,11 +16,11 @@ const sitemap = await readFile(resolve(root, 'sitemap.xml'), 'utf8')
 
 if (!Array.isArray(data.categories) || data.categories.length < 2) throw new Error('categories must include at least two upstream categories')
 if (!Array.isArray(data.cases) || data.cases.length === 0) throw new Error('cases must be a non-empty array')
-if (!Array.isArray(data.sources) || data.sources.length < 2) throw new Error('sources must include the connected prompt libraries')
+if (!Array.isArray(data.sources) || data.sources.filter(source => !source.external).length < 3) throw new Error('sources must include at least three connected prompt libraries')
 
 const ids = new Set()
 for (const prompt of data.cases) {
-  for (const field of ['id', 'title', 'prompt', 'category', 'image']) {
+  for (const field of ['id', 'title', 'prompt', 'category']) {
     if ((field === 'id' && !Number.isInteger(prompt[field])) || (field !== 'id' && (typeof prompt[field] !== 'string' || prompt[field].trim() === ''))) {
       throw new Error(`case ${prompt.id || '<unknown>'} is missing ${field}`)
     }
@@ -28,7 +28,8 @@ for (const prompt of data.cases) {
   if (ids.has(prompt.id)) throw new Error(`duplicate case id: ${prompt.id}`)
   ids.add(prompt.id)
   const imageValid = /^\/images\//.test(prompt.image) || /^https?:\/\//.test(prompt.imageUrl || '')
-  if (!imageValid || (!prompt.sourceUrl && !prompt.githubUrl)) {
+  const imageExplicitlyOmitted = prompt.previewAvailable === false && !prompt.image && !prompt.imageUrl
+  if ((!imageValid && !imageExplicitlyOmitted) || (!prompt.sourceUrl && !prompt.githubUrl)) {
     throw new Error(`case ${prompt.id} has an invalid image or source reference`)
   }
 }
@@ -44,20 +45,19 @@ if (!html.includes('aria-labelledby="modalTitle"') || !app.includes("event.key =
 if (!html.includes('id="langBtn"') || !app.includes('const copy = {') || !app.includes('setLanguage(next)') || !app.includes("localStorage.setItem('meimind-language'")) {
   throw new Error('bilingual switch contract missing')
 }
-if (!app.includes('github.com/sandbaseai/lab-prompt-gallery')) throw new Error('company repository link missing')
+if (!html.includes('github.com/sandbaseai/lab-prompt-gallery') || !submit.includes('github.com/sandbaseai/lab-prompt-gallery')) throw new Error('company repository link missing')
 if (!app.includes('titleEn') || !app.includes('summaryEn') || !app.includes('displayTitle') || !app.includes('containsCjk')) {
   throw new Error('localized case metadata contract missing')
 }
 if (!app.includes('syncUrl') || !app.includes('hydrateUrlState') || !app.includes('noResultsTitle') || !app.includes('imageFallback') || app.includes('p.views') || app.includes('p.imageCount')) {
   throw new Error('shareable state, empty state, or image fallback contract missing')
 }
-if (!app.includes('awesome-gpt-image-2/main/data')) throw new Error('upstream image source missing')
+if (!app.includes('cdn.jsdelivr.net/gh/freestylefly/awesome-gpt-image-2@main/data') || !app.includes('raw/refs/heads/main/data')) throw new Error('upstream image source or fallback missing')
 if (!html.includes('href="privacy.html"') || !html.includes('href="terms.html"') || !privacy.includes('Privacy / 隐私说明') || !terms.includes('Terms / 使用说明')) throw new Error('legal pages are not linked')
 if (!robots.includes('Sitemap: https://lab-prompt-gallery-sandbase.vercel.app/sitemap.xml') || !sitemap.includes('<urlset')) throw new Error('SEO crawl files are missing')
 if (vercel.cleanUrls !== true || !Array.isArray(vercel.headers) || !vercel.rewrites?.some(rule => rule.source === '/favicon.ico' && rule.destination === '/assets/favicon.svg')) {
   throw new Error('vercel.json must define clean URLs, headers, and favicon rewrite')
 }
-if (!app.includes('libraryGrid') || !app.includes('renderLibraries')) throw new Error('multi-library discovery contract missing')
 if (!html.includes('href="submit.html"') || !submit.includes('id="submitForm"') || !submit.includes('id="submitToGithub"') || !submitJs.includes('sandbaseai/lab-prompt-gallery/issues/new')) {
   throw new Error('guided prompt submission flow missing')
 }
