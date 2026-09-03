@@ -4,7 +4,7 @@
 
 **The Loudest Library of GPT Image 2 Prompts with Neo-Brutalism Aesthetics.**
 
-16,000+ Free Image & Video Prompts · 13 Brutalist Categories · 1-Click Copy · Zero Fluff
+33 curated image & video prompts · 11 brutalist categories · 1-click copy · zero fluff
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-black.svg)](LICENSE)
 [![Content License: CC-BY-4.0](https://img.shields.io/badge/Content-CC--BY--4.0-red.svg)](https://creativecommons.org/licenses/by/4.0/)
@@ -23,7 +23,7 @@
 
 - 🎨 **Neo-Brutalism Design Language** — Sharp borders, hard drop shadows, monospace typography, and a raw editorial aesthetic.
 - ⚡ **Zero Build, Zero Framework, Blazing Fast** — Built with vanilla HTML5, modern CSS custom properties, and native ES6+ JavaScript. Loads in milliseconds.
-- 🗂 **13 Curated Categories** — UI & Interfaces, 35mm Photography, Infographics, Conceptual Posters, 3D Character Grids, Manga Storyboards, YouTube Thumbnails, and more.
+- 🗂 **11 Curated Categories** — UI & Interfaces, 35mm Photography, Infographics, Conceptual Posters, 3D Character Grids, Manga Storyboards, YouTube Thumbnails, and more.
 - 🔍 **Instant Real-Time Search & Filtering** — Sub-millisecond keyword search across titles, tags, models, and aspect ratios with live category counters.
 - 📋 **Structured Prompt Inspector & 1-Click Copy** — Deep-dive modal view with formatted JSON/natural language prompts, parameter chips, and native clipboard integration.
 - 📱 **Fully Responsive Layout** — Seamless user experience from 4K ultrawide monitors to mobile viewports.
@@ -60,6 +60,7 @@ prompt-gallery/
 ├── index.html                  # Semantic HTML5 single-page structure
 ├── style.css                   # Neo-Brutalism design system & tokens
 ├── app.js                      # Vanilla JS state manager, filter engine & modal
+├── package.json                # Root scripts for dev, verify, and capture
 ├── vercel.json                 # Vercel static routing & asset caching rules
 ├── .gitignore                  # Git ignore rules
 ├── LICENSE                     # MIT Open Source License
@@ -70,26 +71,27 @@ prompt-gallery/
 ├── docs/
 │   └── images/                 # High-resolution documentation preview assets
 └── scripts/
-    └── capture-screenshots.mjs # Automated screenshot tool via Chrome DevTools Protocol
+    ├── capture-screenshots.mjs # Automated screenshot tool via Chrome DevTools Protocol
+    └── verify.mjs              # Data, markup, and deployment contract checks
 ```
 
 ---
 
 ## 🚀 Quick Start (Local Development)
 
-No build step or Node.js package installation is required. Run it instantly with any local static HTTP server:
+The gallery is intentionally static. Use the root npm scripts or any local static HTTP server:
 
 ### Option 1: Python HTTP Server (Recommended)
 
 ```bash
 # Clone the repository
-git clone https://github.com/pepedesigner/prompt-gallery.git
+git clone https://github.com/sandbaseai/prompt-gallery.git
 cd prompt-gallery
 
 # Start a lightweight local server
-python3 -m http.server 8000
+npm run dev
 ```
-Visit `http://localhost:8000` in your browser.
+Visit `http://localhost:3000` in your browser.
 
 ### Option 2: Node.js / npx serve
 
@@ -118,9 +120,9 @@ The project includes a ready-to-use [`vercel.json`](vercel.json) configured for 
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
 
-Or deploy via the Vercel CLI:
+Or deploy via the Vercel CLI (use the SandBase team scope when the project exists there):
 ```bash
-npx vercel
+npx vercel --scope sandbase
 ```
 
 ### Deploy to GitHub Pages
@@ -149,5 +151,5 @@ Contributions, prompt submissions, and feature ideas are welcome!
 ---
 
 <div align="center">
-  <sub>Crafted with ❤️ and Neo-Brutalism by <a href="https://github.com/pepedesigner">@pepedesigner</a></sub>
+  <sub>POWERED BY <a href="https://sandbase.ai">SANDBASE</a> · Crafted with Neo-Brutalism by <a href="https://github.com/pepedesigner">@pepedesigner</a></sub>
 </div>

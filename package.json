@@ -1,0 +1,15 @@
+{
+  "name": "prompt-gallery",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A lightweight prompt gallery for GPT Image 2 workflows.",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "python -m http.server 3000",
+    "start": "python -m http.server 3000",
+    "test": "node scripts/verify.mjs",
+    "verify": "node scripts/verify.mjs",
+    "capture": "node scripts/capture-screenshots.mjs"
+  }
+}

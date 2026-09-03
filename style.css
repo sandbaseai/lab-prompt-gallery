@@ -62,6 +62,16 @@ a:hover { text-decoration: underline; }
 button { font-family: inherit; cursor: pointer; border: 0; background: none; color: inherit; }
 input, select { font-family: inherit; }
 
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+summary:focus-visible,
+.card:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
 img { display: block; max-width: 100%; }
 
 .section {
@@ -422,6 +432,14 @@ img { display: block; max-width: 100%; }
   color: var(--text-muted);
 }
 
+.load-error {
+  border: 2px solid var(--accent);
+  background: var(--bg-card);
+  padding: 24px;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+}
+
 /* ---------- CARD ---------- */
 .card {
   background: var(--bg-card);
@@ -602,6 +620,7 @@ img { display: block; max-width: 100%; }
 .footer__col a { color: var(--dark-text); }
 .footer__col a:hover { color: var(--accent); text-decoration: none; }
 .footer__brand { font-weight: 700; }
+.footer__powered { color: var(--accent) !important; font-weight: 700; letter-spacing: 0.08em; }
 .footer__col--meta { color: var(--dark-muted); font-size: 11px; }
 .footer__col--meta span { color: var(--dark-muted); }
 
@@ -628,7 +647,7 @@ img { display: block; max-width: 100%; }
 }
 .modal__close {
   position: absolute; top: 8px; right: 8px;
-  width: 32px; height: 32px;
+  width: 44px; height: 44px;
   border: 2px solid var(--border-fat);
   background: var(--bg-card);
   font-family: var(--font-mono);
@@ -733,7 +752,12 @@ img { display: block; max-width: 100%; }
 }
 
 @media (max-width: 640px) {
+  .nav__inner { flex-wrap: wrap; gap: 12px; }
   .nav__links { display: none; }
+  .nav__actions { margin-left: auto; }
+  .nav__actions .btn--ghost { display: none; }
+  .nav__actions .btn--solid { font-size: 11px; padding: 8px 10px; }
+  .nav__logo-tag { display: none; }
   .section { padding: 48px 16px; }
   .section__head { flex-direction: column; align-items: flex-start; gap: 8px; }
   .toolbar__row { flex-direction: column; align-items: stretch; }
@@ -741,4 +765,13 @@ img { display: block; max-width: 100%; }
   .footer__inner { grid-template-columns: 1fr; padding: 32px 16px; }
   .modal__dialog { margin: 16px; max-height: calc(100vh - 32px); }
   .detail__body { padding: 18px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }

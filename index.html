@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MeiMind · GPT Image 2 Prompts Gallery</title>
-    <meta name="description" content="MeiMind · 16,000+ 免费 GPT Image 2 提示词与图像灵感库,涵盖 UI、摄影、海报、信息图、人物、漫画等 13 大类,支持搜索、复制、二创。" />
+    <meta name="description" content="MeiMind · A curated GPT Image 2 prompt gallery for browsing, copying, and remixing image ideas." />
     <meta name="theme-color" content="#F5F0E8" />
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
     <link rel="stylesheet" href="style.css" />
@@ -14,7 +14,7 @@
     <header class="nav">
       <div class="nav__inner">
         <a class="nav__logo" href="#">
-          <span class="nav__logo-mark">▣</span>
+          <img class="nav__logo-mark" src="assets/favicon.svg" alt="" width="28" height="28" />
           <span class="nav__logo-text">MeiMind</span>
           <span class="nav__logo-tag">/ gpt-image-2</span>
         </a>
@@ -25,8 +25,8 @@
           <a href="#faq">FAQ</a>
         </nav>
         <div class="nav__actions">
-          <a class="btn btn--ghost" href="https://github.com/freestylefly/awesome-gpt-image-2" target="_blank" rel="noopener">
-            <span aria-hidden="true">★</span> GitHub
+          <a class="btn btn--ghost" href="https://github.com/sandbaseai/prompt-gallery" target="_blank" rel="noopener">
+            GitHub
           </a>
           <button class="btn btn--solid" id="submitBtn" type="button">Submit Prompt</button>
           <button class="nav__lang" type="button" id="langBtn">EN</button>
@@ -48,16 +48,16 @@
           <span class="hero__title-accent">GPT Image 2</span> Prompts.
         </h1>
         <p class="hero__sub">
-          <strong>16,000+</strong> free image & video prompts.
-          13 brutalist categories. Zero fluff. Copy · Remix · Ship.
+          <strong id="heroPromptCount">33</strong> curated image & video prompts.
+          <span id="heroCategoryCount">11</span> brutalist categories. Zero fluff. Copy · Remix · Ship.
         </p>
         <div class="hero__cta">
           <a class="btn btn--solid btn--xl" href="#gallery">Browse Gallery →</a>
           <a class="btn btn--ghost btn--xl" href="#trending">View Trending</a>
         </div>
         <div class="hero__stats">
-          <div class="stat"><b>16,472</b><span>PROMPTS</span></div>
-          <div class="stat"><b>13</b><span>CATEGORIES</span></div>
+          <div class="stat"><b id="heroStatPromptCount">33</b><span>PROMPTS</span></div>
+          <div class="stat"><b id="heroStatCategoryCount">11</b><span>CATEGORIES</span></div>
           <div class="stat"><b>4K</b><span>RES OUTPUT</span></div>
           <div class="stat"><b>0$</b><span>FREE FOREVER</span></div>
         </div>
@@ -115,7 +115,7 @@
               id="searchInput"
               class="search__input"
               type="search"
-              placeholder="Search 16,472 prompts by title, tag, model..."
+              placeholder="Search prompts by title, tag, model..."
               autocomplete="off"
             />
           </div>
@@ -157,7 +157,7 @@
           <summary>Where do these prompts come from?</summary>
           <p>
             数据主要来自
-            <a href="https://github.com/freestylefly/awesome-gpt-image-2" target="_blank" rel="noopener">freestylefly/awesome-gpt-image-2</a>
+            <a href="https://github.com/sandbaseai/prompt-gallery" target="_blank" rel="noopener">sandbaseai/prompt-gallery</a>
             社区开源仓库和
             <a href="https://gpt-image2.canghe.ai/" target="_blank" rel="noopener">canghe.ai</a>
             镜像。所有 prompt 版权归原作者所有,仅用于学习与二次创作。
@@ -189,7 +189,7 @@
     <!-- ============ FINAL CTA ============ -->
     <section class="cta">
       <h2>Ready to create with <span class="cta__accent">GPT Image 2?</span></h2>
-      <p>16,000+ 提示词,1 键复制,无限 remix。</p>
+      <p><span id="ctaPromptCount">33</span> prompts, one-click copy, infinite remix.</p>
       <a class="btn btn--solid btn--xl btn--invert" href="https://meimind.app" target="_blank" rel="noopener">
         Start Generating →
       </a>
@@ -199,12 +199,12 @@
     <footer class="footer">
       <div class="footer__inner">
         <div class="footer__col">
-          <span class="nav__logo-mark">▣</span>
+          <img class="nav__logo-mark" src="assets/favicon.svg" alt="" width="28" height="28" />
           <span class="footer__brand">MeiMind / gpt-image-2</span>
         </div>
         <div class="footer__col">
           <h4>RESOURCES</h4>
-          <a href="https://github.com/freestylefly/awesome-gpt-image-2" target="_blank" rel="noopener">awesome-gpt-image-2</a>
+          <a href="https://github.com/sandbaseai/prompt-gallery" target="_blank" rel="noopener">sandbaseai/prompt-gallery</a>
           <a href="https://gpt-image2.canghe.ai/" target="_blank" rel="noopener">canghe.ai 镜像</a>
           <a href="https://github.com/khangtrannn/ng-brutalism" target="_blank" rel="noopener">ng-brutalism</a>
         </div>
@@ -216,6 +216,7 @@
         </div>
         <div class="footer__col footer__col--meta">
           <span>© 2026 MeiMind</span>
+          <a class="footer__powered" href="https://sandbase.ai" target="_blank" rel="noopener">POWERED BY SANDBASE</a>
           <span>Built with HTML + CSS + Vanilla JS</span>
           <span>Brutalism inspired by ng-brutalism</span>
         </div>
@@ -225,14 +226,18 @@
     <!-- ============ MODAL ============ -->
     <div class="modal" id="modal" aria-hidden="true">
       <div class="modal__backdrop" data-close></div>
-      <div class="modal__dialog" role="dialog" aria-modal="true">
-        <button class="modal__close" data-close aria-label="Close">✕</button>
+      <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <button class="modal__close" data-close type="button" aria-label="Close">×</button>
         <div class="modal__body" id="modalBody"></div>
       </div>
     </div>
 
     <!-- ============ TOAST ============ -->
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <noscript>
+      <p class="noscript">This gallery needs JavaScript enabled to load prompts and open the inspector.</p>
+    </noscript>
 
     <script src="app.js"></script>
   </body>

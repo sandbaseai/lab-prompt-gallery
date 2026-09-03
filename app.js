@@ -6,6 +6,7 @@
 (() => {
   const $  = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
+  const REPO_URL = 'https://github.com/sandbaseai/prompt-gallery';
 
   const state = {
     data:      null,       // { categories, prompts }
@@ -16,6 +17,7 @@
     page:      0,
     pageSize:  24,
   };
+  let lastFocused = null;
 
   /* ---------- 1. DATA LOAD ---------- */
   async function load() {
@@ -25,14 +27,21 @@
       state.data = await res.json();
     } catch (err) {
       console.error('Failed to load prompts.json', err);
-      $('#grid').innerHTML = '<p style="padding:40px;font-family:Menlo">⚠ Failed to load prompts.json.<br>请通过本地服务器访问(例如 <code>python3 -m http.server</code>)。</p>';
+      $('#grid').innerHTML = '<p class="load-error">Failed to load prompts.json.<br>请通过本地服务器访问(例如 <code>python -m http.server</code>)。</p>';
       return;
     }
     initFilters();
     applyFilters();
     renderTrending();
     renderPills();
-    $('#totalCount').textContent = state.data.prompts.length.toLocaleString();
+    const promptCount = state.data.prompts.length;
+    const categoryCount = state.data.categories.filter(category => category.id !== 'all').length;
+    $('#totalCount').textContent = promptCount.toLocaleString();
+    $('#heroPromptCount').textContent = promptCount.toLocaleString();
+    $('#heroStatPromptCount').textContent = promptCount.toLocaleString();
+    $('#heroCategoryCount').textContent = categoryCount.toLocaleString();
+    $('#heroStatCategoryCount').textContent = categoryCount.toLocaleString();
+    $('#ctaPromptCount').textContent = promptCount.toLocaleString();
   }
 
   /* ---------- 2. PILLS / FILTERS ---------- */
@@ -52,7 +61,7 @@
       renderGrid(true);
     });
     $('#submitBtn').addEventListener('click', () => {
-      window.open('https://github.com/freestylefly/awesome-gpt-image-2/issues/new', '_blank');
+      window.open(`${REPO_URL}/issues/new`, '_blank', 'noopener');
     });
     $('#langBtn').addEventListener('click', () => {
       const btn = $('#langBtn');
@@ -65,7 +74,24 @@
       if (e.target.dataset.close !== undefined) closeModal();
     });
     document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') closeModal();
+      if (!$('#modal').classList.contains('is-open')) return;
+      if (e.key === 'Escape') {
+        closeModal();
+        return;
+      }
+      if (e.key !== 'Tab') return;
+      const focusable = $$('button, a, input, select, textarea, [tabindex]:not([tabindex="-1"])', $('#modal'))
+        .filter(el => !el.hasAttribute('disabled'));
+      if (focusable.length === 0) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
     });
   }
 
@@ -122,7 +148,7 @@
   /* ---------- 4. TRENDING (top 3 by views) ---------- */
   function renderTrending() {
     const top = state.data.prompts.slice().sort((a, b) => (b.views || 0) - (a.views || 0)).slice(0, 3);
-    $('#trendingGrid').innerHTML = top.map((p, i) => cardHTML(p, i + 1)).join('');
+    $('#trendingGrid').innerHTML = top.map((p, i) => cardHTML(p, i + 1, '', true)).join('');
     bindCardEvents('#trendingGrid');
   }
 
@@ -132,7 +158,7 @@
     const end   = start + state.pageSize;
     const slice = state.filtered.slice(0, end);
 
-    const html = slice.map((p, i) => cardHTML(p, i + 1, 'wide')).join('');
+    const html = slice.map((p, i) => cardHTML(p, i + 1, 'wide', false)).join('');
     $('#grid').innerHTML = html;
     $('#gridCount').textContent = `${slice.length.toLocaleString()} / ${state.filtered.length.toLocaleString()}`;
 
@@ -140,13 +166,10 @@
     $('#loadMore').style.display = end >= state.filtered.length ? 'none' : 'inline-flex';
 
     bindCardEvents('#grid');
-    if (!append) {
-      $('#grid').scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
   }
 
   /* ---------- 6. CARD HTML ---------- */
-  function cardHTML(p, idx, hint = '') {
+  function cardHTML(p, idx, hint = '', showTrend = false) {
     const mediaClass = hint === 'wide'
       ? (p.aspectHint === 'tall' ? 'card__media card__media--tall'
          : p.aspectHint === 'wide' ? 'card__media card__media--wide'
@@ -157,13 +180,13 @@
     const tag   = (p.tags && p.tags[0]) ? `<span class="card__tag">${p.tags[0]}</span>` : '';
 
     return `
-      <article class="card" data-id="${p.id}">
+      <article class="card" data-id="${escapeAttr(p.id)}" tabindex="0" role="button" aria-label="Open prompt: ${escapeAttr(p.title)}">
         <div class="${mediaClass}">
           <div class="card__placeholder">
             ${escapeHTML(p.aspect || 'image')} · ${escapeHTML(p.model || 'gpt-image-2')}
           </div>
           ${p.imageCount && p.imageCount > 1 ? `<span class="card__count">×${p.imageCount}</span>` : ''}
-          ${idx <= 3 ? `<span class="card__badge">#${idx} TREND</span>` : ''}
+          ${showTrend && idx <= 3 ? `<span class="card__badge">#${idx} TREND</span>` : ''}
         </div>
         <div class="card__body">
           <div class="card__title">${escapeHTML(p.title)}</div>
@@ -185,6 +208,12 @@
   function bindCardEvents(rootSel) {
     $$(`${rootSel} .card`).forEach(el => {
       el.addEventListener('click', () => openModal(el.dataset.id));
+      el.addEventListener('keydown', event => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          openModal(el.dataset.id);
+        }
+      });
     });
   }
 
@@ -200,7 +229,7 @@
         </div>
       </div>
       <div class="detail__body">
-        <h2 class="detail__title">${escapeHTML(p.title)}</h2>
+        <h2 class="detail__title" id="modalTitle">${escapeHTML(p.title)}</h2>
         <p class="detail__summary">${escapeHTML(p.summary || '')}</p>
         <div class="detail__meta">
           <span class="detail__chip detail__chip--accent">${escapeHTML(p.model)}</span>
@@ -222,23 +251,28 @@
     $('#modal').classList.add('is-open');
     $('#modal').setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
+    lastFocused = document.activeElement;
+    $('#modal .modal__close').focus();
 
     $('#copyBtn').addEventListener('click', () => copyText(p.prompt));
     $('#generateBtn').addEventListener('click', () => {
-      window.open('https://meimind.app', '_blank');
+      window.open('https://meimind.app', '_blank', 'noopener');
     });
   }
 
   function closeModal() {
+    if (!$('#modal').classList.contains('is-open')) return;
     $('#modal').classList.remove('is-open');
     $('#modal').setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
+    if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
+    lastFocused = null;
   }
 
   /* ---------- 8. UTILS ---------- */
   function copyText(text) {
     if (navigator.clipboard) {
-      navigator.clipboard.writeText(text).then(() => toast('COPIED ✓'));
+      navigator.clipboard.writeText(text).then(() => toast('COPIED ✓')).catch(() => toast('COPY FAILED'));
     } else {
       const ta = document.createElement('textarea');
       ta.value = text;

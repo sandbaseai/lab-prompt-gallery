@@ -1,7 +1,23 @@
-import { spawn, execSync } from 'child_process';
+import { spawn } from 'child_process';
 import http from 'http';
 import fs from 'fs';
 import path from 'path';
+import os from 'os';
+
+function findChrome() {
+  const windowsRoots = [process.env.PROGRAMFILES, process.env['PROGRAMFILES(X86)'], process.env.LOCALAPPDATA].filter(Boolean);
+  const candidates = process.platform === 'win32'
+    ? windowsRoots.flatMap(root => [
+        path.join(root, 'Google', 'Chrome', 'Application', 'chrome.exe'),
+        path.join(root, 'Chromium', 'Application', 'chrome.exe'),
+      ])
+    : process.platform === 'darwin'
+      ? ['/Applications/Google Chrome.app/Contents/MacOS/Google Chrome']
+      : ['/usr/bin/google-chrome', '/usr/bin/chromium', '/usr/bin/chromium-browser'];
+  const chromePath = [process.env.CHROME_PATH, ...candidates].filter(Boolean).find(file => fs.existsSync(file));
+  if (!chromePath) throw new Error('Chrome not found. Set CHROME_PATH to a Chrome/Chromium executable.');
+  return chromePath;
+}
 
 // 1. Static server
 const MIME_TYPES = {
@@ -16,7 +32,13 @@ const MIME_TYPES = {
 const server = http.createServer((req, res) => {
   let reqPath = req.url.split('?')[0];
   if (reqPath === '/') reqPath = '/index.html';
-  const filePath = path.join(process.cwd(), reqPath);
+  const rootPath = process.cwd();
+  const filePath = path.resolve(rootPath, `.${reqPath}`);
+  if (!filePath.startsWith(rootPath + path.sep)) {
+    res.writeHead(403);
+    res.end('Forbidden');
+    return;
+  }
   
   fs.readFile(filePath, (err, data) => {
     if (err) {
@@ -33,8 +55,8 @@ const server = http.createServer((req, res) => {
 await new Promise(r => server.listen(8999, '127.0.0.1', r));
 
 // 2. Launch Chrome
-const tmpDir = execSync('mktemp -d').toString().trim();
-const chrome = spawn('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', [
+const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'prompt-gallery-'));
+const chrome = spawn(findChrome(), [
   '--headless=new',
   '--remote-debugging-port=9227',
   '--user-data-dir=' + tmpDir,
@@ -114,5 +136,6 @@ await takeViewportScreenshot('modal-detail.png');
 ws.close();
 chrome.kill();
 server.close();
+fs.rmSync(tmpDir, { recursive: true, force: true });
 console.log('All screenshots captured successfully!');
 process.exit(0);
