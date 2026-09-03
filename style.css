@@ -744,6 +744,15 @@ img { display: block; max-width: 100%; }
 }
 .detail__chip--accent { background: var(--accent); color: #fff; border-color: var(--accent); }
 
+.detail__prompt-label {
+  margin-bottom: 6px;
+  color: var(--text-faint);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .detail__prompt {
   background: var(--bg-pre);
   border: 2px solid var(--border-fat);

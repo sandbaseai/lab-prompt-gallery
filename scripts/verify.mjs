@@ -35,6 +35,9 @@ if (!html.includes('id="langBtn"') || !app.includes('const copy = {') || !app.in
   throw new Error('bilingual switch contract missing')
 }
 if (!app.includes('github.com/sandbaseai/lab-prompt-gallery')) throw new Error('company repository link missing')
+if (!app.includes('titleEn') || !app.includes('summaryEn') || !app.includes('displayTitle') || !app.includes('containsCjk')) {
+  throw new Error('localized case metadata contract missing')
+}
 if (!app.includes('awesome-gpt-image-2/main/data')) throw new Error('upstream image source missing')
 if (!html.includes('href="privacy.html"') || !html.includes('href="terms.html"') || !privacy.includes('Privacy / 隐私说明') || !terms.includes('Terms / 使用说明')) throw new Error('legal pages are not linked')
 if (vercel.cleanUrls !== true || !Array.isArray(vercel.headers)) throw new Error('vercel.json must define clean URLs and headers')
