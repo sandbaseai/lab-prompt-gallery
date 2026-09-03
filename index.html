@@ -6,10 +6,23 @@
     <title>MeiMind · GPT Image 2 Prompts Gallery</title>
     <meta name="description" content="MeiMind · A curated view into a 16,000+ GPT Image 2 prompt library for browsing, copying, and remixing image ideas." />
     <meta name="theme-color" content="#F5F0E8" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://lab-prompt-gallery-sandbase.vercel.app/" />
+    <meta property="og:title" content="MeiMind · GPT Image 2 Prompts Gallery" />
+    <meta property="og:description" content="Browse, copy, and remix a curated GPT Image 2 prompt gallery." />
+    <meta property="og:image" content="https://raw.githubusercontent.com/freestylefly/awesome-gpt-image-2/main/data/images/case378.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="MeiMind · GPT Image 2 Prompts Gallery" />
+    <meta name="twitter:description" content="Browse, copy, and remix a curated GPT Image 2 prompt gallery." />
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/freestylefly/awesome-gpt-image-2/main/data/images/case378.jpg" />
+    <link rel="canonical" href="https://lab-prompt-gallery-sandbase.vercel.app/" />
+    <link rel="preconnect" href="https://raw.githubusercontent.com" />
+    <link rel="preconnect" href="https://github.com" />
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <a class="skip-link" href="#main-content" data-i18n="skipToContent">Skip to content</a>
     <!-- ============ TOP NAV ============ -->
     <header class="nav">
       <div class="nav__inner">
@@ -18,13 +31,16 @@
           <span class="nav__logo-text">MeiMind</span>
           <span class="nav__logo-tag">/ gpt-image-2</span>
         </a>
-        <nav class="nav__links">
+        <nav class="nav__links" id="primaryNav" aria-label="Primary navigation" data-i18n-aria-label="primaryNav">
           <a href="#gallery" data-i18n="navPrompts">Prompts</a>
-          <a href="#trending" data-i18n="navTrending">Trending</a>
+          <a href="#trending" data-i18n="navTrending">Featured</a>
           <a href="#about" data-i18n="navAbout">About</a>
           <a href="#faq" data-i18n="navFaq">FAQ</a>
         </nav>
         <div class="nav__actions">
+          <button class="nav__menu" type="button" id="menuBtn" aria-expanded="false" aria-controls="primaryNav" aria-label="Open menu">
+            <span data-i18n="menu">Menu</span>
+          </button>
           <a class="btn btn--ghost" href="https://github.com/sandbaseai/lab-prompt-gallery" target="_blank" rel="noopener">
             <span data-i18n="github">GitHub</span>
           </a>
@@ -34,6 +50,7 @@
       </div>
     </header>
 
+    <main id="main-content">
     <!-- ============ HERO ============ -->
     <section class="hero">
       <div class="hero__bg" aria-hidden="true"></div>
@@ -54,7 +71,7 @@
         </p>
         <div class="hero__cta">
           <a class="btn btn--solid btn--xl" href="#gallery" data-i18n="browseGallery">Browse Gallery →</a>
-          <a class="btn btn--ghost btn--xl" href="#trending" data-i18n="viewTrending">View Trending</a>
+          <a class="btn btn--ghost btn--xl" href="#trending" data-i18n="viewTrending">View Featured</a>
         </div>
         <div class="hero__stats">
           <div class="stat"><b id="heroStatPromptCount">541</b><span data-i18n="statPrompts">PROMPTS</span></div>
@@ -68,7 +85,7 @@
     <!-- ============ TRENDING ============ -->
     <section class="section" id="trending">
       <div class="section__head">
-        <h2 class="section__title" data-i18n="trendingTitle">Trending Prompts</h2>
+        <h2 class="section__title" data-i18n="trendingTitle">Featured Prompts</h2>
         <a href="#gallery" class="section__more" data-i18n="viewAll">View All →</a>
       </div>
       <div class="trending" id="trendingGrid"></div>
@@ -83,15 +100,15 @@
         </div>
         <div class="about__col about__col--text">
           <p data-i18n-html="aboutCopy">
-            <b>GPT Image 2</b> 是 OpenAI 推出的旗舰级图像生成模型,具备原生 <b>4K</b> 输出、
-            <b>精准文字渲染</b>(海报、UI 截图、漫画对话框)和强指令遵循能力。
-            它能稳定处理 JSON / 自然语言两种 prompt 范式,在摄影、UI、信息图、海报、
-            角色一致性等场景表现尤其出色。
+            <b>GPT Image 2</b> is OpenAI's flagship image model with native <b>4K</b> output,
+            precise text rendering (posters, UI screenshots, comic speech bubbles), and strong
+            instruction following. It handles JSON and natural-language prompts across photography,
+            UI, infographics, posters, and consistent characters.
           </p>
           <p data-i18n-html="sourcesCopy">
-            本站点从 <a href="https://github.com/freestylefly/awesome-gpt-image-2" target="_blank" rel="noopener">awesome-gpt-image-2</a>、
-            <a href="https://gpt-image2.canghe.ai/" target="_blank" rel="noopener">canghe.ai 镜像库</a> 与社区推特采集 prompt,
-            全部按 Brutalism 分类聚合,支持一键复制、二创、二次分发。
+            This gallery samples prompts from <a href="https://github.com/freestylefly/awesome-gpt-image-2" target="_blank" rel="noopener">awesome-gpt-image-2</a>,
+            the <a href="https://gpt-image2.canghe.ai/" target="_blank" rel="noopener">canghe.ai mirror</a>,
+            and community posts. Everything is grouped for quick copying, remixing, and attribution.
           </p>
           <a class="btn btn--solid" href="https://meimind.app" target="_blank" rel="noopener" data-i18n="tryMeiMind">Try it in MeiMind →</a>
         </div>
@@ -112,11 +129,13 @@
         <div class="toolbar__row">
           <div class="search">
             <span class="search__icon" aria-hidden="true">⌕</span>
+            <label class="sr-only" for="searchInput" data-i18n="searchLabel">Search prompts</label>
             <input
               id="searchInput"
               class="search__input"
               type="search"
-              placeholder="Search prompts by title, tag, model..."
+              name="q"
+              placeholder="Search prompts by title, tag, model…"
               data-i18n-placeholder="searchPlaceholder"
               autocomplete="off"
             />
@@ -124,7 +143,7 @@
           <div class="toolbar__select">
             <label for="sortSel" data-i18n="sortLabel">SORT</label>
             <select id="sortSel">
-              <option value="trending" data-i18n="sortTrending">Trending</option>
+              <option value="trending" data-i18n="sortTrending">Featured</option>
               <option value="newest" data-i18n="sortNewest">Newest</option>
               <option value="az" data-i18n="sortAZ">A → Z</option>
             </select>
@@ -151,38 +170,37 @@
         <details class="faq__item">
           <summary data-i18n="faq1Question">What is GPT Image 2?</summary>
           <p data-i18n="faq1Answer">
-            OpenAI 的新一代原生图像生成模型。支持 4K 输出、精确文字渲染、强大的指令遵循,
-            可生成摄影、UI 截图、海报、漫画、信息图等多种风格图像。
+            OpenAI's native image generation model for high-resolution output, accurate typography,
+            and strong instruction following.
           </p>
         </details>
         <details class="faq__item">
           <summary data-i18n="faq2Question">Where do these prompts come from?</summary>
           <p data-i18n-html="faq2Answer">
-            数据主要来自
-            <a href="https://github.com/sandbaseai/lab-prompt-gallery" target="_blank" rel="noopener">sandbaseai/lab-prompt-gallery</a>
-            社区开源仓库和
-            <a href="https://gpt-image2.canghe.ai/" target="_blank" rel="noopener">canghe.ai</a>
-            镜像。所有 prompt 版权归原作者所有,仅用于学习与二次创作。
+            Data is curated from <a href="https://github.com/freestylefly/awesome-gpt-image-2" target="_blank" rel="noopener">freestylefly/awesome-gpt-image-2</a>,
+            <a href="https://gpt-image2.canghe.ai/" target="_blank" rel="noopener">canghe.ai</a>, and community posts.
+            Credit the original author when remixing.
           </p>
         </details>
         <details class="faq__item">
           <summary data-i18n="faq3Question">How do I use these prompts?</summary>
           <p data-i18n="faq3Answer">
-            点开任意卡片 → "Copy" 完整 prompt → 粘贴到 MeiMind、ChatGPT 或任意支持 GPT Image 2 的工具中 →
-            调整参数 → 生成。鼓励基于现有 prompt 进行 remix 与扩展。
+            Open a card, copy the full prompt, paste it into MeiMind, ChatGPT, or another compatible
+            tool, then adjust the parameters and remix.
           </p>
         </details>
         <details class="faq__item">
           <summary data-i18n="faq4Question">Can I submit my own prompt?</summary>
           <p data-i18n="faq4Answer">
-            当然。点击右上角 "Submit Prompt",在 GitHub 仓库提一个 PR,我们会在 24h 内审合并入。
-            高质量 prompt 会被推上 Trending 区。
+            Yes. Use “Submit Prompt” to open an issue in the company repository. Strong prompts can
+            be featured in the Featured section.
           </p>
         </details>
         <details class="faq__item">
           <summary data-i18n="faq5Question">Is this free?</summary>
           <p data-i18n="faq5Answer">
-            100% free,无注册、无水印、无追踪。本站所有内容遵循对应源仓库的 License(CC-BY-4.0 / MIT)。
+            The gallery is free to browse and copy. Prompt content follows the license and attribution
+            terms of its original source.
           </p>
         </details>
       </div>
@@ -197,6 +215,8 @@
       </a>
     </section>
 
+    </main>
+
     <!-- ============ FOOTER ============ -->
     <footer class="footer">
       <div class="footer__inner">
@@ -205,13 +225,13 @@
           <span class="footer__brand">MeiMind / gpt-image-2</span>
         </div>
         <div class="footer__col">
-          <h4 data-i18n="resources">RESOURCES</h4>
+          <h2 data-i18n="resources">RESOURCES</h2>
           <a href="https://github.com/sandbaseai/lab-prompt-gallery" target="_blank" rel="noopener">sandbaseai/lab-prompt-gallery</a>
           <a href="https://gpt-image2.canghe.ai/" target="_blank" rel="noopener" data-i18n="mirror">canghe.ai mirror</a>
           <a href="https://github.com/khangtrannn/ng-brutalism" target="_blank" rel="noopener">ng-brutalism</a>
         </div>
         <div class="footer__col">
-          <h4 data-i18n="legal">LEGAL</h4>
+          <h2 data-i18n="legal">LEGAL</h2>
           <a href="LICENSE" data-i18n="license">License · CC-BY-4.0</a>
           <a href="privacy.html" data-i18n="privacy">Privacy</a>
           <a href="terms.html" data-i18n="terms">Terms</a>

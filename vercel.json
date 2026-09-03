@@ -1,5 +1,8 @@
 {
   "cleanUrls": true,
+  "rewrites": [
+    { "source": "/favicon.ico", "destination": "/assets/favicon.svg" }
+  ],
   "headers": [
     {
       "source": "/(.*)\\.(json|js|css|svg|png|jpg|jpeg|webp)",

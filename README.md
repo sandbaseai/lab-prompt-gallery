@@ -24,9 +24,10 @@
 - 🎨 **Neo-Brutalism Design Language** — Sharp borders, hard drop shadows, monospace typography, and a raw editorial aesthetic.
 - ⚡ **Zero Build, Zero Framework, Blazing Fast** — Built with vanilla HTML5, modern CSS custom properties, and native ES6+ JavaScript. Loads in milliseconds.
 - 🗂 **13 Curated Categories** — UI & Interfaces, Photography, Infographics, Posters, Products, Characters, Documents, Scenes, History, and more.
-- 🔍 **Instant Real-Time Search & Filtering** — Sub-millisecond keyword search across titles, tags, models, and aspect ratios with live category counters.
+- 🔍 **Instant Search & Shareable Filters** — Debounced keyword search across titles, tags, models, and aspect ratios; category, sort, search, and open cases are reflected in the URL.
 - 📋 **Structured Prompt Inspector & 1-Click Copy** — Deep-dive modal view with formatted JSON/natural language prompts, parameter chips, and native clipboard integration.
-- 📱 **Fully Responsive Layout** — Seamless user experience from 4K ultrawide monitors to mobile viewports.
+- 📱 **Fully Responsive Layout** — Seamless user experience from 4K ultrawide monitors to mobile viewports, with an accessible navigation menu and keyboard-roving case cards.
+- 🖼 **Resilient Image Loading** — Upstream images use a GitHub CDN fallback and an explicit unavailable state when neither source responds.
 
 ---
 
@@ -46,8 +47,8 @@
 
 ---
 
-### 3. Trending Prompts Section
-> Highlighted community-curated prompts driving top engagement and creative remixing.
+### 3. Featured Prompts Section
+> Source-flagged and latest cases surfaced for quick discovery; no unverified view-count claim.
 
 ![Trending Section Preview](docs/images/trending-preview.png)
 
@@ -62,6 +63,8 @@ lab-prompt-gallery/
 ├── app.js                      # Vanilla JS state manager, filter engine & modal
 ├── package.json                # Root scripts for dev, verify, and capture
 ├── vercel.json                 # Vercel static routing & asset caching rules
+├── robots.txt                  # Crawler policy and sitemap pointer
+├── sitemap.xml                 # Public page sitemap
 ├── .gitignore                  # Git ignore rules
 ├── LICENSE                     # MIT Open Source License
 ├── data/

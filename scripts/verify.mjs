@@ -9,6 +9,8 @@ const app = await readFile(resolve(root, 'app.js'), 'utf8')
 const vercel = await parseJson('vercel.json')
 const privacy = await readFile(resolve(root, 'privacy.html'), 'utf8')
 const terms = await readFile(resolve(root, 'terms.html'), 'utf8')
+const robots = await readFile(resolve(root, 'robots.txt'), 'utf8')
+const sitemap = await readFile(resolve(root, 'sitemap.xml'), 'utf8')
 
 if (!Array.isArray(data.categories) || data.categories.length < 2) throw new Error('categories must include at least two upstream categories')
 if (!Array.isArray(data.cases) || data.cases.length === 0) throw new Error('cases must be a non-empty array')
@@ -28,7 +30,10 @@ for (const prompt of data.cases) {
 }
 
 if (!html.includes('id="heroPromptCount"') || !html.includes('POWERED BY SANDBASE')) throw new Error('brand/count contract missing from index.html')
-if (!html.includes('aria-labelledby="modalTitle"') || !app.includes("event.key === 'Enter'") || !app.includes(".catch(() => toast('COPY FAILED'))")) {
+if (!html.includes('<main id="main-content">') || !html.includes('class="skip-link"') || !html.includes('id="menuBtn"') || !html.includes('for="searchInput"')) {
+  throw new Error('semantic navigation/accessibility contract missing')
+}
+if (!html.includes('aria-labelledby="modalTitle"') || !app.includes("event.key === 'Enter'") || !app.includes("copyFailed")) {
   throw new Error('keyboard/modal/clipboard contract missing')
 }
 if (!html.includes('id="langBtn"') || !app.includes('const copy = {') || !app.includes('setLanguage(next)') || !app.includes("localStorage.setItem('meimind-language'")) {
@@ -38,8 +43,14 @@ if (!app.includes('github.com/sandbaseai/lab-prompt-gallery')) throw new Error('
 if (!app.includes('titleEn') || !app.includes('summaryEn') || !app.includes('displayTitle') || !app.includes('containsCjk')) {
   throw new Error('localized case metadata contract missing')
 }
+if (!app.includes('syncUrl') || !app.includes('hydrateUrlState') || !app.includes('noResultsTitle') || !app.includes('imageFallback') || app.includes('p.views') || app.includes('p.imageCount')) {
+  throw new Error('shareable state, empty state, or image fallback contract missing')
+}
 if (!app.includes('awesome-gpt-image-2/main/data')) throw new Error('upstream image source missing')
 if (!html.includes('href="privacy.html"') || !html.includes('href="terms.html"') || !privacy.includes('Privacy / 隐私说明') || !terms.includes('Terms / 使用说明')) throw new Error('legal pages are not linked')
-if (vercel.cleanUrls !== true || !Array.isArray(vercel.headers)) throw new Error('vercel.json must define clean URLs and headers')
+if (!robots.includes('Sitemap: https://lab-prompt-gallery-sandbase.vercel.app/sitemap.xml') || !sitemap.includes('<urlset')) throw new Error('SEO crawl files are missing')
+if (vercel.cleanUrls !== true || !Array.isArray(vercel.headers) || !vercel.rewrites?.some(rule => rule.source === '/favicon.ico' && rule.destination === '/assets/favicon.svg')) {
+  throw new Error('vercel.json must define clean URLs, headers, and favicon rewrite')
+}
 
 console.log(`verified ${data.cases.length} upstream cases across ${data.categories.length} categories`)
