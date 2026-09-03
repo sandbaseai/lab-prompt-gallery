@@ -62,6 +62,8 @@ lab-prompt-gallery/
 ├── index.html                  # Semantic HTML5 single-page structure
 ├── style.css                   # Neo-Brutalism design system & tokens
 ├── app.js                      # Vanilla JS state manager, filter engine & modal
+├── submit.html                 # Beginner-friendly prompt submission form
+├── submit.js                   # Creates a pre-filled GitHub Issue draft
 ├── package.json                # Root scripts for dev, verify, and capture
 ├── vercel.json                 # Vercel static routing & asset caching rules
 ├── robots.txt                  # Crawler policy and sitemap pointer
@@ -124,6 +126,10 @@ The synchronized grid currently contains the 541-case `freestylefly/awesome-gpt-
 For broader discovery, the UI also links to [Toolcentral's 7,902-template GPT Image 2 catalog](https://github.com/Toolcentral-ai/awesome-gpt-image-2-prompts) and [Pixmind's CC0 Midjourney V7 examples](https://github.com/Pixmind-io/awesome-midjourney-v7-example-prompts). These remain external until their record-level image/prompt rights and import format are reviewed.
 
 Run `npm run sync:upstream` to refresh the two connected libraries. The merge is deterministic and assigns stable numeric IDs to secondary records so URL deep links remain shareable.
+
+### Submit a prompt
+
+The **Submit Prompt** button opens `submit.html`, a short guided form for title, prompt text, author, and source. The site does not store submissions; after validation, the form creates a pre-filled GitHub Issue draft for review. A GitHub account is required to click **Submit new issue**.
 
 ## 🌐 Deployment
 

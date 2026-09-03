@@ -6,6 +6,8 @@ const parseJson = async (file) => JSON.parse(await readFile(resolve(root, file),
 const data = await parseJson('data/cases.json')
 const html = await readFile(resolve(root, 'index.html'), 'utf8')
 const app = await readFile(resolve(root, 'app.js'), 'utf8')
+const submit = await readFile(resolve(root, 'submit.html'), 'utf8')
+const submitJs = await readFile(resolve(root, 'submit.js'), 'utf8')
 const vercel = await parseJson('vercel.json')
 const privacy = await readFile(resolve(root, 'privacy.html'), 'utf8')
 const terms = await readFile(resolve(root, 'terms.html'), 'utf8')
@@ -31,7 +33,8 @@ for (const prompt of data.cases) {
   }
 }
 
-if (!html.includes('id="heroPromptCount"') || !html.includes('POWERED BY SANDBASE')) throw new Error('brand/count contract missing from index.html')
+if (!html.includes('id="heroStatPromptCount"') || !html.includes('POWERED BY SANDBASE')) throw new Error('brand/count contract missing from index.html')
+if (html.includes('class="hero__sub"')) throw new Error('hero sub copy should remain removed')
 if (!html.includes('<main id="main-content">') || !html.includes('class="skip-link"') || !html.includes('id="menuBtn"') || !html.includes('for="searchInput"')) {
   throw new Error('semantic navigation/accessibility contract missing')
 }
@@ -55,5 +58,16 @@ if (vercel.cleanUrls !== true || !Array.isArray(vercel.headers) || !vercel.rewri
   throw new Error('vercel.json must define clean URLs, headers, and favicon rewrite')
 }
 if (!app.includes('libraryGrid') || !app.includes('renderLibraries')) throw new Error('multi-library discovery contract missing')
+if (!html.includes('href="submit.html"') || !submit.includes('id="submitForm"') || !submit.includes('id="submitToGithub"') || !submitJs.includes('sandbaseai/lab-prompt-gallery/issues/new')) {
+  throw new Error('guided prompt submission flow missing')
+}
+
+const i18nKeys = new Set([
+  ...[...html.matchAll(/data-i18n(?:-html|-placeholder|-aria-label)?="([^"]+)"/g)].map(match => match[1]),
+  ...[...submit.matchAll(/data-i18n(?:-html|-placeholder|-aria-label)?="([^"]+)"/g)].map(match => match[1]),
+])
+for (const key of i18nKeys) {
+  if (!app.includes(`${key}:`) && !submitJs.includes(`${key}:`)) throw new Error(`missing translation key: ${key}`)
+}
 
 console.log(`verified ${data.cases.length} cases from ${data.sources.length} libraries across ${data.categories.length} categories`)

@@ -224,13 +224,6 @@ img { display: block; max-width: 100%; }
   margin-left: 4px;
   white-space: nowrap;
 }
-.nav__powered {
-  color: var(--text-faint);
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.08em;
-  white-space: nowrap;
-}
 .nav__links {
   display: flex;
   gap: 18px;
@@ -326,13 +319,6 @@ img { display: block; max-width: 100%; }
   padding: 0 8px;
   display: inline-block;
 }
-.hero__sub {
-  font-size: 17px;
-  color: var(--dark-muted);
-  max-width: 640px;
-  margin-bottom: 32px;
-}
-.hero__sub strong { color: var(--dark-text); }
 .hero__cta { display: flex; gap: 12px; margin-bottom: 48px; flex-wrap: wrap; }
 .hero__cta .btn--solid { background: var(--accent); border-color: var(--accent); color: #fff; }
 .hero__cta .btn--solid:hover { background: var(--bg-card); color: var(--text); border-color: var(--bg-card); }
@@ -614,6 +600,117 @@ img { display: block; max-width: 100%; }
   font-family: var(--font-mono);
   color: var(--text-muted);
 }
+
+/* ---------- SUBMIT FLOW ---------- */
+.submit-page {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 72px 24px 96px;
+}
+.submit-shell {
+  border-top: 2px solid var(--border-fat);
+  border-bottom: 2px solid var(--border-fat);
+  padding: 32px 0 40px;
+}
+.submit-title {
+  max-width: 720px;
+  margin-bottom: 12px;
+  font-family: var(--font-mono);
+  font-size: clamp(36px, 6vw, 64px);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+.submit-lead {
+  max-width: 680px;
+  margin-bottom: 40px;
+  color: var(--text-muted);
+  font-size: 18px;
+  line-height: 1.6;
+}
+.submit-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(240px, 0.8fr);
+  gap: 32px;
+  align-items: start;
+}
+.submit-form,
+.submit-next {
+  border: 2px solid var(--border-fat);
+  background: var(--bg-card);
+  padding: 24px;
+}
+.submit-form { display: flex; flex-direction: column; gap: 18px; }
+.submit-field { display: flex; flex-direction: column; gap: 6px; }
+.submit-field label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.submit-optional {
+  color: var(--text-faint);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.submit-field input,
+.submit-field textarea {
+  width: 100%;
+  border: 2px solid var(--border-fat);
+  background: var(--bg-input);
+  color: var(--text);
+  padding: 10px 12px;
+  font: 14px/1.5 var(--font-ui);
+}
+.submit-field textarea {
+  min-height: 220px;
+  resize: vertical;
+  font-family: var(--font-mono);
+}
+.submit-field input::placeholder,
+.submit-field textarea::placeholder { color: var(--text-faint); }
+.submit-field-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.submit-note,
+.submit-next p,
+.submit-status {
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 1.55;
+}
+.submit-note { margin-top: -4px; }
+.submit-next {
+  position: sticky;
+  top: 112px;
+  background: var(--bg-pre);
+}
+.submit-next__step {
+  display: block;
+  margin-bottom: 16px;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+}
+.submit-next h2 {
+  margin-bottom: 10px;
+  font-family: var(--font-mono);
+  font-size: 22px;
+  line-height: 1.2;
+}
+.submit-next .btn { margin-top: 20px; }
+.submit-status { min-height: 20px; margin-top: 12px; color: var(--accent); }
+.submit-direct {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  margin-top: 8px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-decoration: underline;
+}
+.submit-footer { margin-top: 0; }
 
 /* ---------- CARD ---------- */
 .card {
@@ -975,9 +1072,13 @@ img { display: block; max-width: 100%; }
   .nav__actions .btn--ghost,
   .nav__actions .btn--solid { font-size: 10px; padding: 6px 8px; }
   .nav__logo-tag { display: none; }
-  .nav__powered { display: none; }
   .section { padding: 48px 16px; scroll-margin-top: 124px; }
   .section__head { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .submit-page { padding: 48px 16px 64px; }
+  .submit-layout { grid-template-columns: 1fr; gap: 20px; }
+  .submit-form, .submit-next { padding: 18px; }
+  .submit-next { position: static; }
+  .submit-field-grid { grid-template-columns: 1fr; }
   .library-grid { grid-template-columns: 1fr; }
   .toolbar__row { flex-direction: column; align-items: stretch; }
   .grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 14px; }
