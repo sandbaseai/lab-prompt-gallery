@@ -522,6 +522,7 @@ img { display: block; max-width: 100%; }
 .legal-section {
   border-top: 2px solid var(--border-fat);
   padding: 20px 0 24px;
+  scroll-margin-top: 86px;
 }
 .legal-section h2 {
   margin-bottom: 8px;
@@ -530,6 +531,13 @@ img { display: block; max-width: 100%; }
   text-transform: uppercase;
 }
 .legal-section p { max-width: 720px; color: var(--text-muted); }
+.legal-sources {
+  max-width: 720px;
+  margin: 14px 0 0 18px;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+.legal-sources li + li { margin-top: 8px; }
 .legal-meta {
   margin-top: 30px;
   color: var(--text-muted);

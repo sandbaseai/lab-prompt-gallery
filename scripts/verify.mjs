@@ -53,6 +53,7 @@ if (!app.includes('syncUrl') || !app.includes('hydrateUrlState') || !app.include
 }
 if (!app.includes('cdn.jsdelivr.net/gh/freestylefly/awesome-gpt-image-2@main/data') || !app.includes('raw/refs/heads/main/data')) throw new Error('upstream image source or fallback missing')
 if (!html.includes('href="privacy.html"') || !html.includes('href="terms.html"') || !privacy.includes('data-lang="en"') || !privacy.includes('data-lang="zh"') || !terms.includes('data-lang="en"') || !terms.includes('data-lang="zh"') || !legalJs.includes('meimind-language')) throw new Error('legal pages are not linked or bilingual')
+if (!html.includes('href="terms.html#licenses"') || html.includes('README.md#-data-sources')) throw new Error('source license link must target the in-site legal section')
 if (!robots.includes('Sitemap: https://lab-prompt-gallery-sandbase.vercel.app/sitemap.xml') || !sitemap.includes('<urlset')) throw new Error('SEO crawl files are missing')
 if (vercel.cleanUrls !== true || !Array.isArray(vercel.headers) || !vercel.rewrites?.some(rule => rule.source === '/favicon.ico' && rule.destination === '/assets/favicon.svg')) {
   throw new Error('vercel.json must define clean URLs, headers, and favicon rewrite')

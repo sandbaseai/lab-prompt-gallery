@@ -30,6 +30,9 @@
     document.querySelectorAll('[data-lang]').forEach(el => { el.hidden = el.dataset.lang !== language; });
     languageButton.textContent = t('languageCode');
     languageButton.setAttribute('aria-label', t('langLabel'));
+    if (window.location.hash === '#licenses') {
+      document.querySelector('.legal-locale:not([hidden]) [data-license-section]')?.scrollIntoView({ block: 'start' });
+    }
   }
 
   languageButton.addEventListener('click', () => {
