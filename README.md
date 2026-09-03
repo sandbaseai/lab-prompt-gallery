@@ -4,7 +4,7 @@
 
 **The Loudest Library of GPT Image 2 Prompts with Neo-Brutalism Aesthetics.**
 
-16,000+ upstream image & video prompts · 33 curated entries in this snapshot · 11 brutalist categories · 1-click copy
+16,000+ upstream image & video prompts · 541 cases in this snapshot · 13 categories · 1-click copy
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-black.svg)](LICENSE)
 [![Content License: CC-BY-4.0](https://img.shields.io/badge/Content-CC--BY--4.0-red.svg)](https://creativecommons.org/licenses/by/4.0/)
@@ -23,7 +23,7 @@
 
 - 🎨 **Neo-Brutalism Design Language** — Sharp borders, hard drop shadows, monospace typography, and a raw editorial aesthetic.
 - ⚡ **Zero Build, Zero Framework, Blazing Fast** — Built with vanilla HTML5, modern CSS custom properties, and native ES6+ JavaScript. Loads in milliseconds.
-- 🗂 **11 Curated Categories** — UI & Interfaces, 35mm Photography, Infographics, Conceptual Posters, 3D Character Grids, Manga Storyboards, YouTube Thumbnails, and more.
+- 🗂 **13 Curated Categories** — UI & Interfaces, Photography, Infographics, Posters, Products, Characters, Documents, Scenes, History, and more.
 - 🔍 **Instant Real-Time Search & Filtering** — Sub-millisecond keyword search across titles, tags, models, and aspect ratios with live category counters.
 - 📋 **Structured Prompt Inspector & 1-Click Copy** — Deep-dive modal view with formatted JSON/natural language prompts, parameter chips, and native clipboard integration.
 - 📱 **Fully Responsive Layout** — Seamless user experience from 4K ultrawide monitors to mobile viewports.
@@ -65,7 +65,7 @@ lab-prompt-gallery/
 ├── .gitignore                  # Git ignore rules
 ├── LICENSE                     # MIT Open Source License
 ├── data/
-│   └── prompts.json            # Curated prompt database & taxonomy
+│   └── cases.json              # Synced upstream case database & taxonomy
 ├── assets/
 │   └── favicon.svg             # Vector site mark
 ├── docs/
@@ -109,7 +109,7 @@ Open the directory in VS Code, right-click `index.html`, and select **"Open with
 - **Markup & Layout**: Semantic HTML5, CSS Grid & Flexbox, Container-query friendly structures.
 - **Styling**: Vanilla CSS3 with `:root` CSS Design Tokens, Neo-Brutalism hard shadows (`--shadow-hard: 4px 4px 0 #1A1A1A`), dark mode accents, and custom monospace typography.
 - **Logic & State**: Native ES6+ JavaScript, Fetch API, Debounced input handler, Keyboard navigation (Escape to close modal), and modern Clipboard API.
-- **Data Layer**: Clean decoupled `data/prompts.json` schema, easily connectable to external APIs or automated scraping pipelines.
+- **Data Layer**: Directly synced `data/cases.json` metadata with upstream image assets served from the source repository.
 
 ---
 
@@ -137,7 +137,7 @@ npx vercel --scope sandbase
 Contributions, prompt submissions, and feature ideas are welcome!
 
 1. Fork this repository.
-2. Add or update prompt entries in [`data/prompts.json`](data/prompts.json).
+2. Add or update cases upstream, then run `npm run sync:upstream` and verify the image paths.
 3. Commit your changes: `git commit -m "feat: add new UI design prompts"`
 4. Push to your branch and open a Pull Request.
 

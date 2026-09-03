@@ -7,6 +7,22 @@
   const $  = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
   const REPO_URL = 'https://github.com/sandbaseai/lab-prompt-gallery';
+  const UPSTREAM_IMAGE_ROOT = 'https://raw.githubusercontent.com/freestylefly/awesome-gpt-image-2/main/data';
+  const CATEGORY_DEFS = [
+    ['architecture', 'Architecture & Spaces', '▣'],
+    ['brand', 'Brand & Logos', '▤'],
+    ['character', 'Characters & People', '▥'],
+    ['infographic', 'Charts & Infographics', '▦'],
+    ['document', 'Documents & Publishing', '▧'],
+    ['history', 'History & Classical Themes', '▨'],
+    ['illustration', 'Illustration & Art', '▩'],
+    ['other', 'Other Use Cases', '◧'],
+    ['photography', 'Photography & Realism', '◨'],
+    ['poster', 'Posters & Typography', '◩'],
+    ['product', 'Products & E-commerce', '◪'],
+    ['scene', 'Scenes & Storytelling', '◫'],
+    ['ui', 'UI & Interfaces', '◬'],
+  ].map(([id, label, icon]) => ({ id, label, icon }));
 
   const copy = {
     en: {
@@ -33,8 +49,8 @@
     },
   };
   const categoryLabels = {
-    en: { all: 'All', ui: 'UI & Interfaces', infographic: 'Infographic', poster: 'Poster', product: 'Product', photography: 'Photography', illustration: 'Illustration', character: 'Character', comic: 'Comic', scene: 'Scene', history: 'History', youtube: 'YouTube Thumb' },
-    zh: { all: '全部', ui: 'UI 与界面', infographic: '信息图', poster: '海报', product: '产品', photography: '摄影', illustration: '插画', character: '角色', comic: '漫画', scene: '场景', history: '历史', youtube: 'YouTube 缩略图' },
+    en: { all: 'All', architecture: 'Architecture & Spaces', brand: 'Brand & Logos', character: 'Characters & People', infographic: 'Charts & Infographics', document: 'Documents & Publishing', history: 'History & Classical Themes', illustration: 'Illustration & Art', other: 'Other Use Cases', photography: 'Photography & Realism', poster: 'Posters & Typography', product: 'Products & E-commerce', scene: 'Scenes & Storytelling', ui: 'UI & Interfaces' },
+    zh: { all: '全部', architecture: '建筑与空间', brand: '品牌与标志', character: '人物与角色', infographic: '图表与信息图', document: '文档与出版', history: '历史与古典题材', illustration: '插画与艺术', other: '其他应用场景', photography: '摄影与写实', poster: '海报与排版', product: '商品与电商', scene: '场景与叙事', ui: 'UI 与界面' },
   };
   let language = 'en';
   try { language = localStorage.getItem('meimind-language') === 'zh' ? 'zh' : 'en'; } catch {}
@@ -55,6 +71,39 @@
     if (state.data) renderPills();
   }
 
+  function inferAspect(prompt) {
+    const match = String(prompt || '').match(/\b(\d{1,2}:\d{1,2})\b/);
+    return match ? match[1] : '4:5';
+  }
+
+  function normalizeData(raw) {
+    const categoryByLabel = new Map(CATEGORY_DEFS.map(category => [category.label, category]));
+    const categories = [{ id: 'all', label: 'All', icon: '▣' }, ...CATEGORY_DEFS];
+    const prompts = (Array.isArray(raw.cases) ? raw.cases : []).map(item => {
+      const category = categoryByLabel.get(item.category) || CATEGORY_DEFS.find(def => def.id === 'other');
+      const aspect = inferAspect(item.prompt);
+      const [width, height] = aspect.split(':').map(Number);
+      const aspectHint = width === height ? 'square' : width > height ? 'wide' : 'tall';
+      const image = typeof item.image === 'string' && item.image.startsWith('/') ? `${UPSTREAM_IMAGE_ROOT}${item.image}` : '';
+      return {
+        id: String(item.id),
+        title: item.title,
+        summary: item.promptPreview || String(item.prompt || '').slice(0, 180),
+        category: category.id,
+        tags: [...(Array.isArray(item.styles) ? item.styles : []), ...(Array.isArray(item.scenes) ? item.scenes : [])].slice(0, 4),
+        model: 'gpt-image-2',
+        aspect,
+        aspectHint,
+        featured: Boolean(item.featured),
+        image,
+        imageAlt: item.imageAlt || item.title,
+        prompt: item.prompt,
+        source: { author: item.sourceLabel || 'upstream case', url: item.sourceUrl || item.githubUrl || raw.repository },
+      };
+    });
+    return { categories, prompts };
+  }
+
   const state = {
     data:      null,       // { categories, prompts }
     filtered:  [],
@@ -69,12 +118,12 @@
   /* ---------- 1. DATA LOAD ---------- */
   async function load() {
     try {
-      const res = await fetch('data/prompts.json');
+      const res = await fetch('data/cases.json');
       if (!res.ok) throw new Error('fetch failed');
-      state.data = await res.json();
+      state.data = normalizeData(await res.json());
     } catch (err) {
-      console.error('Failed to load prompts.json', err);
-      $('#grid').innerHTML = '<p class="load-error">Failed to load prompts.json.<br>请通过本地服务器访问(例如 <code>python -m http.server</code>)。</p>';
+      console.error('Failed to load cases.json', err);
+      $('#grid').innerHTML = '<p class="load-error">Failed to load cases.json.<br>请通过本地服务器访问(例如 <code>python -m http.server</code>)。</p>';
       return;
     }
     initFilters();
@@ -185,8 +234,8 @@
       );
     }
 
-    if (state.sort === 'trending') list.sort((a, b) => (b.views || 0) - (a.views || 0));
-    if (state.sort === 'newest')   list.sort((a, b) => String(b.id).localeCompare(String(a.id)));
+    if (state.sort === 'trending') list.sort((a, b) => Number(b.featured) - Number(a.featured) || Number(b.id) - Number(a.id));
+    if (state.sort === 'newest')   list.sort((a, b) => Number(b.id) - Number(a.id));
     if (state.sort === 'az')       list.sort((a, b) => a.title.localeCompare(b.title));
 
     state.filtered = list;
@@ -195,7 +244,7 @@
 
   /* ---------- 4. TRENDING (top 3 by views) ---------- */
   function renderTrending() {
-    const top = state.data.prompts.slice().sort((a, b) => (b.views || 0) - (a.views || 0)).slice(0, 3);
+    const top = state.data.prompts.slice().sort((a, b) => Number(b.featured) - Number(a.featured) || Number(b.id) - Number(a.id)).slice(0, 3);
     $('#trendingGrid').innerHTML = top.map((p, i) => cardHTML(p, i + 1, '', true)).join('');
     bindCardEvents('#trendingGrid');
   }
@@ -224,12 +273,16 @@
          : 'card__media')
       : 'card__media';
 
-    const views = p.views ? formatViews(p.views) : '';
     const tag   = (p.tags && p.tags[0]) ? `<span class="card__tag">${p.tags[0]}</span>` : '';
+    const author = String(p.source.author || 'upstream').startsWith('@') ? p.source.author : `@${p.source.author}`;
+    const image = p.image
+      ? `<img class="card__image" src="${escapeAttr(p.image)}" alt="${escapeAttr(p.imageAlt || p.title)}" loading="lazy" decoding="async" />`
+      : '';
 
     return `
       <article class="card" data-id="${escapeAttr(p.id)}" tabindex="0" role="button" aria-label="${escapeAttr(language === 'zh' ? `打开提示词：${p.title}` : `Open prompt: ${p.title}`)}">
         <div class="${mediaClass}">
+          ${image}
           <div class="card__placeholder">
             ${escapeHTML(p.aspect || 'image')} · ${escapeHTML(p.model || 'gpt-image-2')}
           </div>
@@ -240,17 +293,12 @@
           <div class="card__title">${escapeHTML(p.title)}</div>
           <div class="card__summary">${escapeHTML(p.summary || '')}</div>
           <div class="card__meta">
-            <span class="card__author">@${escapeHTML(p.source.author)}</span>
-            <span>${views} ${tag}</span>
+            <span class="card__author">${escapeHTML(author)}</span>
+            <span>CASE ${escapeHTML(p.id)} ${tag}</span>
           </div>
         </div>
       </article>
     `;
-  }
-
-  function formatViews(n) {
-    if (n >= 1000) return (n / 1000).toFixed(1).replace(/\.0$/, '') + 'k';
-    return String(n);
   }
 
   function bindCardEvents(rootSel) {
@@ -263,6 +311,18 @@
         }
       });
     });
+    bindImageFallbacks(rootSel);
+  }
+
+  function bindImageFallbacks(rootSel) {
+    $$(`${rootSel} .card__image`).forEach(image => {
+      const media = image.closest('.card__media');
+      const markLoaded = () => media?.classList.add('has-image');
+      const removeBroken = () => image.remove();
+      image.addEventListener('load', markLoaded, { once: true });
+      image.addEventListener('error', removeBroken, { once: true });
+      if (image.complete && image.naturalWidth > 0) markLoaded();
+    });
   }
 
   /* ---------- 7. MODAL DETAIL ---------- */
@@ -270,8 +330,12 @@
     const p = state.data.prompts.find(x => x.id === id);
     if (!p) return;
     const body = $('#modalBody');
+    const detailImage = p.image
+      ? `<img src="${escapeAttr(p.image)}" alt="${escapeAttr(p.imageAlt || p.title)}" decoding="async" />`
+      : '';
     body.innerHTML = `
       <div class="detail__media">
+        ${detailImage}
         <div class="card__placeholder" style="width:100%;aspect-ratio:${p.aspect || '4/3'}">
           ${escapeHTML(p.aspect || 'image')} preview · ${escapeHTML(p.model)}
         </div>
@@ -296,6 +360,15 @@
         </div>
       </div>
     `;
+    const detailMedia = $('.detail__media', body);
+    const detailImageEl = $('img', detailMedia);
+    if (detailImageEl) {
+      const detailPlaceholder = $('.card__placeholder', detailMedia);
+      const hidePlaceholder = () => { if (detailPlaceholder) detailPlaceholder.hidden = true; };
+      detailImageEl.addEventListener('load', hidePlaceholder, { once: true });
+      detailImageEl.addEventListener('error', () => detailImageEl.remove(), { once: true });
+      if (detailImageEl.complete && detailImageEl.naturalWidth > 0) hidePlaceholder();
+    }
     $('#modal').classList.add('is-open');
     $('#modal').setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
